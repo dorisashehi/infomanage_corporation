@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import Header from "../components/Header";
@@ -51,42 +51,19 @@ const resultsItems = [
 
 const frameworkCards = [
   {
-    num: "01",
-    icon: "bi-tools",
+    icon: "bi-wrench-adjustable",
     title: "Fix",
     desc: "Rapid issue resolution keeps users productive and minimizes disruptions.",
-    bullets: [
-      "Help desk troubleshooting",
-      "Application support",
-      "Incident response and escalation",
-    ],
-    accent: true,
   },
   {
-    num: "02",
-    icon: "bi-shield-check",
+    icon: "bi-gear",
     title: "Maintain",
     desc: "Proactive operations reduce risk and prevent problems before they occur.",
-    bullets: [
-      "24×7 system monitoring",
-      "Patch management",
-      "Security hygiene",
-      "Infrastructure maintenance",
-    ],
-    accent: false,
   },
   {
-    num: "03",
     icon: "bi-graph-up-arrow",
     title: "Enhance",
     desc: "Strategic guidance helps organizations improve and evolve their technology environments.",
-    bullets: [
-      "Technology roadmaps",
-      "Infrastructure upgrades",
-      "Lifecycle planning",
-      "vCTO advisory",
-    ],
-    accent: false,
   },
 ];
 
@@ -168,20 +145,17 @@ export default function ManagedITPage() {
               <i className="bi bi-cpu" />
               <span>Managed IT Services</span>
             </div>
-            <h1>Managed IT Services</h1>
+            <h1>
+              Stop Reacting to Problems.
+              <br />
+              Start Preventing Them.
+            </h1>
             <p className="mit-hero-sub">
-              Stop reacting to problems. Start preventing them.
-            </p>
-            <p className="mit-hero-body">
               InfoManage takes operational responsibility for the technology
-              your business depends on: desktops, laptops, servers, printers,
-              firewalls, switches, and networks, so your team can focus on
-              growth instead of troubleshooting.
+              your business depends on, so your team can focus on growth instead
+              of troubleshooting.
             </p>
-            <p className="mit-hero-note">
-              Rather than reacting to problems as they occur, we proactively
-              manage the systems that keep your business running.
-            </p>
+
             {/* <div className="mit-hero-btns">
               <Link to="/contact#contact" className="btn-get-started">Schedule a Consultation</Link>
               <Link to="/contact" className="mit-hero-outline-btn">Request an IT Assessment</Link>
@@ -192,7 +166,7 @@ export default function ManagedITPage() {
         {/* ── What We Handle — light section, 3-column ──────────── */}
         <section
           id="overview"
-          style={{ padding: "56px 0", background: "#fff" }}
+          style={{ padding: "48px 0", background: "#fff" }}
         >
           <div className="container">
             <div
@@ -224,7 +198,7 @@ export default function ManagedITPage() {
                     fontWeight: 700,
                     color: "var(--heading-color)",
                     lineHeight: 1.3,
-                    marginBottom: 14,
+                    marginBottom: 12,
                   }}
                 >
                   Your Technology, Fully Covered
@@ -234,7 +208,7 @@ export default function ManagedITPage() {
                     width: 46,
                     height: 3,
                     background: "var(--accent)",
-                    marginBottom: 18,
+                    marginBottom: 22,
                   }}
                 />
                 <p
@@ -380,36 +354,107 @@ export default function ManagedITPage() {
               </p>
             </div>
 
-            <div className="hww-grid">
-              {frameworkCards.map((card, i) => (
-                <div
-                  key={i}
-                  className="hww-card"
-                  data-aos="fade-up"
-                  data-aos-delay={150 + i * 100}
-                >
-                  <div className="hww-num">{card.num}</div>
-                  <div
-                    className="hww-icon-wrap"
-                    style={{ borderRadius: "50%", background: "var(--accent)" }}
-                  >
-                    <i
-                      className={`bi ${card.icon}`}
-                      style={{ color: "#fff" }}
-                    />
-                  </div>
-                  <h4>{card.title}</h4>
-                  <p>{card.desc}</p>
-                  <ul className="hww-points">
-                    {card.bullets.map((b, j) => (
-                      <li key={j}>
-                        <i className="bi bi-check2-circle" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "nowrap",
+                alignItems: "center",
+                gap: 8,
+                border: "1px solid #e5eaf1",
+                borderRadius: 16,
+                padding: "26px 30px",
+                boxShadow: "0 8px 28px rgba(13, 30, 46, 0.06)",
+              }}
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              {frameworkCards.map((card, i) => {
+                const color = [
+                  "var(--accent)",
+                  "var(--heading-color)",
+                  "var(--accent-dark)",
+                ][i % 3];
+                return (
+                  <Fragment key={i}>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 14,
+                        flex: "1 1 auto",
+                        minWidth: 200,
+                      }}
+                      data-aos="fade-up"
+                      data-aos-delay={150 + i * 100}
+                    >
+                      <div
+                        style={{
+                          width: 60,
+                          height: 60,
+                          borderRadius: "50%",
+                          border: `2px solid ${color}`,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0,
+                        }}
+                      >
+                        <i
+                          className={`bi ${card.icon}`}
+                          style={{ color, fontSize: 22 }}
+                        />
+                      </div>
+                      <div>
+                        <h6
+                          style={{
+                            color,
+                            fontWeight: 900,
+                            fontSize: 14,
+                            textTransform: "uppercase",
+                            letterSpacing: 0.5,
+                            margin: "0 0 4px",
+                          }}
+                        >
+                          {card.title}.
+                        </h6>
+                        <p
+                          style={{
+                            fontSize: 13,
+                            color: "rgb(85, 85, 85)",
+                            margin: 0,
+                            lineHeight: 1.4,
+                          }}
+                        >
+                          {card.desc}
+                        </p>
+                      </div>
+                    </div>
+
+                    {i < frameworkCards.length - 1 && (
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          flex: "0 1 40px",
+                          minWidth: 20,
+                        }}
+                      >
+                        <div
+                          style={{ flex: 1, borderTop: "2px dotted #d0d7e2" }}
+                        />
+                        <i
+                          className="bi bi-chevron-right"
+                          style={{
+                            color: "#c3ccd9",
+                            fontSize: 14,
+                            margin: "0 4px",
+                          }}
+                        />
+                      </div>
+                    )}
+                  </Fragment>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -633,183 +678,296 @@ export default function ManagedITPage() {
           </div>
         </section>
 
-        {/* ── Results You Can Expect — outcome grid ─────────────── */}
+        {/* ── Results You Can Expect — Project Management layout ── */}
         <section
           className="mit-section"
-          style={{ padding: "48px 0", background: "var(--light-bg)" }}
+          style={{ padding: "48px 0", background: "#fff" }}
         >
           <div className="container">
             <div
               style={{
-                textAlign: "center",
-                maxWidth: 640,
-                margin: "0 auto 32px",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 32,
+                alignItems: "center",
               }}
-              data-aos="fade-up"
             >
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 2,
-                  color: "var(--accent)",
-                  marginBottom: 10,
-                }}
-              >
-                What You Get
-              </span>
-              <h2
-                style={{
-                  fontSize: 32,
-                  fontWeight: 700,
-                  color: "var(--heading-color)",
-                  marginBottom: 10,
-                }}
-              >
-                The Difference You&apos;ll Actually Notice
-              </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
-                Not a list of tasks. What those tasks add up to for your
-                business.
-              </p>
-            </div>
-
-            <div
-              className="mit-gov-grid"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              {resultsItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="feature-card"
-                  data-aos="fade-up"
-                  data-aos-delay={150 + i * 50}
+              <div style={{ flex: "1 1 420px" }} data-aos="fade-up">
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: 2,
+                    color: "var(--accent)",
+                    marginBottom: 10,
+                  }}
                 >
-                  <div
-                    className="icon-wrapper"
-                    style={{
-                      background: "transparent",
-                      border: "2px solid var(--accent)",
-                      borderRadius: "50%",
-                    }}
-                  >
-                    <i className={`bi ${item.icon}`} />
-                  </div>
-                  <h5>{item.title}</h5>
-                  <p>{item.desc}</p>
+                  What You Get
+                </span>
+                <h2
+                  style={{
+                    fontSize: 32,
+                    fontWeight: 700,
+                    color: "var(--heading-color)",
+                    lineHeight: 1.25,
+                    marginBottom: 12,
+                  }}
+                >
+                  The Difference You&apos;ll Actually Notice
+                </h2>
+                <p
+                  style={{
+                    color: "#555",
+                    lineHeight: 1.8,
+                    fontSize: 14.5,
+                    marginBottom: 24,
+                    maxWidth: 460,
+                  }}
+                >
+                  Not a list of tasks. What those tasks add up to for your
+                  business.
+                </p>
+                <div
+                  style={{
+                    width: 46,
+                    height: 3,
+                    background: "var(--accent)",
+                    marginBottom: 22,
+                  }}
+                />
+
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                    gap: 16,
+                  }}
+                >
+                  {resultsItems.map((item, i) => (
+                    <div
+                      key={i}
+                      data-aos="fade-up"
+                      data-aos-delay={100 + i * 80}
+                    >
+                      <div
+                        style={{
+                          width: 56,
+                          height: 56,
+                          borderRadius: "50%",
+                          background: "rgba(26, 108, 181, 0.08)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          marginBottom: 14,
+                        }}
+                      >
+                        <i
+                          className={`bi ${item.icon}`}
+                          style={{ color: "var(--accent)", fontSize: 26 }}
+                        />
+                      </div>
+                      <h5
+                        style={{
+                          fontSize: 14.5,
+                          fontWeight: 700,
+                          color: "var(--heading-color)",
+                          marginBottom: 8,
+                        }}
+                      >
+                        {item.title}
+                      </h5>
+                      <p
+                        style={{
+                          fontSize: 13,
+                          color: "#666",
+                          lineHeight: 1.6,
+                          margin: 0,
+                        }}
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div
+                style={{ flex: "1 1 420px" }}
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
+                <div style={{ position: "relative" }}>
+                  <img
+                    src="/images/managed-it/operations.jpg"
+                    alt="InfoManage technician managing IT operations"
+                    style={{
+                      width: "100%",
+                      height: 400,
+                      objectFit: "cover",
+                      borderRadius: 16,
+                      display: "block",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: -22,
+                      right: -14,
+                      background: "#fff",
+                      borderRadius: 12,
+                      padding: "16px 26px",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.18)",
+                      transform: "rotate(-3deg)",
+                    }}
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <p
+                      style={{
+                        margin: 0,
+                        fontFamily: "'Caveat', cursive",
+                        fontSize: 26,
+                        fontWeight: 700,
+                        color: "var(--heading-color)",
+                        lineHeight: 1.25,
+                      }}
+                    >
+                      Less Firefighting.
+                      <br />
+                      <span style={{ borderBottom: "2px solid var(--accent)" }}>
+                        More Progress.
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ── Who This Is For — background image + overlay ──────── */}
-        <section
-          style={{
-            position: "relative",
-            padding: "56px 0",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              backgroundImage:
-                "url(/images/industries/teams-across-industries.jpg)",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background: "rgba(240, 244, 249, 0.68)",
-            }}
-          />
-          <div
-            className="container"
-            style={{ position: "relative", zIndex: 1 }}
-          >
+        {/* ── Is This You? — dark section, Why It's Different format ── */}
+        <section style={{ padding: "48px 0", background: "#0d1e2e" }}>
+          <div className="container">
             <div
               style={{
-                textAlign: "center",
-                maxWidth: 640,
-                margin: "0 auto 32px",
-              }}
-              data-aos="fade-up"
-            >
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 2,
-                  color: "var(--accent)",
-                  marginBottom: 10,
-                }}
-              >
-                Is This You?
-              </span>
-              <h2
-                style={{
-                  fontSize: 32,
-                  fontWeight: 700,
-                  color: "var(--heading-color)",
-                  marginBottom: 10,
-                }}
-              >
-                Built for Businesses Like Yours
-              </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
-                Managed IT from InfoManage fits organizations that:
-              </p>
-            </div>
-
-            <div
-              className="mit-criteria-list"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-                gap: 16,
-                maxWidth: 900,
-                margin: "0 auto",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 48,
+                alignItems: "flex-start",
               }}
             >
-              {idealForItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="mit-criteria-item"
-                  style={{ padding: "16px 20px" }}
-                  data-aos="fade-up"
-                  data-aos-delay={80 + i * 70}
+              {/* Left: header + callout */}
+              <div style={{ flex: "1 1 320px" }} data-aos="fade-right">
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: 2,
+                    color: "var(--accent)",
+                    marginBottom: 10,
+                  }}
                 >
-                  <div
-                    className="mit-criteria-icon"
-                    style={{ width: 42, height: 42 }}
+                  Is This You?
+                </span>
+                <h2
+                  style={{
+                    fontSize: 30,
+                    fontWeight: 700,
+                    color: "#fff",
+                    lineHeight: 1.3,
+                    marginBottom: 14,
+                  }}
+                >
+                  Built for Businesses Like Yours
+                </h2>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.65)",
+                    lineHeight: 1.8,
+                    fontSize: 14.5,
+                    marginBottom: 20,
+                  }}
+                >
+                  If your team spends more time firefighting IT problems than
+                  growing the business, it might be time for a partner who
+                  handles the technology so you don&apos;t have to.
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 14,
+                    alignItems: "center",
+                    background: "rgba(255,255,255,0.06)",
+                    borderRadius: 12,
+                    padding: "16px 20px",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                  }}
+                >
+                  <i
+                    className="bi bi-building"
+                    style={{
+                      color: "var(--accent)",
+                      fontSize: 26,
+                      flexShrink: 0,
+                    }}
+                  />
+                  <p
+                    style={{
+                      color: "rgba(255,255,255,0.85)",
+                      fontSize: 13.5,
+                      lineHeight: 1.6,
+                      margin: 0,
+                    }}
                   >
-                    <i
-                      className={
-                        [
-                          "bi-pc-display",
-                          "bi-arrow-repeat",
-                          "bi-graph-down-arrow",
-                          "bi-activity",
-                          "bi-compass",
-                          "bi-building",
-                        ][i]
-                      }
-                      style={{ fontSize: 18 }}
-                    />
-                  </div>
-                  <p style={{ fontSize: 14.5 }}>{item}</p>
+                    No in-house IT department? We become the technology team
+                    your business doesn&apos;t have to hire.
+                  </p>
                 </div>
-              ))}
+              </div>
+
+              {/* Right: checklist */}
+              <div
+                style={{ flex: "1 1 360px", minWidth: 0 }}
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
+                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                  {idealForItems.map((item, i) => (
+                    <li
+                      key={i}
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: 10,
+                        padding: "10px 0",
+                        borderBottom:
+                          i < idealForItems.length - 1
+                            ? "1px solid rgba(255,255,255,0.08)"
+                            : "none",
+                        color: "rgba(255,255,255,0.85)",
+                        fontSize: 14.5,
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      <i
+                        className="bi bi-check-circle-fill"
+                        style={{
+                          color: "var(--accent)",
+                          fontSize: 15,
+                          marginTop: 2,
+                          flexShrink: 0,
+                        }}
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>

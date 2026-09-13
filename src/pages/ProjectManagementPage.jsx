@@ -557,10 +557,7 @@ export default function ProjectManagementPage() {
                 alignItems: "stretch",
               }}
             >
-              <div
-                style={{ flex: "0 1 280px" }}
-                data-aos="fade-right"
-              >
+              <div style={{ flex: "0 1 280px" }} data-aos="fade-right">
                 <div
                   style={{
                     position: "relative",
@@ -643,8 +640,8 @@ export default function ProjectManagementPage() {
                     marginBottom: 24,
                   }}
                 >
-                  We handle your on-premises cabling and related tasks to
-                  ensure a reliable, high-performance network from day one.
+                  We handle your on-premises cabling and related tasks to ensure
+                  a reliable, high-performance network from day one.
                 </p>
 
                 <div
@@ -698,8 +695,8 @@ export default function ProjectManagementPage() {
                         margin: 0,
                       }}
                     >
-                      Prepare quote for on-premises cabling based on draft
-                      floor plan.
+                      Prepare quote for on-premises cabling based on draft floor
+                      plan.
                     </p>
                   </div>
 
@@ -739,9 +736,7 @@ export default function ProjectManagementPage() {
                     >
                       Station Cable Runs
                     </h5>
-                    <ul
-                      style={{ listStyle: "none", padding: 0, margin: 0 }}
-                    >
+                    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                       {stationCableRuns.map((item, i) => (
                         <li
                           key={i}
@@ -815,9 +810,7 @@ export default function ProjectManagementPage() {
                     >
                       Test cables end to end, then mount:
                     </p>
-                    <ul
-                      style={{ listStyle: "none", padding: 0, margin: 0 }}
-                    >
+                    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                       {mountedEquipment.map((item, i) => (
                         <li
                           key={i}
@@ -1212,78 +1205,6 @@ export default function ProjectManagementPage() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Final CTA — blue banner ────────────────────────────── */}
-        <section style={{ padding: "48px 0" }}>
-          <div className="container">
-            <div
-              style={{
-                background: "var(--accent)",
-                borderRadius: 16,
-                padding: "30px 36px",
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-                justifyContent: "space-between",
-                gap: 24,
-                overflow: "hidden",
-              }}
-              data-aos="fade-up"
-            >
-              <div style={{ flex: "1 1 320px" }}>
-                <h2
-                  style={{
-                    fontSize: 24,
-                    fontWeight: 700,
-                    color: "#fff",
-                    marginBottom: 12,
-                  }}
-                >
-                  Need help with your next buildout?
-                </h2>
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.85)",
-                    fontSize: 15,
-                    marginBottom: 24,
-                  }}
-                >
-                  Our team is ready to help you plan, coordinate, and deliver a
-                  seamless IT infrastructure for your new space.
-                </p>
-                <Link
-                  to="/contact"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 8,
-                    background: "#fff",
-                    color: "var(--accent)",
-                    padding: "12px 28px",
-                    borderRadius: 50,
-                    fontWeight: 600,
-                    fontSize: 15,
-                  }}
-                >
-                  Get in Touch
-                  <i className="bi bi-arrow-right" />
-                </Link>
-              </div>
-              <img
-                src="/images/about/support-team.jpg"
-                alt="InfoManage team ready to help"
-                style={{
-                  width: 220,
-                  height: 160,
-                  objectFit: "cover",
-                  borderRadius: 12,
-                  display: "block",
-                  flexShrink: 0,
-                }}
-              />
             </div>
           </div>
         </section>
