@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -50,6 +51,21 @@ const riskLookItems = [
     icon: "bi-arrow-counterclockwise",
     title: "Recovery Uncertainty",
     desc: "Having backups isn't enough. Without verified, tested recovery, you may only discover what wasn't protected when you need to restore it most.",
+  },
+];
+
+const phishingEmails = [
+  {
+    sender: "helpdesk@informanage-support.net",
+    subject: "⚠ Action Required: Verify Your Mailbox",
+    preview:
+      "Your mailbox will be suspended unless you confirm your credentials within 24 hours...",
+  },
+  {
+    sender: "accounts@secure-billing-alert.com",
+    subject: "Invoice Overdue — Immediate Payment Needed",
+    preview:
+      "Please review the attached invoice and submit payment to avoid service interruption...",
   },
 ];
 
@@ -346,7 +362,7 @@ export default function CybersecurityPage() {
         </section>
 
         {/* ── How These Gaps Show Up in Practice ────────────────── */}
-        <section style={{ padding: "48px 0", background: "#0d1e2e" }}>
+        <section style={{ padding: "48px 0 76px", background: "#0d1e2e" }}>
           <div className="container">
             <div
               style={{
@@ -354,10 +370,9 @@ export default function CybersecurityPage() {
                 flexWrap: "wrap",
                 gap: 32,
                 alignItems: "center",
-                marginBottom: 28,
               }}
             >
-              <div style={{ flex: "1 1 380px" }} data-aos="fade-right">
+              <div style={{ flex: "1 1 460px" }} data-aos="fade-right">
                 <SectionHeading eyebrow="In Practice" />
                 <h2
                   style={{
@@ -369,219 +384,263 @@ export default function CybersecurityPage() {
                 >
                   How These Gaps Show Up in Practice
                 </h2>
-                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 15 }}>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.65)",
+                    fontSize: 15,
+                    marginBottom: 24,
+                  }}
+                >
                   Rarely one big failure. Usually a handful of small ones,
                   stacked together.
                 </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                  {riskLookItems.map((item, i) => (
+                    <li
+                      key={i}
+                      style={{
+                        display: "flex",
+                        gap: 6,
+                        alignItems: "flex-start",
+                        padding: "3px 0",
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: 26,
+                          height: 26,
+                          borderRadius: "50%",
+                          background: "var(--accent)",
+                          color: "#fff",
+                          fontSize: 12,
+                          fontWeight: 700,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexShrink: 0,
+                          marginTop: 2,
+                        }}
+                      >
+                        {i + 1}
+                      </span>
+                      <p
+                        style={{
+                          margin: 0,
+                          color: "rgba(255,255,255,0.7)",
+                          fontSize: 14,
+                          lineHeight: 1.7,
+                        }}
+                      >
+                        <strong style={{ color: "#fff" }}>
+                          {item.title}:
+                        </strong>{" "}
+                        {item.desc}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div
+                style={{ flex: "1 1 380px", position: "relative" }}
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
+              <div
+                style={{
+                  position: "relative",
+                  background: "#fff",
+                  borderRadius: 14,
+                  overflow: "hidden",
+                  boxShadow: "0 20px 45px rgba(0,0,0,0.35)",
+                }}
+              >
+                {/* mail app header bar */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 6,
+                    padding: "10px 14px",
+                    background: "#f1f3f6",
+                    borderBottom: "1px solid #e5e8ee",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: 10,
+                      height: 10,
+                      borderRadius: "50%",
+                      background: "#ff5f57",
+                    }}
+                  />
+                  <span
+                    style={{
+                      width: 10,
+                      height: 10,
+                      borderRadius: "50%",
+                      background: "#febc2e",
+                    }}
+                  />
+                  <span
+                    style={{
+                      width: 10,
+                      height: 10,
+                      borderRadius: "50%",
+                      background: "#28c840",
+                    }}
+                  />
+                  <span
+                    style={{
+                      marginLeft: 6,
+                      fontSize: 12,
+                      fontWeight: 600,
+                      color: "#667",
+                    }}
+                  >
+                    Inbox
+                  </span>
+                </div>
+
+                {phishingEmails.map((mail, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      padding: "14px 16px",
+                      borderBottom:
+                        i < phishingEmails.length - 1
+                          ? "1px solid #eef0f4"
+                          : "none",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        marginBottom: 6,
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 6,
+                          fontSize: 12,
+                          color: "#888",
+                        }}
+                      >
+                        <i
+                          className="bi bi-envelope"
+                          style={{ color: "var(--accent)" }}
+                        />
+                        {mail.sender}
+                      </div>
+                      <span
+                        style={{
+                          background: "#fdecea",
+                          color: "#dc3545",
+                          fontSize: 10,
+                          fontWeight: 700,
+                          padding: "2px 8px",
+                          borderRadius: 20,
+                          textTransform: "uppercase",
+                          flexShrink: 0,
+                        }}
+                      >
+                        Suspicious
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        fontWeight: 700,
+                        fontSize: 13.5,
+                        color: "var(--heading-color)",
+                        marginBottom: 4,
+                      }}
+                    >
+                      {mail.subject}
+                    </div>
+                    <div
+                      style={{ fontSize: 12, color: "#777", lineHeight: 1.5 }}
+                    >
+                      {mail.preview}
+                    </div>
+                  </div>
+                ))}
               </div>
 
               <div
                 style={{
-                  flex: "1 1 320px",
                   position: "relative",
-                  minHeight: 260,
+                  zIndex: 2,
+                  marginTop: -12,
+                  maxWidth: 270,
+                  background: "var(--accent)",
+                  borderRadius: 14,
+                  padding: "22px 24px",
+                  boxShadow: "0 16px 40px rgba(0,0,0,0.3)",
                 }}
-                data-aos="fade-left"
-                data-aos-delay="100"
+                data-aos="fade-up"
+                data-aos-delay="200"
               >
-                {/* decorative bug & phishing icons */}
-                <i
-                  className="bi bi-bug-fill"
-                  style={{
-                    position: "absolute",
-                    top: -6,
-                    right: 30,
-                    fontSize: 52,
-                    color: "rgba(220, 53, 69, 0.28)",
-                    transform: "rotate(15deg)",
-                  }}
-                />
-                <i
-                  className="bi bi-bug-fill"
-                  style={{
-                    position: "absolute",
-                    bottom: 6,
-                    left: 6,
-                    fontSize: 34,
-                    color: "rgba(220, 53, 69, 0.2)",
-                    transform: "rotate(-18deg)",
-                  }}
-                />
-                <i
-                  className="bi bi-envelope-exclamation-fill"
-                  style={{
-                    position: "absolute",
-                    top: 36,
-                    left: 0,
-                    fontSize: 42,
-                    color: "rgba(26, 108, 181, 0.28)",
-                  }}
-                />
-                <i
-                  className="bi bi-shield-exclamation"
-                  style={{
-                    position: "absolute",
-                    bottom: 0,
-                    right: 50,
-                    fontSize: 38,
-                    color: "rgba(26, 108, 181, 0.22)",
-                  }}
-                />
-
-                {/* phishing email example 1 */}
                 <div
                   style={{
-                    position: "relative",
-                    zIndex: 1,
-                    background: "#fff",
-                    borderRadius: 10,
-                    padding: "14px 16px",
-                    boxShadow: "0 12px 30px rgba(0,0,0,0.35)",
-                    marginBottom: 20,
-                    marginLeft: 30,
-                    transform: "rotate(-2deg)",
+                    width: 48,
+                    height: 48,
+                    borderRadius: "50%",
+                    background: "rgba(255,255,255,0.15)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: 14,
                   }}
                 >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: 6,
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 6,
-                        fontSize: 12,
-                        color: "#888",
-                      }}
-                    >
-                      <i
-                        className="bi bi-envelope"
-                        style={{ color: "var(--accent)" }}
-                      />
-                      helpdesk@informanage-support.net
-                    </div>
-                    <span
-                      style={{
-                        background: "#fdecea",
-                        color: "#dc3545",
-                        fontSize: 10,
-                        fontWeight: 700,
-                        padding: "2px 8px",
-                        borderRadius: 20,
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      Suspicious
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      fontWeight: 700,
-                      fontSize: 13.5,
-                      color: "var(--heading-color)",
-                      marginBottom: 4,
-                    }}
-                  >
-                    ⚠ Action Required: Verify Your Mailbox
-                  </div>
-                  <div style={{ fontSize: 12, color: "#777", lineHeight: 1.5 }}>
-                    Your mailbox will be suspended unless you confirm your
-                    credentials within 24 hours...
-                  </div>
+                  <i
+                    className="bi bi-shield-exclamation"
+                    style={{ color: "#fff", fontSize: 22 }}
+                  />
                 </div>
-
-                {/* phishing email example 2 */}
-                <div
+                <h5
                   style={{
-                    position: "relative",
-                    zIndex: 1,
-                    background: "#fff",
-                    borderRadius: 10,
-                    padding: "14px 16px",
-                    boxShadow: "0 12px 30px rgba(0,0,0,0.35)",
-                    marginLeft: 70,
-                    transform: "rotate(2deg)",
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: "#fff",
+                    marginBottom: 8,
                   }}
                 >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      marginBottom: 6,
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 6,
-                        fontSize: 12,
-                        color: "#888",
-                      }}
-                    >
-                      <i
-                        className="bi bi-envelope"
-                        style={{ color: "var(--accent)" }}
-                      />
-                      accounts@secure-billing-alert.com
-                    </div>
-                    <span
-                      style={{
-                        background: "#fdecea",
-                        color: "#dc3545",
-                        fontSize: 10,
-                        fontWeight: 700,
-                        padding: "2px 8px",
-                        borderRadius: 20,
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      Suspicious
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      fontWeight: 700,
-                      fontSize: 13.5,
-                      color: "var(--heading-color)",
-                      marginBottom: 4,
-                    }}
-                  >
-                    Invoice Overdue — Immediate Payment Needed
-                  </div>
-                  <div style={{ fontSize: 12, color: "#777", lineHeight: 1.5 }}>
-                    Please review the attached invoice and submit payment to
-                    avoid service interruption...
-                  </div>
-                </div>
+                  Built From Real Attack Patterns
+                </h5>
+                <p
+                  style={{
+                    fontSize: 13,
+                    color: "rgba(255,255,255,0.85)",
+                    lineHeight: 1.7,
+                    marginBottom: 16,
+                  }}
+                >
+                  These are the kinds of messages we actively hunt for —
+                  before someone on your team clicks.
+                </p>
+                <Link
+                  to="/contact"
+                  style={{
+                    width: 34,
+                    height: 34,
+                    borderRadius: "50%",
+                    border: "1px solid rgba(255,255,255,0.5)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <i
+                    className="bi bi-arrow-right"
+                    style={{ color: "#fff", fontSize: 14 }}
+                  />
+                </Link>
               </div>
-            </div>
-
-            <div
-              className="mit-gov-grid"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              {riskLookItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="feature-card"
-                  data-aos="fade-up"
-                  data-aos-delay={150 + i * 60}
-                >
-                  <div className="icon-wrapper">
-                    <i className={`bi ${item.icon}`} />
-                  </div>
-                  <h5>{item.title}</h5>
-                  <p>{item.desc}</p>
-                </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
@@ -730,18 +789,110 @@ export default function CybersecurityPage() {
                       border: "2px dashed rgba(26, 108, 181, 0.3)",
                     }}
                   />
-                  <img
-                    src="/images/cybersecurity/security-assessment.jpg"
-                    alt="Security expert conducting a layered security assessment"
+                  <div
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
                       borderRadius: "50%",
-                      display: "block",
+                      overflow: "hidden",
+                      background: "#fff",
                       boxShadow: "0 16px 40px rgba(0,0,0,0.16)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
-                  />
+                  >
+                    <div style={{ width: 178 }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 8,
+                          marginBottom: 14,
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: 32,
+                            height: 32,
+                            borderRadius: 8,
+                            background: "#fdecea",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            flexShrink: 0,
+                          }}
+                        >
+                          <i
+                            className="bi bi-envelope-fill"
+                            style={{ color: "#EA4335", fontSize: 15 }}
+                          />
+                        </div>
+                        <span
+                          style={{
+                            fontSize: 14,
+                            fontWeight: 700,
+                            color: "var(--heading-color)",
+                          }}
+                        >
+                          Gmail
+                        </span>
+                      </div>
+                      {[
+                        { from: "IT Security Team", subject: "MFA enabled on your account" },
+                        { from: "Accounting", subject: "Q3 invoices approved" },
+                        { from: "No-Reply", subject: "Weekly threat summary" },
+                      ].map((row, i) => (
+                        <div
+                          key={i}
+                          style={{
+                            display: "flex",
+                            alignItems: "flex-start",
+                            gap: 7,
+                            padding: "7px 0",
+                            borderBottom:
+                              i < 2 ? "1px solid #f0f1f4" : "none",
+                          }}
+                        >
+                          <span
+                            style={{
+                              width: 6,
+                              height: 6,
+                              borderRadius: "50%",
+                              background: "var(--accent)",
+                              marginTop: 4,
+                              flexShrink: 0,
+                            }}
+                          />
+                          <div style={{ textAlign: "left", minWidth: 0 }}>
+                            <div
+                              style={{
+                                fontSize: 11,
+                                fontWeight: 700,
+                                color: "#333",
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
+                            >
+                              {row.from}
+                            </div>
+                            <div
+                              style={{
+                                fontSize: 10,
+                                color: "#999",
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
+                            >
+                              {row.subject}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                   <div
                     style={{
                       position: "absolute",
@@ -760,6 +911,46 @@ export default function CybersecurityPage() {
                     <i
                       className="bi bi-shield-lock"
                       style={{ color: "#fff", fontSize: 24 }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 4,
+                      left: -14,
+                      width: 52,
+                      height: 52,
+                      borderRadius: "50%",
+                      background: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 8px 20px rgba(0,0,0,0.18)",
+                    }}
+                  >
+                    <i
+                      className="bi bi-google"
+                      style={{ color: "#4285F4", fontSize: 22 }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 96,
+                      right: -18,
+                      width: 52,
+                      height: 52,
+                      borderRadius: "50%",
+                      background: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 8px 20px rgba(0,0,0,0.18)",
+                    }}
+                  >
+                    <i
+                      className="bi bi-microsoft"
+                      style={{ color: "#00A4EF", fontSize: 20 }}
                     />
                   </div>
                 </div>
