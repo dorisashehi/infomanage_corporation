@@ -7,7 +7,8 @@ const exposureItems = [
   {
     icon: "bi-envelope-exclamation",
     risk: "Phishing & human error",
-    detail: "Most breaches trace back to a person clicking, not a sophisticated attack.",
+    detail:
+      "Most breaches trace back to a person clicking, not a sophisticated attack.",
   },
   {
     icon: "bi-key",
@@ -17,17 +18,20 @@ const exposureItems = [
   {
     icon: "bi-bug",
     risk: "Unpatched systems",
-    detail: "Known vulnerabilities sitting unaddressed on devices and network hardware.",
+    detail:
+      "Known vulnerabilities sitting unaddressed on devices and network hardware.",
   },
   {
     icon: "bi-cloud-slash",
     risk: "Backups that have never been tested",
-    detail: "Assumed to work, but never actually restored under real conditions.",
+    detail:
+      "Assumed to work, but never actually restored under real conditions.",
   },
   {
     icon: "bi-laptop",
     risk: "Remote work exposure",
-    detail: "Distributed work has widened the attack surface for many businesses.",
+    detail:
+      "Distributed work has widened the attack surface for many businesses.",
   },
 ];
 
@@ -140,12 +144,11 @@ export default function CybersecurityPage() {
             </div>
             <h1>
               Attackers Don&apos;t Need a Big Mistake.
-              <br />
-              A Small One Will Do.
+              <br />A Small One Will Do.
             </h1>
             <p className="mit-hero-sub">
-              A missed patch, a reused password, a backup that&apos;s never
-              been tested — we find these gaps before they turn into downtime.
+              A missed patch, a reused password, a backup that&apos;s never been
+              tested — we find these gaps before they turn into downtime.
             </p>
 
             {/* <div className="mit-hero-btns">
@@ -158,10 +161,24 @@ export default function CybersecurityPage() {
         {/* ── Common Points of Exposure — About-style layout ────── */}
         <section style={{ padding: "48px 0", background: "#fff" }}>
           <div className="container">
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 32, alignItems: "center" }}>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 32,
+                alignItems: "center",
+              }}
+            >
               {/* Left: image collage */}
               <div style={{ flex: "1 1 460px" }} data-aos="fade-right">
-                <div style={{ position: "relative", maxWidth: 620, height: 480, margin: "0 auto" }}>
+                <div
+                  style={{
+                    position: "relative",
+                    maxWidth: 620,
+                    height: 480,
+                    margin: "0 auto",
+                  }}
+                >
                   {/* dashed frame */}
                   <div
                     style={{
@@ -190,7 +207,12 @@ export default function CybersecurityPage() {
                     <img
                       src="/images/cybersecurity/threat-monitoring.jpg"
                       alt="Security analyst reviewing system logs for threats"
-                      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: "block",
+                      }}
                     />
                   </div>
                   {/* badge */}
@@ -210,28 +232,60 @@ export default function CybersecurityPage() {
                     data-aos="fade-up"
                     data-aos-delay="200"
                   >
-                    <div style={{ fontSize: 26, fontWeight: 900, lineHeight: 1 }}>95%</div>
-                    <div style={{ fontSize: 11, marginTop: 4, lineHeight: 1.3 }}>
-                      Of Breaches Start<br />With Human Error
+                    <div
+                      style={{ fontSize: 26, fontWeight: 900, lineHeight: 1 }}
+                    >
+                      95%
+                    </div>
+                    <div
+                      style={{ fontSize: 11, marginTop: 4, lineHeight: 1.3 }}
+                    >
+                      Of Breaches Start
+                      <br />
+                      With Human Error
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Right: content */}
-              <div style={{ flex: "1 1 380px" }} data-aos="fade-left" data-aos-delay="100">
+              <div
+                style={{ flex: "1 1 380px" }}
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
                 <SectionHeading eyebrow="The Real Risk" />
-                <h2 style={{ fontSize: 30, fontWeight: 700, color: "var(--heading-color)", lineHeight: 1.3, marginBottom: 12 }}>
+                <h2
+                  style={{
+                    fontSize: 30,
+                    fontWeight: 700,
+                    color: "var(--heading-color)",
+                    lineHeight: 1.3,
+                    marginBottom: 12,
+                  }}
+                >
                   Common Points of Exposure
                 </h2>
-                <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 24, fontSize: 15 }}>
-                  Where the actual risk tends to sit inside a growing
-                  business. A single weak point is often enough, and most
-                  organizations are carrying more than one.
+                <p
+                  style={{
+                    color: "#555",
+                    lineHeight: 1.8,
+                    marginBottom: 24,
+                    fontSize: 15,
+                  }}
+                >
+                  Where the actual risk tends to sit inside a growing business.
+                  A single weak point is often enough, and most organizations
+                  are carrying more than one.
                 </p>
 
                 <div
-                  style={{ display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: 20, rowGap: 4 }}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    columnGap: 20,
+                    rowGap: 4,
+                  }}
                   data-aos="fade-up"
                   data-aos-delay="300"
                 >
@@ -258,11 +312,30 @@ export default function CybersecurityPage() {
                           marginTop: 2,
                         }}
                       >
-                        <i className={`bi ${item.icon}`} style={{ color: "var(--accent)", fontSize: 15 }} />
+                        <i
+                          className={`bi ${item.icon}`}
+                          style={{ color: "var(--accent)", fontSize: 15 }}
+                        />
                       </div>
                       <div>
-                        <div style={{ fontSize: 14, fontWeight: 600, color: "#333" }}>{item.risk}</div>
-                        <div style={{ fontSize: 12, color: "#888", lineHeight: 1.4 }}>{item.detail}</div>
+                        <div
+                          style={{
+                            fontSize: 14,
+                            fontWeight: 600,
+                            color: "#333",
+                          }}
+                        >
+                          {item.risk}
+                        </div>
+                        <div
+                          style={{
+                            fontSize: 12,
+                            color: "#888",
+                            lineHeight: 1.4,
+                          }}
+                        >
+                          {item.detail}
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -286,7 +359,14 @@ export default function CybersecurityPage() {
             >
               <div style={{ flex: "1 1 380px" }} data-aos="fade-right">
                 <SectionHeading eyebrow="In Practice" />
-                <h2 style={{ fontSize: 32, fontWeight: 700, color: "#fff", marginBottom: 10 }}>
+                <h2
+                  style={{
+                    fontSize: 32,
+                    fontWeight: 700,
+                    color: "#fff",
+                    marginBottom: 10,
+                  }}
+                >
                   How These Gaps Show Up in Practice
                 </h2>
                 <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 15 }}>
@@ -296,15 +376,57 @@ export default function CybersecurityPage() {
               </div>
 
               <div
-                style={{ flex: "1 1 320px", position: "relative", minHeight: 260 }}
+                style={{
+                  flex: "1 1 320px",
+                  position: "relative",
+                  minHeight: 260,
+                }}
                 data-aos="fade-left"
                 data-aos-delay="100"
               >
                 {/* decorative bug & phishing icons */}
-                <i className="bi bi-bug-fill" style={{ position: "absolute", top: -6, right: 30, fontSize: 52, color: "rgba(220, 53, 69, 0.28)", transform: "rotate(15deg)" }} />
-                <i className="bi bi-bug-fill" style={{ position: "absolute", bottom: 6, left: 6, fontSize: 34, color: "rgba(220, 53, 69, 0.2)", transform: "rotate(-18deg)" }} />
-                <i className="bi bi-envelope-exclamation-fill" style={{ position: "absolute", top: 36, left: 0, fontSize: 42, color: "rgba(26, 108, 181, 0.28)" }} />
-                <i className="bi bi-shield-exclamation" style={{ position: "absolute", bottom: 0, right: 50, fontSize: 38, color: "rgba(26, 108, 181, 0.22)" }} />
+                <i
+                  className="bi bi-bug-fill"
+                  style={{
+                    position: "absolute",
+                    top: -6,
+                    right: 30,
+                    fontSize: 52,
+                    color: "rgba(220, 53, 69, 0.28)",
+                    transform: "rotate(15deg)",
+                  }}
+                />
+                <i
+                  className="bi bi-bug-fill"
+                  style={{
+                    position: "absolute",
+                    bottom: 6,
+                    left: 6,
+                    fontSize: 34,
+                    color: "rgba(220, 53, 69, 0.2)",
+                    transform: "rotate(-18deg)",
+                  }}
+                />
+                <i
+                  className="bi bi-envelope-exclamation-fill"
+                  style={{
+                    position: "absolute",
+                    top: 36,
+                    left: 0,
+                    fontSize: 42,
+                    color: "rgba(26, 108, 181, 0.28)",
+                  }}
+                />
+                <i
+                  className="bi bi-shield-exclamation"
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 50,
+                    fontSize: 38,
+                    color: "rgba(26, 108, 181, 0.22)",
+                  }}
+                />
 
                 {/* phishing email example 1 */}
                 <div
@@ -320,16 +442,51 @@ export default function CybersecurityPage() {
                     transform: "rotate(-2deg)",
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "#888" }}>
-                      <i className="bi bi-envelope" style={{ color: "var(--accent)" }} />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      marginBottom: 6,
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 6,
+                        fontSize: 12,
+                        color: "#888",
+                      }}
+                    >
+                      <i
+                        className="bi bi-envelope"
+                        style={{ color: "var(--accent)" }}
+                      />
                       helpdesk@informanage-support.net
                     </div>
-                    <span style={{ background: "#fdecea", color: "#dc3545", fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 20, textTransform: "uppercase" }}>
+                    <span
+                      style={{
+                        background: "#fdecea",
+                        color: "#dc3545",
+                        fontSize: 10,
+                        fontWeight: 700,
+                        padding: "2px 8px",
+                        borderRadius: 20,
+                        textTransform: "uppercase",
+                      }}
+                    >
                       Suspicious
                     </span>
                   </div>
-                  <div style={{ fontWeight: 700, fontSize: 13.5, color: "var(--heading-color)", marginBottom: 4 }}>
+                  <div
+                    style={{
+                      fontWeight: 700,
+                      fontSize: 13.5,
+                      color: "var(--heading-color)",
+                      marginBottom: 4,
+                    }}
+                  >
                     ⚠ Action Required: Verify Your Mailbox
                   </div>
                   <div style={{ fontSize: 12, color: "#777", lineHeight: 1.5 }}>
@@ -351,16 +508,51 @@ export default function CybersecurityPage() {
                     transform: "rotate(2deg)",
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "#888" }}>
-                      <i className="bi bi-envelope" style={{ color: "var(--accent)" }} />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      marginBottom: 6,
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 6,
+                        fontSize: 12,
+                        color: "#888",
+                      }}
+                    >
+                      <i
+                        className="bi bi-envelope"
+                        style={{ color: "var(--accent)" }}
+                      />
                       accounts@secure-billing-alert.com
                     </div>
-                    <span style={{ background: "#fdecea", color: "#dc3545", fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 20, textTransform: "uppercase" }}>
+                    <span
+                      style={{
+                        background: "#fdecea",
+                        color: "#dc3545",
+                        fontSize: 10,
+                        fontWeight: 700,
+                        padding: "2px 8px",
+                        borderRadius: 20,
+                        textTransform: "uppercase",
+                      }}
+                    >
                       Suspicious
                     </span>
                   </div>
-                  <div style={{ fontWeight: 700, fontSize: 13.5, color: "var(--heading-color)", marginBottom: 4 }}>
+                  <div
+                    style={{
+                      fontWeight: 700,
+                      fontSize: 13.5,
+                      color: "var(--heading-color)",
+                      marginBottom: 4,
+                    }}
+                  >
                     Invoice Overdue — Immediate Payment Needed
                   </div>
                   <div style={{ fontSize: 12, color: "#777", lineHeight: 1.5 }}>
@@ -398,11 +590,22 @@ export default function CybersecurityPage() {
         <section className="howwework-section" style={{ padding: "48px 0" }}>
           <div className="container">
             <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 24px" }}
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 24px",
+              }}
               data-aos="fade-up"
             >
               <SectionHeading eyebrow="Our Approach" />
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 12,
+                }}
+              >
                 The Way We Defend Your Systems
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
@@ -414,100 +617,180 @@ export default function CybersecurityPage() {
             <div
               style={{
                 display: "flex",
-                flexWrap: "wrap",
-                gap: 36,
+                flexWrap: "wrap-reverse",
+                gap: 32,
                 alignItems: "center",
-                maxWidth: 980,
-                margin: "0 auto",
               }}
             >
-              {/* Shield graphic — 5 stacked bands */}
+              {/* Numbered timeline */}
               <div
-                style={{ flex: "0 1 240px", margin: "0 auto" }}
-                data-aos="fade-right"
+                style={{
+                  flex: "1 1 460px",
+                  position: "relative",
+                  paddingLeft: 68,
+                }}
+                data-aos="fade-up"
+                data-aos-delay="100"
               >
                 <div
                   style={{
-                    width: 220,
-                    height: 260,
-                    margin: "0 auto",
-                    clipPath:
-                      "polygon(50% 0%, 100% 15%, 100% 55%, 50% 100%, 0% 55%, 0% 15%)",
-                    display: "flex",
-                    flexDirection: "column",
-                    boxShadow: "0 12px 32px rgba(26, 108, 181, 0.25)",
+                    position: "absolute",
+                    left: 23,
+                    top: 26,
+                    bottom: 26,
+                    width: 2,
+                    background:
+                      "repeating-linear-gradient(180deg, #d0d7e2 0, #d0d7e2 6px, transparent 6px, transparent 12px)",
                   }}
-                >
-                  {layersItems.map((item, i) => (
+                />
+
+                {layersItems.map((item, i) => {
+                  const color = "var(--accent)";
+                  return (
                     <div
                       key={item.num}
                       style={{
-                        flex: 1,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: `rgba(26, 108, 181, ${0.45 + i * 0.14})`,
+                        position: "relative",
+                        marginBottom: i < layersItems.length - 1 ? 16 : 0,
                       }}
                     >
-                      <span style={{ color: "#fff", fontWeight: 900, fontSize: 20, fontFamily: '"Nunito", sans-serif' }}>
-                        {item.num}
-                      </span>
+                      <div
+                        style={{
+                          position: "absolute",
+                          left: -68,
+                          top: 0,
+                          width: 48,
+                          height: 48,
+                          borderRadius: "50%",
+                          background: color,
+                          color: "#fff",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontWeight: 700,
+                          fontSize: 18,
+                          flexShrink: 0,
+                        }}
+                      >
+                        {item.num.replace(/^0/, "")}
+                      </div>
+                      <h4
+                        style={{
+                          margin: "6px 0 8px",
+                          fontSize: 16.5,
+                          fontWeight: 700,
+                          color: "var(--heading-color)",
+                        }}
+                      >
+                        {item.title}
+                      </h4>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: 6,
+                          padding: "3px 0",
+                        }}
+                      >
+                        <p
+                          style={{
+                            fontSize: 14,
+                            color: "#666",
+                            lineHeight: 1.6,
+                            margin: 0,
+                          }}
+                        >
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
 
-              {/* Layer rows */}
-              <div style={{ flex: "1 1 480px", minWidth: 0 }} data-aos="fade-up" data-aos-delay="100">
-                {layersItems.map((item, i) => (
+              {/* Circular photo badge */}
+              <div
+                style={{ flex: "0 1 280px", textAlign: "center" }}
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div
+                  style={{
+                    position: "relative",
+                    width: 260,
+                    height: 260,
+                    margin: "0 auto",
+                  }}
+                >
                   <div
-                    key={item.num}
                     style={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: 16,
-                      padding: "11px 0",
-                      borderBottom: i < layersItems.length - 1 ? "1px solid #eef0f4" : "none",
+                      position: "absolute",
+                      inset: -10,
+                      borderRadius: "50%",
+                      border: "2px dashed rgba(26, 108, 181, 0.3)",
                     }}
-                    data-aos="fade-up"
-                    data-aos-delay={150 + i * 70}
+                  />
+                  <img
+                    src="/images/cybersecurity/security-assessment.jpg"
+                    alt="Security expert conducting a layered security assessment"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "50%",
+                      display: "block",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.16)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 6,
+                      right: 6,
+                      width: 60,
+                      height: 60,
+                      borderRadius: "50%",
+                      background: "var(--accent)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 8px 20px rgba(26, 108, 181, 0.4)",
+                    }}
                   >
-                    <div
-                      style={{
-                        width: 40,
-                        height: 40,
-                        borderRadius: "50%",
-                        background: `rgba(26, 108, 181, ${0.45 + i * 0.14})`,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <i className={`bi ${item.icon}`} style={{ color: "#fff", fontSize: 17 }} />
-                    </div>
-                    <div>
-                      <div style={{ fontWeight: 700, color: "var(--heading-color)", fontSize: 15.5, marginBottom: 4 }}>
-                        Layer {item.num.replace(/^0/, "")} — {item.title}
-                      </div>
-                      <div style={{ color: "#666", fontSize: 14, lineHeight: 1.6 }}>{item.desc}</div>
-                    </div>
+                    <i
+                      className="bi bi-shield-lock"
+                      style={{ color: "#fff", fontSize: 24 }}
+                    />
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* ── Where Do You Actually Stand — self-check ──────────── */}
-        <section className="mit-section" style={{ padding: "48px 0", background: "#fff" }}>
+        <section
+          className="mit-section"
+          style={{ padding: "48px 0", background: "#fff" }}
+        >
           <div className="container">
             <div
-              style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 24px" }}
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 24px",
+              }}
               data-aos="fade-up"
             >
               <SectionHeading eyebrow="Quick Self-Check" />
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
                 Where Do You Actually Stand?
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
@@ -529,13 +812,28 @@ export default function CybersecurityPage() {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div style={{ fontSize: 40, fontWeight: 900, color: "#fff", fontFamily: '"Nunito", sans-serif', flexShrink: 0 }}>
+              <div
+                style={{
+                  fontSize: 40,
+                  fontWeight: 900,
+                  color: "#fff",
+                  fontFamily: '"Nunito", sans-serif',
+                  flexShrink: 0,
+                }}
+              >
                 60%
               </div>
-              <p style={{ color: "rgba(255,255,255,0.92)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>
+              <p
+                style={{
+                  color: "rgba(255,255,255,0.92)",
+                  fontSize: 14.5,
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
                 of small businesses that suffer a cyberattack shut down within
-                six months. The fundamentals are what decide which side of
-                that number you&apos;re on.
+                six months. The fundamentals are what decide which side of that
+                number you&apos;re on.
               </p>
             </div>
 
@@ -563,14 +861,21 @@ export default function CybersecurityPage() {
                     fontSize: 14,
                   }}
                 >
-                  <i className="bi bi-check-circle-fill" style={{ color: "var(--accent)", fontSize: 15, marginTop: 2, flexShrink: 0 }} />
+                  <i
+                    className="bi bi-check-circle-fill"
+                    style={{
+                      color: "var(--accent)",
+                      fontSize: 15,
+                      marginTop: 2,
+                      flexShrink: 0,
+                    }}
+                  />
                   {item}
                 </div>
               ))}
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </>
