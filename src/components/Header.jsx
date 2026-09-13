@@ -9,6 +9,10 @@ const navLinks = [
       { label: "Managed IT", href: "/managed-it-services" },
       { label: "Cybersecurity", href: "/cybersecurity-services" },
       { label: "VoIP Phone Systems", href: "/voip-phone-systems" },
+      {
+        label: "Project Management for Buildouts",
+        href: "/project-management-buildouts",
+      },
     ],
   },
   { label: "Industries", href: "/industries", internal: true },
@@ -61,6 +65,12 @@ export default function Header() {
     {
       label: "VoIP Phone Systems",
       href: "/voip-phone-systems",
+      internal: true,
+      indent: true,
+    },
+    {
+      label: "Project Management for Buildouts",
+      href: "/project-management-buildouts",
       internal: true,
       indent: true,
     },

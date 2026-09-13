@@ -18,6 +18,7 @@ import ManagedITPage from "./pages/ManagedITPage";
 import CybersecurityPage from "./pages/CybersecurityPage";
 import VoipPage from "./pages/VoipPage";
 import ITStrategyPage from "./pages/ITStrategyPage";
+import ProjectManagementPage from "./pages/ProjectManagementPage";
 import AboutPage from "./pages/AboutPage";
 import IndustriesPage from "./pages/IndustriesPage";
 import ContactPage from "./pages/ContactPage";
@@ -81,6 +82,10 @@ export default function App() {
         <Route path="/cybersecurity-services" element={<CybersecurityPage />} />
         <Route path="/voip-phone-systems" element={<VoipPage />} />
         <Route path="/it-strategy-advisory" element={<ITStrategyPage />} />
+        <Route
+          path="/project-management-buildouts"
+          element={<ProjectManagementPage />}
+        />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/industries" element={<IndustriesPage />} />
         <Route path="/contact" element={<ContactPage />} />
