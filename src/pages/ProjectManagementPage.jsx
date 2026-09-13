@@ -183,7 +183,7 @@ export default function ProjectManagementPage() {
                   >
                     <i
                       className={`bi ${item.icon}`}
-                      style={{ fontSize: 22, color: "var(--accent)" }}
+                      style={{ fontSize: 26, color: "var(--accent)" }}
                     />
                   </div>
                   <p
@@ -268,8 +268,8 @@ export default function ProjectManagementPage() {
                     >
                       <div
                         style={{
-                          width: 46,
-                          height: 46,
+                          width: 56,
+                          height: 56,
                           borderRadius: "50%",
                           background: "rgba(26, 108, 181, 0.08)",
                           display: "flex",
@@ -280,7 +280,7 @@ export default function ProjectManagementPage() {
                       >
                         <i
                           className={`bi ${f.icon}`}
-                          style={{ color: "var(--accent)", fontSize: 19 }}
+                          style={{ color: "var(--accent)", fontSize: 26 }}
                         />
                       </div>
                       <h5
@@ -466,8 +466,8 @@ export default function ProjectManagementPage() {
                   >
                     <div
                       style={{
-                        width: 40,
-                        height: 40,
+                        width: 48,
+                        height: 48,
                         borderRadius: "50%",
                         background: "rgba(255,255,255,0.12)",
                         display: "flex",
@@ -478,7 +478,7 @@ export default function ProjectManagementPage() {
                     >
                       <i
                         className="bi bi-building"
-                        style={{ color: "#fff", fontSize: 17 }}
+                        style={{ color: "#fff", fontSize: 22 }}
                       />
                     </div>
                     <h5
@@ -530,19 +530,83 @@ export default function ProjectManagementPage() {
         {/* ── Premise Cabling and Related Activities ─────────────── */}
         <section
           id="premise-cabling"
-          style={{ padding: "56px 0", background: "#fff" }}
+          style={{ padding: "64px 0 80px", background: "#fff" }}
         >
           <div className="container">
             <div
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 40,
-                alignItems: "flex-start",
-                marginBottom: 32,
+                gap: 32,
+                alignItems: "stretch",
               }}
             >
-              <div style={{ flex: "1 1 320px" }} data-aos="fade-up">
+              <div
+                style={{ flex: "0 1 280px" }}
+                data-aos="fade-right"
+              >
+                <div
+                  style={{
+                    position: "relative",
+                    height: "100%",
+                    minHeight: 320,
+                    borderRadius: 18,
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src="/images/project-management/cabling-card.jpg"
+                    alt="Close-up of a network patch panel with cabling"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(180deg, rgba(10,22,40,0.05) 30%, rgba(10,22,40,0.9) 100%)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: 24,
+                      right: 24,
+                      bottom: 28,
+                    }}
+                  >
+                    <p
+                      style={{
+                        margin: 0,
+                        color: "#fff",
+                        fontSize: 20,
+                        fontWeight: 700,
+                        lineHeight: 1.35,
+                      }}
+                    >
+                      Reliable connections.
+                      <br />
+                      Built for performance.
+                    </p>
+                    <div
+                      style={{
+                        width: 40,
+                        height: 3,
+                        background: "var(--accent)",
+                        marginTop: 14,
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ flex: "1 1 460px" }} data-aos="fade-up">
                 <SectionHeading eyebrow="Cabling & Connectivity" />
                 <h2
                   style={{
@@ -550,128 +614,221 @@ export default function ProjectManagementPage() {
                     fontWeight: 700,
                     color: "var(--heading-color)",
                     lineHeight: 1.3,
-                    marginBottom: 14,
+                    marginBottom: 12,
                   }}
                 >
-                  Premise Cabling and Related Activities
+                  Cabling and Related Activities
                 </h2>
+                <p
+                  style={{
+                    color: "#555",
+                    lineHeight: 1.8,
+                    fontSize: 14.5,
+                    marginBottom: 24,
+                  }}
+                >
+                  We handle your on-premises cabling and related tasks to
+                  ensure a reliable, high-performance network from day one.
+                </p>
+
                 <div
                   style={{
-                    width: 46,
-                    height: 3,
-                    background: "var(--accent)",
-                    marginBottom: 18,
+                    display: "grid",
+                    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                    gap: 16,
                   }}
-                />
-                <p style={{ color: "#555", lineHeight: 1.8, fontSize: 14.5 }}>
-                  We handle your on-premises cabling and related tasks to ensure
-                  a reliable, high-performance network from day one.
-                </p>
-              </div>
-            </div>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-                gap: 20,
-              }}
-            >
-              <div
-                className="feature-card"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <div className="icon-wrapper">
-                  <i className="bi bi-truck" />
-                </div>
-                <h5>Cable Vendor Coordination</h5>
-                <p>
-                  Prepare quote for on-premises cabling based on draft floor
-                  plan.
-                </p>
-              </div>
-
-              <div
-                className="feature-card"
-                data-aos="fade-up"
-                data-aos-delay="160"
-              >
-                <div className="icon-wrapper">
-                  <i className="bi bi-diagram-3" />
-                </div>
-                <h5>Station Cable Runs</h5>
-                <ul
-                  style={{ listStyle: "none", padding: 0, margin: "8px 0 0" }}
                 >
-                  {stationCableRuns.map((item, i) => (
-                    <li
-                      key={i}
+                  <div
+                    style={{
+                      background: "var(--light-bg)",
+                      borderRadius: 14,
+                      padding: "20px 18px",
+                    }}
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                  >
+                    <div
                       style={{
+                        width: 52,
+                        height: 52,
+                        borderRadius: "50%",
+                        background: "rgba(26, 108, 181, 0.1)",
                         display: "flex",
-                        gap: 8,
-                        alignItems: "flex-start",
-                        fontSize: 13,
-                        color: "#555",
-                        padding: "4px 0",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginBottom: 14,
                       }}
                     >
                       <i
-                        className="bi bi-chevron-right"
-                        style={{
-                          color: "var(--accent)",
-                          fontSize: 11,
-                          marginTop: 3,
-                          flexShrink: 0,
-                        }}
+                        className="bi bi-people"
+                        style={{ color: "var(--accent)", fontSize: 22 }}
                       />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                    </div>
+                    <h5
+                      style={{
+                        fontSize: 14,
+                        fontWeight: 700,
+                        color: "var(--heading-color)",
+                        marginBottom: 8,
+                      }}
+                    >
+                      Cable Vendor Coordination
+                    </h5>
+                    <p
+                      style={{
+                        fontSize: 12.5,
+                        color: "#666",
+                        lineHeight: 1.6,
+                        margin: 0,
+                      }}
+                    >
+                      Prepare quote for on-premises cabling based on draft
+                      floor plan.
+                    </p>
+                  </div>
 
-              <div
-                className="feature-card"
-                data-aos="fade-up"
-                data-aos-delay="220"
-              >
-                <div className="icon-wrapper">
-                  <i className="bi bi-check-circle" />
-                </div>
-                <h5>Testing & Mounting</h5>
-                <p style={{ marginBottom: 8 }}>
-                  For prebuilt wired spaces, test cables end to end.
-                </p>
-                <p style={{ marginBottom: 4, fontWeight: 600, fontSize: 13 }}>
-                  Mount equipment:
-                </p>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {mountedEquipment.map((item, i) => (
-                    <li
-                      key={i}
+                  <div
+                    style={{
+                      background: "var(--light-bg)",
+                      borderRadius: 14,
+                      padding: "20px 18px",
+                    }}
+                    data-aos="fade-up"
+                    data-aos-delay="160"
+                  >
+                    <div
                       style={{
+                        width: 52,
+                        height: 52,
+                        borderRadius: "50%",
+                        background: "rgba(26, 108, 181, 0.1)",
                         display: "flex",
-                        gap: 8,
-                        alignItems: "flex-start",
-                        fontSize: 13,
-                        color: "#555",
-                        padding: "4px 0",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginBottom: 14,
                       }}
                     >
                       <i
-                        className="bi bi-chevron-right"
-                        style={{
-                          color: "var(--accent)",
-                          fontSize: 11,
-                          marginTop: 3,
-                          flexShrink: 0,
-                        }}
+                        className="bi bi-diagram-3"
+                        style={{ color: "var(--accent)", fontSize: 22 }}
                       />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                    </div>
+                    <h5
+                      style={{
+                        fontSize: 14,
+                        fontWeight: 700,
+                        color: "var(--heading-color)",
+                        marginBottom: 8,
+                      }}
+                    >
+                      Station Cable Runs
+                    </h5>
+                    <ul
+                      style={{ listStyle: "none", padding: 0, margin: 0 }}
+                    >
+                      {stationCableRuns.map((item, i) => (
+                        <li
+                          key={i}
+                          style={{
+                            display: "flex",
+                            gap: 6,
+                            alignItems: "flex-start",
+                            fontSize: 12.5,
+                            color: "#666",
+                            padding: "3px 0",
+                          }}
+                        >
+                          <i
+                            className="bi bi-chevron-right"
+                            style={{
+                              color: "var(--accent)",
+                              fontSize: 10,
+                              marginTop: 3,
+                              flexShrink: 0,
+                            }}
+                          />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div
+                    style={{
+                      background: "var(--light-bg)",
+                      borderRadius: 14,
+                      padding: "20px 18px",
+                    }}
+                    data-aos="fade-up"
+                    data-aos-delay="220"
+                  >
+                    <div
+                      style={{
+                        width: 52,
+                        height: 52,
+                        borderRadius: "50%",
+                        background: "rgba(26, 108, 181, 0.1)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginBottom: 14,
+                      }}
+                    >
+                      <i
+                        className="bi bi-wrench"
+                        style={{ color: "var(--accent)", fontSize: 22 }}
+                      />
+                    </div>
+                    <h5
+                      style={{
+                        fontSize: 14,
+                        fontWeight: 700,
+                        color: "var(--heading-color)",
+                        marginBottom: 8,
+                      }}
+                    >
+                      Testing & Mounting
+                    </h5>
+                    <p
+                      style={{
+                        fontSize: 12.5,
+                        color: "#666",
+                        lineHeight: 1.6,
+                        marginBottom: 8,
+                      }}
+                    >
+                      Test cables end to end, then mount:
+                    </p>
+                    <ul
+                      style={{ listStyle: "none", padding: 0, margin: 0 }}
+                    >
+                      {mountedEquipment.map((item, i) => (
+                        <li
+                          key={i}
+                          style={{
+                            display: "flex",
+                            gap: 6,
+                            alignItems: "flex-start",
+                            fontSize: 12.5,
+                            color: "#666",
+                            padding: "3px 0",
+                          }}
+                        >
+                          <i
+                            className="bi bi-chevron-right"
+                            style={{
+                              color: "var(--accent)",
+                              fontSize: 10,
+                              marginTop: 3,
+                              flexShrink: 0,
+                            }}
+                          />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1035,10 +1192,23 @@ export default function ProjectManagementPage() {
                     marginBottom: 16,
                   }}
                 >
-                  <i
-                    className="bi bi-shield-check"
-                    style={{ color: "var(--accent)", fontSize: 20 }}
-                  />
+                  <div
+                    style={{
+                      width: 46,
+                      height: 46,
+                      borderRadius: "50%",
+                      background: "rgba(26, 108, 181, 0.1)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <i
+                      className="bi bi-shield-check"
+                      style={{ color: "var(--accent)", fontSize: 22 }}
+                    />
+                  </div>
                   <h4
                     style={{
                       margin: 0,
@@ -1096,10 +1266,23 @@ export default function ProjectManagementPage() {
                     marginBottom: 16,
                   }}
                 >
-                  <i
-                    className="bi bi-hdd-network"
-                    style={{ color: "var(--accent)", fontSize: 20 }}
-                  />
+                  <div
+                    style={{
+                      width: 46,
+                      height: 46,
+                      borderRadius: "50%",
+                      background: "rgba(26, 108, 181, 0.1)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <i
+                      className="bi bi-hdd-network"
+                      style={{ color: "var(--accent)", fontSize: 22 }}
+                    />
+                  </div>
                   <h4
                     style={{
                       margin: 0,
