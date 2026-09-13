@@ -1,16 +1,15 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const capabilityIcons = [
-  { icon: "bi-kanban", label: "IT Project Management" },
-  { icon: "bi-hdd-network", label: "Network & Security Infrastructure" },
-  { icon: "bi-diagram-3", label: "Cabling & Connectivity" },
-  { icon: "bi-camera-video", label: "Audio Visual & Collaboration" },
-  { icon: "bi-box-seam", label: "Equipment Installation" },
+  { icon: "bi-kanban", label: "Project Management" },
   { icon: "bi-clipboard-check", label: "Planning & Coordination" },
+  { icon: "bi-diagram-3", label: "Cabling & Connectivity" },
+  { icon: "bi-box-seam", label: "Equipment & Relocation" },
+  { icon: "bi-hdd-network", label: "Network Security" },
 ];
 
 const buildoutFeatures = [
@@ -53,24 +52,41 @@ const stationCableRuns = [
 
 const mountedEquipment = ["WAPs", "Patch panels", "Network rack", "TVs"];
 
-const preMoveItems = [
-  "Inventory all floor equipment",
-  "Meet and coordinate with movers to define roles and identify procedures",
-  "Identify layout plan for the new location",
-];
-
-const disconnectItems = [
-  "All computers should already be shut down",
-  "Photograph each location; match to the pre-move inventory",
-  "Disconnect and bag all equipment cables and peripheral devices (e.g., mouse, keyboard), label the containers",
-  "Label equipment",
-];
-
-const reconnectItems = [
-  "Check equipment against inventory",
-  "Locate equipment according to plan",
-  "Unbag equipment cables and peripheral devices and connect the power, network, and peripherals as necessary",
-  "Power up to verify network connectivity if requested",
+const equipmentSteps = [
+  {
+    icon: "bi-hand-index-thumb",
+    title: "Pre-Move",
+    color: "var(--accent)",
+    items: [
+      "Inventory all floor equipment.",
+      "Mark and coordinate with your team to define release and security procedures.",
+      "Identify relocation plan for the new location.",
+    ],
+  },
+  {
+    icon: "bi-truck",
+    title: "Move Day",
+    color: "var(--heading-color)",
+    intro:
+      "Carefully disconnect, transport and reconnect and configure procedures.",
+    items: [
+      "All computers should already be shut down.",
+      "Photocopiers, each location, match to the new inventory.",
+      "Disconnect and tag all equipment cables and peripheral devices (e.g., mouse, keyboard, tablet PCs, containers).",
+      "Label equipment.",
+    ],
+  },
+  {
+    icon: "bi-plug",
+    title: "Reconnect",
+    color: "var(--accent-dark)",
+    items: [
+      "Check equipment against inventory.",
+      "Locate equipment according to plan.",
+      "Unbag equipment cables and peripheral devices and connect the power, network, and peripherals as necessary.",
+      "Power up to verify network connectivity.",
+    ],
+  },
 ];
 
 const firewallOverview = [
@@ -152,13 +168,13 @@ export default function ProjectManagementPage() {
         </section>
 
         {/* ── Capability icon row ────────────────────────────────── */}
-        <section style={{ padding: "40px 0", background: "#fff" }}>
+        <section style={{ padding: "48px 0", background: "#fff" }}>
           <div className="container">
             <div
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-                gap: 24,
+                gap: 16,
               }}
               data-aos="fade-up"
             >
@@ -178,7 +194,7 @@ export default function ProjectManagementPage() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      margin: "0 auto 12px",
+                      margin: "0 auto 14px",
                     }}
                   >
                     <i
@@ -206,14 +222,14 @@ export default function ProjectManagementPage() {
         {/* ── Project Management for Buildouts ───────────────────── */}
         <section
           id="project-management"
-          style={{ padding: "64px 0 80px", background: "#fff" }}
+          style={{ padding: "48px 0", background: "#fff" }}
         >
           <div className="container">
             <div
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 56,
+                gap: 32,
                 alignItems: "center",
               }}
             >
@@ -225,7 +241,7 @@ export default function ProjectManagementPage() {
                     fontWeight: 700,
                     color: "var(--heading-color)",
                     lineHeight: 1.25,
-                    marginBottom: 16,
+                    marginBottom: 12,
                   }}
                 >
                   Project Management for Buildouts
@@ -249,7 +265,7 @@ export default function ProjectManagementPage() {
                     width: 46,
                     height: 3,
                     background: "var(--accent)",
-                    marginBottom: 30,
+                    marginBottom: 22,
                   }}
                 />
 
@@ -257,7 +273,7 @@ export default function ProjectManagementPage() {
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-                    gap: 20,
+                    gap: 16,
                   }}
                 >
                   {buildoutFeatures.map((f, i) => (
@@ -275,7 +291,7 @@ export default function ProjectManagementPage() {
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          marginBottom: 12,
+                          marginBottom: 14,
                         }}
                       >
                         <i
@@ -288,7 +304,7 @@ export default function ProjectManagementPage() {
                           fontSize: 14.5,
                           fontWeight: 700,
                           color: "var(--heading-color)",
-                          marginBottom: 6,
+                          marginBottom: 8,
                         }}
                       >
                         {f.title}
@@ -366,14 +382,14 @@ export default function ProjectManagementPage() {
         {/* ── Key Coordination Activities ─────────────────────────── */}
         <section
           id="key-coordination"
-          style={{ padding: "64px 0 80px", background: "var(--light-bg)" }}
+          style={{ padding: "48px 0", background: "var(--light-bg)" }}
         >
           <div className="container">
             <div
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 56,
+                gap: 32,
                 alignItems: "center",
               }}
             >
@@ -383,7 +399,7 @@ export default function ProjectManagementPage() {
                     fontSize: 30,
                     fontWeight: 700,
                     color: "var(--heading-color)",
-                    marginBottom: 26,
+                    marginBottom: 24,
                   }}
                 >
                   Key Coordination Activities
@@ -394,9 +410,9 @@ export default function ProjectManagementPage() {
                       key={i}
                       style={{
                         display: "flex",
-                        gap: 14,
+                        gap: 6,
                         alignItems: "flex-start",
-                        padding: "10px 0",
+                        padding: "3px 0",
                       }}
                     >
                       <span
@@ -530,7 +546,7 @@ export default function ProjectManagementPage() {
         {/* ── Premise Cabling and Related Activities ─────────────── */}
         <section
           id="premise-cabling"
-          style={{ padding: "64px 0 80px", background: "#fff" }}
+          style={{ padding: "48px 0", background: "#0d1e2e" }}
         >
           <div className="container">
             <div
@@ -612,7 +628,7 @@ export default function ProjectManagementPage() {
                   style={{
                     fontSize: 28,
                     fontWeight: 700,
-                    color: "var(--heading-color)",
+                    color: "#fff",
                     lineHeight: 1.3,
                     marginBottom: 12,
                   }}
@@ -621,7 +637,7 @@ export default function ProjectManagementPage() {
                 </h2>
                 <p
                   style={{
-                    color: "#555",
+                    color: "rgba(255,255,255,0.7)",
                     lineHeight: 1.8,
                     fontSize: 14.5,
                     marginBottom: 24,
@@ -640,7 +656,7 @@ export default function ProjectManagementPage() {
                 >
                   <div
                     style={{
-                      background: "var(--light-bg)",
+                      background: "rgba(255,255,255,0.06)",
                       borderRadius: 14,
                       padding: "20px 18px",
                     }}
@@ -668,7 +684,7 @@ export default function ProjectManagementPage() {
                       style={{
                         fontSize: 14,
                         fontWeight: 700,
-                        color: "var(--heading-color)",
+                        color: "#fff",
                         marginBottom: 8,
                       }}
                     >
@@ -677,7 +693,7 @@ export default function ProjectManagementPage() {
                     <p
                       style={{
                         fontSize: 12.5,
-                        color: "#666",
+                        color: "rgba(255,255,255,0.65)",
                         lineHeight: 1.6,
                         margin: 0,
                       }}
@@ -689,7 +705,7 @@ export default function ProjectManagementPage() {
 
                   <div
                     style={{
-                      background: "var(--light-bg)",
+                      background: "rgba(255,255,255,0.06)",
                       borderRadius: 14,
                       padding: "20px 18px",
                     }}
@@ -717,7 +733,7 @@ export default function ProjectManagementPage() {
                       style={{
                         fontSize: 14,
                         fontWeight: 700,
-                        color: "var(--heading-color)",
+                        color: "#fff",
                         marginBottom: 8,
                       }}
                     >
@@ -734,7 +750,7 @@ export default function ProjectManagementPage() {
                             gap: 6,
                             alignItems: "flex-start",
                             fontSize: 12.5,
-                            color: "#666",
+                            color: "rgba(255,255,255,0.65)",
                             padding: "3px 0",
                           }}
                         >
@@ -755,7 +771,7 @@ export default function ProjectManagementPage() {
 
                   <div
                     style={{
-                      background: "var(--light-bg)",
+                      background: "rgba(255,255,255,0.06)",
                       borderRadius: 14,
                       padding: "20px 18px",
                     }}
@@ -783,7 +799,7 @@ export default function ProjectManagementPage() {
                       style={{
                         fontSize: 14,
                         fontWeight: 700,
-                        color: "var(--heading-color)",
+                        color: "#fff",
                         marginBottom: 8,
                       }}
                     >
@@ -792,7 +808,7 @@ export default function ProjectManagementPage() {
                     <p
                       style={{
                         fontSize: 12.5,
-                        color: "#666",
+                        color: "rgba(255,255,255,0.65)",
                         lineHeight: 1.6,
                         marginBottom: 8,
                       }}
@@ -810,7 +826,7 @@ export default function ProjectManagementPage() {
                             gap: 6,
                             alignItems: "flex-start",
                             fontSize: 12.5,
-                            color: "#666",
+                            color: "rgba(255,255,255,0.65)",
                             padding: "3px 0",
                           }}
                         >
@@ -837,290 +853,162 @@ export default function ProjectManagementPage() {
         {/* ── Equipment Disconnect and Reconnect ──────────────────── */}
         <section
           id="equipment-relocation"
-          style={{ padding: "56px 0", background: "var(--light-bg)" }}
+          style={{ padding: "48px 0", background: "var(--light-bg)" }}
         >
           <div className="container">
             <div
               style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 40,
-                alignItems: "flex-start",
-                marginBottom: 32,
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 24px",
               }}
+              data-aos="fade-up"
             >
-              <div style={{ flex: "1 1 320px" }} data-aos="fade-up">
-                <SectionHeading eyebrow="Equipment & Relocation" />
-                <h2
-                  style={{
-                    fontSize: 28,
-                    fontWeight: 700,
-                    color: "var(--heading-color)",
-                    lineHeight: 1.3,
-                    marginBottom: 14,
-                  }}
-                >
-                  Equipment Disconnect and Reconnect
-                </h2>
-                <div
-                  style={{
-                    width: 46,
-                    height: 3,
-                    background: "var(--accent)",
-                    marginBottom: 18,
-                  }}
-                />
-                <p style={{ color: "#555", lineHeight: 1.8, fontSize: 14.5 }}>
-                  We manage the safe and organized disconnect and reconnect of
-                  your IT equipment to minimize downtime and keep your team
-                  productive.
-                </p>
-              </div>
+              <SectionHeading eyebrow="Equipment & Relocation" />
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
+                Equipment Disconnect and Reconnect
+              </h2>
+              <p style={{ color: "#666", fontSize: 15 }}>
+                We manage the safe and organized disconnect and reconnect of
+                your IT equipment to minimize downtime, and keep your team
+                productive.
+              </p>
             </div>
 
             <div
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 20,
-                alignItems: "stretch",
+                alignItems: "flex-start",
+                gap: 8,
+                background: "#fff",
+                border: "1px solid #e5eaf1",
+                borderRadius: 16,
+                padding: "26px 30px",
+                boxShadow: "0 8px 28px rgba(13, 30, 46, 0.06)",
               }}
+              data-aos="fade-up"
+              data-aos-delay="100"
             >
-              {/* Pre-Move */}
-              <div
-                style={{
-                  flex: "1 1 300px",
-                  background: "#fff",
-                  border: "1px solid #e8edf4",
-                  borderRadius: 14,
-                  padding: "26px 28px",
-                }}
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 12,
-                    marginBottom: 16,
-                  }}
-                >
-                  <span
-                    style={{
-                      width: 30,
-                      height: 30,
-                      borderRadius: "50%",
-                      background: "var(--accent)",
-                      color: "#fff",
-                      fontWeight: 700,
-                      fontSize: 14,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
+              {equipmentSteps.map((step, i) => (
+                <Fragment key={i}>
+                  <div
+                    style={{ flex: "1 1 220px", minWidth: 220 }}
+                    data-aos="fade-up"
+                    data-aos-delay={150 + i * 100}
                   >
-                    1
-                  </span>
-                  <h4
-                    style={{
-                      margin: 0,
-                      fontSize: 16,
-                      fontWeight: 700,
-                      color: "var(--heading-color)",
-                    }}
-                  >
-                    Pre-Move
-                  </h4>
-                </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {preMoveItems.map((item, i) => (
-                    <li
-                      key={i}
+                    <div
                       style={{
                         display: "flex",
-                        gap: 8,
-                        alignItems: "flex-start",
-                        fontSize: 13.5,
-                        color: "#555",
-                        lineHeight: 1.6,
-                        padding: "6px 0",
+                        alignItems: "center",
+                        gap: 14,
+                        marginBottom: 14,
                       }}
                     >
-                      <i
-                        className="bi bi-check2"
+                      <div
                         style={{
-                          color: "var(--accent)",
-                          fontSize: 14,
-                          marginTop: 3,
+                          width: 52,
+                          height: 52,
+                          borderRadius: "50%",
+                          border: `2px solid ${step.color}`,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
                           flexShrink: 0,
                         }}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                      >
+                        <i
+                          className={`bi ${step.icon}`}
+                          style={{ color: step.color, fontSize: 20 }}
+                        />
+                      </div>
+                      <h4
+                        style={{
+                          margin: 0,
+                          fontSize: 14,
+                          fontWeight: 900,
+                          color: step.color,
+                          textTransform: "uppercase",
+                          letterSpacing: 0.5,
+                        }}
+                      >
+                        {step.title}.
+                      </h4>
+                    </div>
+                    {step.intro && (
+                      <p
+                        style={{
+                          fontSize: 12.5,
+                          color: "#666",
+                          lineHeight: 1.6,
+                          marginBottom: 8,
+                        }}
+                      >
+                        {step.intro}
+                      </p>
+                    )}
+                    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                      {step.items.map((item, j) => (
+                        <li
+                          key={j}
+                          style={{
+                            display: "flex",
+                            gap: 6,
+                            alignItems: "flex-start",
+                            fontSize: 12.5,
+                            color: "#666",
+                            lineHeight: 1.6,
+                            padding: "3px 0",
+                          }}
+                        >
+                          <i
+                            className="bi bi-check2"
+                            style={{
+                              color: step.color,
+                              fontSize: 12,
+                              marginTop: 3,
+                              flexShrink: 0,
+                            }}
+                          />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-              {/* Arrow */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flex: "0 0 auto",
-                  color: "var(--accent)",
-                  fontSize: 22,
-                }}
-                data-aos="fade-up"
-                data-aos-delay="150"
-              >
-                <i className="bi bi-arrow-right" />
-              </div>
-
-              {/* Move Day */}
-              <div
-                style={{
-                  flex: "1 1 300px",
-                  background: "#fff",
-                  border: "1px solid #e8edf4",
-                  borderRadius: 14,
-                  padding: "26px 28px",
-                }}
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 12,
-                    marginBottom: 8,
-                  }}
-                >
-                  <span
-                    style={{
-                      width: 30,
-                      height: 30,
-                      borderRadius: "50%",
-                      background: "var(--accent)",
-                      color: "#fff",
-                      fontWeight: 700,
-                      fontSize: 14,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    2
-                  </span>
-                  <h4
-                    style={{
-                      margin: 0,
-                      fontSize: 16,
-                      fontWeight: 700,
-                      color: "var(--heading-color)",
-                    }}
-                  >
-                    Move Day
-                  </h4>
-                </div>
-                <p
-                  style={{
-                    fontSize: 12,
-                    color: "#888",
-                    fontStyle: "italic",
-                    marginBottom: 14,
-                  }}
-                >
-                  Some of the events below will depend on mover and company
-                  procedures.
-                </p>
-
-                <p
-                  style={{
-                    fontSize: 13,
-                    fontWeight: 700,
-                    color: "var(--heading-color)",
-                    marginBottom: 6,
-                  }}
-                >
-                  Disconnect at old location
-                </p>
-                <ul
-                  style={{
-                    listStyle: "none",
-                    padding: 0,
-                    margin: "0 0 14px",
-                  }}
-                >
-                  {disconnectItems.map((item, i) => (
-                    <li
-                      key={i}
+                  {i < equipmentSteps.length - 1 && (
+                    <div
                       style={{
                         display: "flex",
-                        gap: 8,
-                        alignItems: "flex-start",
-                        fontSize: 13.5,
-                        color: "#555",
-                        lineHeight: 1.6,
-                        padding: "5px 0",
+                        alignItems: "center",
+                        flex: "0 1 40px",
+                        minWidth: 20,
+                        alignSelf: "flex-start",
+                        marginTop: 26,
                       }}
                     >
+                      <div
+                        style={{ flex: 1, borderTop: "2px dotted #d0d7e2" }}
+                      />
                       <i
-                        className="bi bi-check2"
+                        className="bi bi-chevron-right"
                         style={{
-                          color: "var(--accent)",
+                          color: "#c3ccd9",
                           fontSize: 14,
-                          marginTop: 3,
-                          flexShrink: 0,
+                          margin: "0 4px",
                         }}
                       />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-                <p
-                  style={{
-                    fontSize: 13,
-                    fontWeight: 700,
-                    color: "var(--heading-color)",
-                    marginBottom: 6,
-                  }}
-                >
-                  Reconnect at new location
-                </p>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {reconnectItems.map((item, i) => (
-                    <li
-                      key={i}
-                      style={{
-                        display: "flex",
-                        gap: 8,
-                        alignItems: "flex-start",
-                        fontSize: 13.5,
-                        color: "#555",
-                        lineHeight: 1.6,
-                        padding: "5px 0",
-                      }}
-                    >
-                      <i
-                        className="bi bi-check2"
-                        style={{
-                          color: "var(--accent)",
-                          fontSize: 14,
-                          marginTop: 3,
-                          flexShrink: 0,
-                        }}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                    </div>
+                  )}
+                </Fragment>
+              ))}
             </div>
           </div>
         </section>
@@ -1128,199 +1016,201 @@ export default function ProjectManagementPage() {
         {/* ── Firewall/Network Switch Replacement ─────────────────── */}
         <section
           id="network-security"
-          style={{ padding: "56px 0", background: "#fff" }}
+          style={{ padding: "48px 0", background: "#fff" }}
         >
           <div className="container">
             <div
               style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 40,
-                alignItems: "flex-start",
-                marginBottom: 32,
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 28px",
               }}
+              data-aos="fade-up"
             >
-              <div style={{ flex: "1 1 320px" }} data-aos="fade-up">
-                <SectionHeading eyebrow="Network Security" />
-                <h2
-                  style={{
-                    fontSize: 28,
-                    fontWeight: 700,
-                    color: "var(--heading-color)",
-                    lineHeight: 1.3,
-                    marginBottom: 14,
-                  }}
-                >
-                  Firewall/Network Switch Replacement
-                </h2>
-                <div
-                  style={{
-                    width: 46,
-                    height: 3,
-                    background: "var(--accent)",
-                    marginBottom: 18,
-                  }}
-                />
-                <p style={{ color: "#555", lineHeight: 1.8, fontSize: 14.5 }}>
-                  We upgrade and configure your network security and
-                  infrastructure to keep your business protected and connected.
-                </p>
-              </div>
+              <SectionHeading eyebrow="Network Security" />
+              <h2
+                style={{
+                  fontSize: 32,
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
+                Firewall/Network Switch Replacement
+              </h2>
+              <p style={{ color: "#666", fontSize: 15 }}>
+                We upgrade and configure your network security and
+                infrastructure to keep your business protected and connected.
+              </p>
             </div>
 
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                gap: 20,
+                display: "flex",
+                flexWrap: "wrap-reverse",
+                gap: 32,
+                alignItems: "center",
               }}
             >
+              {/* Numbered timeline */}
               <div
                 style={{
-                  background: "var(--light-bg)",
-                  borderRadius: 14,
-                  padding: "26px 28px",
+                  flex: "1 1 460px",
+                  position: "relative",
+                  paddingLeft: 68,
                 }}
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
                 <div
                   style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 12,
-                    marginBottom: 16,
+                    position: "absolute",
+                    left: 23,
+                    top: 26,
+                    bottom: 26,
+                    width: 2,
+                    background:
+                      "repeating-linear-gradient(180deg, #d0d7e2 0, #d0d7e2 6px, transparent 6px, transparent 12px)",
                   }}
-                >
+                />
+
+                {[
+                  {
+                    step: "1",
+                    color: "var(--accent)",
+                    title: "Overview",
+                    items: firewallOverview,
+                  },
+                  {
+                    step: "2",
+                    color: "var(--heading-color)",
+                    title: "Implementation",
+                    items: firewallImplementation,
+                  },
+                ].map((stage, si) => (
                   <div
+                    key={si}
                     style={{
-                      width: 46,
-                      height: 46,
-                      borderRadius: "50%",
-                      background: "rgba(26, 108, 181, 0.1)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
+                      position: "relative",
+                      marginBottom: si === 0 ? 24 : 0,
                     }}
                   >
-                    <i
-                      className="bi bi-shield-check"
-                      style={{ color: "var(--accent)", fontSize: 22 }}
-                    />
-                  </div>
-                  <h4
-                    style={{
-                      margin: 0,
-                      fontSize: 16,
-                      fontWeight: 700,
-                      color: "var(--heading-color)",
-                    }}
-                  >
-                    Overview
-                  </h4>
-                </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {firewallOverview.map((item, i) => (
-                    <li
-                      key={i}
+                    <div
                       style={{
+                        position: "absolute",
+                        left: -68,
+                        top: 0,
+                        width: 48,
+                        height: 48,
+                        borderRadius: "50%",
+                        background: stage.color,
+                        color: "#fff",
                         display: "flex",
-                        gap: 8,
-                        alignItems: "flex-start",
-                        fontSize: 13.5,
-                        color: "#555",
-                        lineHeight: 1.7,
-                        padding: "6px 0",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontWeight: 700,
+                        fontSize: 18,
+                        flexShrink: 0,
                       }}
                     >
-                      <i
-                        className="bi bi-check2"
-                        style={{
-                          color: "var(--accent)",
-                          fontSize: 14,
-                          marginTop: 3,
-                          flexShrink: 0,
-                        }}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                      {stage.step}
+                    </div>
+                    <h4
+                      style={{
+                        margin: "8px 0 8px",
+                        fontSize: 14,
+                        fontWeight: 700,
+                        color: "var(--heading-color)",
+                      }}
+                    >
+                      {stage.title}
+                    </h4>
+                    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                      {stage.items.map((item, i) => (
+                        <li
+                          key={i}
+                          style={{
+                            display: "flex",
+                            gap: 6,
+                            alignItems: "flex-start",
+                            fontSize: 14,
+                            color: "#666",
+                            lineHeight: 1.6,
+                            padding: "3px 0",
+                          }}
+                        >
+                          <i
+                            className="bi bi-check2"
+                            style={{
+                              color: stage.color,
+                              fontSize: 12,
+                              marginTop: 3,
+                              flexShrink: 0,
+                            }}
+                          />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
 
+              {/* Circular photo badge */}
               <div
-                style={{
-                  background: "var(--light-bg)",
-                  borderRadius: 14,
-                  padding: "26px 28px",
-                }}
+                style={{ flex: "0 1 280px", textAlign: "center" }}
                 data-aos="fade-up"
-                data-aos-delay="160"
+                data-aos-delay="200"
               >
                 <div
                   style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 12,
-                    marginBottom: 16,
+                    position: "relative",
+                    width: 260,
+                    height: 260,
+                    margin: "0 auto",
                   }}
                 >
                   <div
                     style={{
-                      width: 46,
-                      height: 46,
+                      position: "absolute",
+                      inset: -10,
                       borderRadius: "50%",
-                      background: "rgba(26, 108, 181, 0.1)",
+                      border: "2px dashed rgba(26, 108, 181, 0.3)",
+                    }}
+                  />
+                  <img
+                    src="/images/project-management/office-desk.jpg"
+                    alt="Modern office desk setup overlooking the city"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "50%",
+                      display: "block",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.16)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 6,
+                      right: 6,
+                      width: 60,
+                      height: 60,
+                      borderRadius: "50%",
+                      background: "var(--accent)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      flexShrink: 0,
+                      boxShadow: "0 8px 20px rgba(26, 108, 181, 0.4)",
                     }}
                   >
                     <i
-                      className="bi bi-hdd-network"
-                      style={{ color: "var(--accent)", fontSize: 22 }}
+                      className="bi bi-shield-lock"
+                      style={{ color: "#fff", fontSize: 24 }}
                     />
                   </div>
-                  <h4
-                    style={{
-                      margin: 0,
-                      fontSize: 16,
-                      fontWeight: 700,
-                      color: "var(--heading-color)",
-                    }}
-                  >
-                    Implementation
-                  </h4>
                 </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {firewallImplementation.map((item, i) => (
-                    <li
-                      key={i}
-                      style={{
-                        display: "flex",
-                        gap: 8,
-                        alignItems: "flex-start",
-                        fontSize: 13.5,
-                        color: "#555",
-                        lineHeight: 1.7,
-                        padding: "6px 0",
-                      }}
-                    >
-                      <i
-                        className="bi bi-check2"
-                        style={{
-                          color: "var(--accent)",
-                          fontSize: 14,
-                          marginTop: 3,
-                          flexShrink: 0,
-                        }}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           </div>
@@ -1333,7 +1223,7 @@ export default function ProjectManagementPage() {
               style={{
                 background: "var(--accent)",
                 borderRadius: 16,
-                padding: "36px 40px",
+                padding: "30px 36px",
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "center",
@@ -1349,7 +1239,7 @@ export default function ProjectManagementPage() {
                     fontSize: 24,
                     fontWeight: 700,
                     color: "#fff",
-                    marginBottom: 8,
+                    marginBottom: 12,
                   }}
                 >
                   Need help with your next buildout?
@@ -1358,7 +1248,7 @@ export default function ProjectManagementPage() {
                   style={{
                     color: "rgba(255,255,255,0.85)",
                     fontSize: 15,
-                    marginBottom: 20,
+                    marginBottom: 24,
                   }}
                 >
                   Our team is ready to help you plan, coordinate, and deliver a

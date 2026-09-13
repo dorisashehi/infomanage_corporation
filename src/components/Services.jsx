@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const services = [
   {
     icon: "bi-shield-lock",
@@ -24,7 +26,11 @@ const services = [
     icon: "bi-building-add",
     title: "Move, Build & Grow",
     desc: "Put the technology foundation in place for what comes next.",
-    items: ["New Offices & Buildouts", "Moves & Expansions", "IT Projects"],
+    items: [
+      { label: "New Offices & Buildouts", href: "/project-management-buildouts" },
+      "Moves & Expansions",
+      "IT Projects",
+    ],
   },
 ];
 
@@ -101,30 +107,40 @@ export default function Services() {
               </div>
               <p style={{ marginBottom: 12 }}>{s.desc}</p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                {s.items.map((item, j) => (
-                  <li
-                    key={j}
-                    style={{
-                      fontSize: 13,
-                      padding: "5px 0",
-                      display: "flex",
-                      gap: 6,
-                      alignItems: "flex-start",
-                    }}
-                  >
-                    <i
-                      className="bi bi-arrow-right"
+                {s.items.map((item, j) => {
+                  const label = typeof item === "string" ? item : item.label;
+                  const href = typeof item === "string" ? null : item.href;
+                  return (
+                    <li
+                      key={j}
                       style={{
-                        color: "var(--accent)",
-                        flexShrink: 0,
-                        marginTop: 2,
+                        fontSize: 13,
+                        padding: "5px 0",
+                        display: "flex",
+                        gap: 6,
+                        alignItems: "flex-start",
                       }}
-                    />
-                    <a href="#" className="service-item-link">
-                      {item}
-                    </a>
-                  </li>
-                ))}
+                    >
+                      <i
+                        className="bi bi-arrow-right"
+                        style={{
+                          color: "var(--accent)",
+                          flexShrink: 0,
+                          marginTop: 2,
+                        }}
+                      />
+                      {href ? (
+                        <Link to={href} className="service-item-link">
+                          {label}
+                        </Link>
+                      ) : (
+                        <a href="#" className="service-item-link">
+                          {label}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
               <div className="service-number">0{i + 1}</div>
             </div>

@@ -10,7 +10,7 @@ const navLinks = [
       { label: "Cybersecurity", href: "/cybersecurity-services" },
       { label: "VoIP Phone Systems", href: "/voip-phone-systems" },
       {
-        label: "Project Management for Buildouts",
+        label: "New Offices & Buildouts",
         href: "/project-management-buildouts",
       },
     ],
@@ -69,7 +69,7 @@ export default function Header() {
       indent: true,
     },
     {
-      label: "Project Management for Buildouts",
+      label: "New Offices & Buildouts",
       href: "/project-management-buildouts",
       internal: true,
       indent: true,
