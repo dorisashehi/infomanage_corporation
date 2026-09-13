@@ -93,6 +93,24 @@ const checklistItems = [
   "Security gets reviewed on a schedule, not just after something goes wrong",
 ];
 
+function SectionHeading({ eyebrow }) {
+  return (
+    <span
+      style={{
+        display: "block",
+        fontSize: 12,
+        fontWeight: 700,
+        textTransform: "uppercase",
+        letterSpacing: 2,
+        color: "var(--accent)",
+        marginBottom: 10,
+      }}
+    >
+      {eyebrow}
+    </span>
+  );
+}
+
 export default function CybersecurityPage() {
   useEffect(() => {
     AOS.init({
@@ -120,20 +138,16 @@ export default function CybersecurityPage() {
               <i className="bi bi-shield-lock" />
               <span>Cybersecurity</span>
             </div>
-            <h1>Attackers Don&apos;t Need a Big Mistake. A Small One Will Do.</h1>
+            <h1>
+              Attackers Don&apos;t Need a Big Mistake.
+              <br />
+              A Small One Will Do.
+            </h1>
             <p className="mit-hero-sub">
-              A missed patch, a reused password, a backup nobody&apos;s
-              actually tested.
+              A missed patch, a reused password, a backup that&apos;s never
+              been tested — we find these gaps before they turn into downtime.
             </p>
-            <p className="mit-hero-body">
-              Individually they look minor. Together, they&apos;re how most
-              incidents happen, and InfoManage finds them before they turn
-              into lost data or downtime.
-            </p>
-            <p className="mit-hero-note">
-              When the fundamentals are shaky, the real exposure is usually
-              bigger than what&apos;s visible from the outside.
-            </p>
+
             {/* <div className="mit-hero-btns">
               <Link to="/contact" className="btn-get-started">Request a Security Assessment</Link>
               <Link to="/contact#contact" className="mit-hero-outline-btn">Discuss Your Risk</Link>
@@ -142,9 +156,9 @@ export default function CybersecurityPage() {
         </section>
 
         {/* ── Common Points of Exposure — About-style layout ────── */}
-        <section style={{ padding: "40px 0", background: "#fff" }}>
+        <section style={{ padding: "48px 0", background: "#fff" }}>
           <div className="container">
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 56, alignItems: "center" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 32, alignItems: "center" }}>
               {/* Left: image collage */}
               <div style={{ flex: "1 1 460px" }} data-aos="fade-right">
                 <div style={{ position: "relative", maxWidth: 620, height: 480, margin: "0 auto" }}>
@@ -206,23 +220,11 @@ export default function CybersecurityPage() {
 
               {/* Right: content */}
               <div style={{ flex: "1 1 380px" }} data-aos="fade-left" data-aos-delay="100">
-                <span
-                  style={{
-                    display: "block",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: 2,
-                    color: "var(--accent)",
-                    marginBottom: 12,
-                  }}
-                >
-                  The Real Risk
-                </span>
-                <h2 style={{ fontSize: 30, fontWeight: 700, color: "var(--heading-color)", lineHeight: 1.3, marginBottom: 14 }}>
+                <SectionHeading eyebrow="The Real Risk" />
+                <h2 style={{ fontSize: 30, fontWeight: 700, color: "var(--heading-color)", lineHeight: 1.3, marginBottom: 12 }}>
                   Common Points of Exposure
                 </h2>
-                <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 18, fontSize: 15 }}>
+                <p style={{ color: "#555", lineHeight: 1.8, marginBottom: 24, fontSize: 15 }}>
                   Where the actual risk tends to sit inside a growing
                   business. A single weak point is often enough, and most
                   organizations are carrying more than one.
@@ -271,7 +273,7 @@ export default function CybersecurityPage() {
         </section>
 
         {/* ── How These Gaps Show Up in Practice ────────────────── */}
-        <section style={{ padding: "40px 0", background: "#0d1e2e" }}>
+        <section style={{ padding: "48px 0", background: "#0d1e2e" }}>
           <div className="container">
             <div
               style={{
@@ -283,19 +285,7 @@ export default function CybersecurityPage() {
               }}
             >
               <div style={{ flex: "1 1 380px" }} data-aos="fade-right">
-                <span
-                  style={{
-                    display: "block",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: 2,
-                    color: "var(--accent)",
-                    marginBottom: 10,
-                  }}
-                >
-                  In Practice
-                </span>
+                <SectionHeading eyebrow="In Practice" />
                 <h2 style={{ fontSize: 32, fontWeight: 700, color: "#fff", marginBottom: 10 }}>
                   How These Gaps Show Up in Practice
                 </h2>
@@ -405,26 +395,14 @@ export default function CybersecurityPage() {
         </section>
 
         {/* ── The Way We Defend Your Systems — five layers ──────── */}
-        <section className="howwework-section" style={{ padding: "40px 0" }}>
+        <section className="howwework-section" style={{ padding: "48px 0" }}>
           <div className="container">
             <div
               style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 24px" }}
               data-aos="fade-up"
             >
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 2,
-                  color: "var(--accent)",
-                  marginBottom: 8,
-                }}
-              >
-                Our Approach
-              </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 8 }}>
+              <SectionHeading eyebrow="Our Approach" />
+              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
                 The Way We Defend Your Systems
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
@@ -522,26 +500,14 @@ export default function CybersecurityPage() {
         </section>
 
         {/* ── Where Do You Actually Stand — self-check ──────────── */}
-        <section className="mit-section" style={{ padding: "40px 0 56px", background: "#fff" }}>
+        <section className="mit-section" style={{ padding: "48px 0", background: "#fff" }}>
           <div className="container">
             <div
               style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 24px" }}
               data-aos="fade-up"
             >
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 2,
-                  color: "var(--accent)",
-                  marginBottom: 8,
-                }}
-              >
-                Quick Self-Check
-              </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 8 }}>
+              <SectionHeading eyebrow="Quick Self-Check" />
+              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
                 Where Do You Actually Stand?
               </h2>
               <p style={{ color: "#666", fontSize: 15 }}>
