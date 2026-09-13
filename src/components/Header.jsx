@@ -6,9 +6,9 @@ const navLinks = [
   {
     label: "Services",
     children: [
-      { label: "Managed IT", href: "/managed-it-services" },
+      { label: "Managed IT & Help Desk", href: "/managed-it-help-desk" },
       { label: "Cybersecurity", href: "/cybersecurity-services" },
-      { label: "VoIP Phone Systems", href: "/voip-phone-systems" },
+      { label: "Cloud Phones & Communications", href: "/cloud-phones-communications" },
       {
         label: "New Offices & Buildouts",
         href: "/project-management-buildouts",
@@ -51,8 +51,8 @@ export default function Header() {
     { label: "About", href: "/about", internal: true },
     { label: "Services", heading: true },
     {
-      label: "Managed IT",
-      href: "/managed-it-services",
+      label: "Managed IT & Help Desk",
+      href: "/managed-it-help-desk",
       internal: true,
       indent: true,
     },
@@ -63,8 +63,8 @@ export default function Header() {
       indent: true,
     },
     {
-      label: "VoIP Phone Systems",
-      href: "/voip-phone-systems",
+      label: "Cloud Phones & Communications",
+      href: "/cloud-phones-communications",
       internal: true,
       indent: true,
     },

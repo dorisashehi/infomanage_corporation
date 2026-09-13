@@ -6,7 +6,7 @@ const services = [
     title: "Managed & Secure",
     desc: "Keep people productive and systems protected.",
     items: [
-      "Managed IT & Help Desk",
+      { label: "Managed IT & Help Desk", href: "/managed-it-help-desk" },
       "Cybersecurity",
       "Backup & Business Continuity",
       "Technology Strategy",
@@ -19,7 +19,7 @@ const services = [
     items: [
       "Microsoft 365 & Google Workspace",
       "Networks, Wi-Fi & Internet",
-      "Cloud Phones & Communications",
+      { label: "Cloud Phones & Communications", href: "/cloud-phones-communications" },
     ],
   },
   {

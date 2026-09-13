@@ -83,7 +83,7 @@ export default function Hero() {
               <i className="bi bi-arrow-right" />
             </Link>
             <Link
-              to="/managed-it-services"
+              to="/managed-it-help-desk"
               className="btn-cta-outline"
               style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
             >

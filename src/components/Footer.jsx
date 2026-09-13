@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const serviceLinks = [
-  { label: "Managed IT", href: "/managed-it-services" },
+  { label: "Managed IT & Help Desk", href: "/managed-it-help-desk" },
   { label: "Cybersecurity", href: "/cybersecurity-services" },
-  { label: "VoIP Phone Systems", href: "/voip-phone-systems" },
+  { label: "Cloud Phones & Communications", href: "/cloud-phones-communications" },
 ];
 const companyLinks = [
   { label: "About Us", href: "/about" },

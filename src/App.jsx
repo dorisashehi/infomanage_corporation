@@ -78,9 +78,9 @@ export default function App() {
       <ScrollToHash />
       <Routes>
         <Route path="/" element={<HomePage loaded={loaded} />} />
-        <Route path="/managed-it-services" element={<ManagedITPage />} />
+        <Route path="/managed-it-help-desk" element={<ManagedITPage />} />
         <Route path="/cybersecurity-services" element={<CybersecurityPage />} />
-        <Route path="/voip-phone-systems" element={<VoipPage />} />
+        <Route path="/cloud-phones-communications" element={<VoipPage />} />
         <Route path="/it-strategy-advisory" element={<ITStrategyPage />} />
         <Route
           path="/project-management-buildouts"
