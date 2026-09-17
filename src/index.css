@@ -228,7 +228,7 @@ a:hover {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   z-index: 99;
 }
-.navmenu .dropdown:hover .dropdown-menu {
+.navmenu .dropdown-menu.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -252,7 +252,7 @@ a:hover {
   top: 0;
   transform: none;
 }
-.navmenu .dropdown-menu .dropdown:hover .dropdown-menu {
+.navmenu .dropdown-menu .dropdown-menu.show {
   opacity: 1;
   visibility: visible;
 }

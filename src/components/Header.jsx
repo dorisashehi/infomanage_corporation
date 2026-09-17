@@ -6,12 +6,36 @@ const navLinks = [
   {
     label: "Services",
     children: [
-      { label: "Managed IT & Help Desk", href: "/managed-it-help-desk" },
-      { label: "Cybersecurity", href: "/cybersecurity-services" },
-      { label: "Cloud Phones & Communications", href: "/cloud-phones-communications" },
       {
-        label: "New Offices & Buildouts",
-        href: "/project-management-buildouts",
+        label: "Managed & Secure",
+        children: [
+          { label: "Managed IT & Help Desk", href: "/managed-it-help-desk" },
+          { label: "Cybersecurity", href: "/cybersecurity-services" },
+          { label: "Backup & Business Continuity", href: "#" },
+          { label: "Technology Strategy", href: "/it-strategy-advisory" },
+        ],
+      },
+      {
+        label: "Connect & Collaborate",
+        children: [
+          { label: "Microsoft 365 & Google Workspace", href: "#" },
+          { label: "Networks, Wi-Fi & Internet", href: "#" },
+          {
+            label: "Cloud Phones & Communications",
+            href: "/cloud-phones-communications",
+          },
+        ],
+      },
+      {
+        label: "Move, Build & Grow",
+        children: [
+          {
+            label: "New Offices & Buildouts",
+            href: "/project-management-buildouts",
+          },
+          { label: "Moves & Expansions", href: "#" },
+          { label: "IT Projects", href: "#" },
+        ],
       },
     ],
   },
@@ -25,6 +49,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [openCategory, setOpenCategory] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -50,6 +76,7 @@ export default function Header() {
     { label: "Home", href: "/", internal: true },
     { label: "About", href: "/about", internal: true },
     { label: "Services", heading: true },
+    { label: "Managed & Secure", subheading: true },
     {
       label: "Managed IT & Help Desk",
       href: "/managed-it-help-desk",
@@ -63,14 +90,52 @@ export default function Header() {
       indent: true,
     },
     {
+      label: "Backup & Business Continuity",
+      href: "#",
+      internal: true,
+      indent: true,
+    },
+    {
+      label: "Technology Strategy",
+      href: "/it-strategy-advisory",
+      internal: true,
+      indent: true,
+    },
+    { label: "Connect & Collaborate", subheading: true },
+    {
+      label: "Microsoft 365 & Google Workspace",
+      href: "#",
+      internal: true,
+      indent: true,
+    },
+    {
+      label: "Networks, Wi-Fi & Internet",
+      href: "#",
+      internal: true,
+      indent: true,
+    },
+    {
       label: "Cloud Phones & Communications",
       href: "/cloud-phones-communications",
       internal: true,
       indent: true,
     },
+    { label: "Move, Build & Grow", subheading: true },
     {
       label: "New Offices & Buildouts",
       href: "/project-management-buildouts",
+      internal: true,
+      indent: true,
+    },
+    {
+      label: "Moves & Expansions",
+      href: "#",
+      internal: true,
+      indent: true,
+    },
+    {
+      label: "IT Projects",
+      href: "#",
       internal: true,
       indent: true,
     },
@@ -104,17 +169,49 @@ export default function Header() {
                     key={i}
                     className="dropdown"
                     style={{ padding: "10px 14px" }}
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => {
+                      setServicesOpen(false);
+                      setOpenCategory(null);
+                    }}
                   >
-                    <a href="#">
+                    <a href="#" onClick={(e) => e.preventDefault()}>
                       <span>{link.label}</span>
                       <i className="bi bi-chevron-down toggle-dropdown" />
                     </a>
-                    <ul className="dropdown-menu">
-                      {link.children.map((child, j) => (
-                        <li key={j}>
-                          <Link to={child.href}>{child.label}</Link>
-                        </li>
-                      ))}
+                    <ul
+                      className={`dropdown-menu${servicesOpen ? " show" : ""}`}
+                    >
+                      {link.children.map((child, j) =>
+                        child.children ? (
+                          <li
+                            key={j}
+                            className="dropdown"
+                            onMouseEnter={() => setOpenCategory(j)}
+                            onMouseLeave={() => setOpenCategory(null)}
+                          >
+                            <a href="#" onClick={(e) => e.preventDefault()}>
+                              <span>{child.label}</span>
+                              <i className="bi bi-chevron-right toggle-dropdown" />
+                            </a>
+                            <ul
+                              className={`dropdown-menu${openCategory === j ? " show" : ""}`}
+                            >
+                              {child.children.map((grandchild, k) => (
+                                <li key={k}>
+                                  <Link to={grandchild.href}>
+                                    {grandchild.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </li>
+                        ) : (
+                          <li key={j}>
+                            <Link to={child.href}>{child.label}</Link>
+                          </li>
+                        ),
+                      )}
                     </ul>
                   </li>
                 ) : (
@@ -191,6 +288,18 @@ export default function Header() {
                     textTransform: "uppercase",
                     letterSpacing: 1,
                     color: "#999",
+                  }}
+                >
+                  {link.label}
+                </div>
+              ) : link.subheading ? (
+                <div
+                  key={i}
+                  style={{
+                    padding: "10px 20px 2px 30px",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    color: "var(--heading-color)",
                   }}
                 >
                   {link.label}
