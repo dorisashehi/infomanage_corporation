@@ -51,6 +51,16 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState("hero");
   const [servicesOpen, setServicesOpen] = useState(false);
   const [openCategory, setOpenCategory] = useState(null);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileOpenCategory, setMobileOpenCategory] = useState(null);
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
+    setMobileServicesOpen(false);
+    setMobileOpenCategory(null);
+  };
+
+  const servicesLink = navLinks.find((l) => l.label === "Services");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -71,77 +81,6 @@ export default function Header() {
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
   }, []);
-
-  const mobileLinks = [
-    { label: "Home", href: "/", internal: true },
-    { label: "About", href: "/about", internal: true },
-    { label: "Services", heading: true },
-    { label: "Managed & Secure", subheading: true },
-    {
-      label: "Managed IT & Help Desk",
-      href: "/managed-it-help-desk",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Cybersecurity",
-      href: "/cybersecurity-services",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Backup & Business Continuity",
-      href: "#",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Technology Strategy",
-      href: "/it-strategy-advisory",
-      internal: true,
-      indent: true,
-    },
-    { label: "Connect & Collaborate", subheading: true },
-    {
-      label: "Microsoft 365 & Google Workspace",
-      href: "#",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Networks, Wi-Fi & Internet",
-      href: "#",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Cloud Phones & Communications",
-      href: "/cloud-phones-communications",
-      internal: true,
-      indent: true,
-    },
-    { label: "Move, Build & Grow", subheading: true },
-    {
-      label: "New Offices & Buildouts",
-      href: "/project-management-buildouts",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "Moves & Expansions",
-      href: "#",
-      internal: true,
-      indent: true,
-    },
-    {
-      label: "IT Projects",
-      href: "#",
-      internal: true,
-      indent: true,
-    },
-    { label: "Industries", href: "/industries", internal: true },
-    { label: "Contact", href: "/contact", internal: true },
-  ];
 
   return (
     <>
@@ -247,7 +186,7 @@ export default function Header() {
       </header>
 
       {mobileOpen && (
-        <div className="mobile-nav open" onClick={() => setMobileOpen(false)}>
+        <div className="mobile-nav open" onClick={closeMobileMenu}>
           <div
             className="mobile-nav-inner"
             onClick={(e) => e.stopPropagation()}
@@ -274,72 +213,116 @@ export default function Header() {
               <i
                 className="bi bi-x"
                 style={{ fontSize: 26, cursor: "pointer", color: "#333" }}
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
               />
             </div>
-            {mobileLinks.map((link, i) =>
-              link.heading ? (
-                <div
-                  key={i}
-                  style={{
-                    padding: "12px 20px 4px",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: 1,
-                    color: "#999",
-                  }}
-                >
-                  {link.label}
-                </div>
-              ) : link.subheading ? (
-                <div
-                  key={i}
-                  style={{
-                    padding: "10px 20px 2px 30px",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    color: "var(--heading-color)",
-                  }}
-                >
-                  {link.label}
-                </div>
-              ) : (
-                <Link
-                  key={i}
-                  to={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  style={
-                    link.indent
-                      ? {
-                          paddingLeft: 36,
+
+            <Link to="/" onClick={closeMobileMenu}>
+              Home
+            </Link>
+            <Link to="/about" onClick={closeMobileMenu}>
+              About
+            </Link>
+
+            <div
+              onClick={() => setMobileServicesOpen((v) => !v)}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "12px 20px",
+                cursor: "pointer",
+                borderBottom: "1px solid #f0f0f0",
+                fontSize: 15,
+                color: "#444",
+              }}
+            >
+              Services
+              <i
+                className="bi bi-chevron-down"
+                style={{
+                  fontSize: 12,
+                  transition: "transform 0.2s",
+                  transform: mobileServicesOpen
+                    ? "rotate(180deg)"
+                    : "rotate(0deg)",
+                }}
+              />
+            </div>
+
+            {mobileServicesOpen &&
+              servicesLink.children.map((category, j) => (
+                <div key={j}>
+                  <div
+                    onClick={() =>
+                      setMobileOpenCategory((v) => (v === j ? null : j))
+                    }
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "10px 20px 10px 30px",
+                      cursor: "pointer",
+                      background: "#fafafa",
+                      borderBottom: "1px solid #f0f0f0",
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: "var(--heading-color)",
+                    }}
+                  >
+                    {category.label}
+                    <i
+                      className="bi bi-chevron-down"
+                      style={{
+                        fontSize: 11,
+                        transition: "transform 0.2s",
+                        transform:
+                          mobileOpenCategory === j
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
+                      }}
+                    />
+                  </div>
+                  {mobileOpenCategory === j &&
+                    category.children.map((item, k) => (
+                      <Link
+                        key={k}
+                        to={item.href}
+                        onClick={closeMobileMenu}
+                        style={{
+                          paddingLeft: 44,
                           fontSize: 14,
                           color: "#666",
                           borderBottom: "1px solid #f5f5f5",
                           display: "flex",
                           alignItems: "center",
-                        }
-                      : {}
-                  }
-                >
-                  {link.indent && (
-                    <i
-                      className="bi bi-chevron-right"
-                      style={{
-                        fontSize: 10,
-                        marginRight: 6,
-                        color: "var(--accent)",
-                      }}
-                    />
-                  )}
-                  {link.label}
-                </Link>
-              ),
-            )}
+                        }}
+                      >
+                        <i
+                          className="bi bi-chevron-right"
+                          style={{
+                            fontSize: 10,
+                            marginRight: 6,
+                            color: "var(--accent)",
+                          }}
+                        />
+                        {item.label}
+                      </Link>
+                    ))}
+                </div>
+              ))}
+
+            <Link to="/industries" onClick={closeMobileMenu}>
+              Industries
+            </Link>
+            <Link to="/contact" onClick={closeMobileMenu}>
+              Contact
+            </Link>
+
             <div style={{ padding: "16px 20px" }}>
               <Link
                 to="/contact#contact"
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
                 style={{
                   display: "inline-block",
                   background: "var(--accent)",
