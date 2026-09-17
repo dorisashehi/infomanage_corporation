@@ -7,9 +7,9 @@ const services = [
     desc: "Keep people productive and systems protected.",
     items: [
       { label: "Managed IT & Help Desk", href: "/managed-it-help-desk" },
-      "Cybersecurity",
+      { label: "Cybersecurity", href: "/cybersecurity-services" },
       "Backup & Business Continuity",
-      "Technology Strategy",
+      { label: "Technology Strategy", href: "/technology-strategy" },
     ],
   },
   {
@@ -19,7 +19,10 @@ const services = [
     items: [
       "Microsoft 365 & Google Workspace",
       "Networks, Wi-Fi & Internet",
-      { label: "Cloud Phones & Communications", href: "/cloud-phones-communications" },
+      {
+        label: "Cloud Phones & Communications",
+        href: "/cloud-phones-communications",
+      },
     ],
   },
   {
@@ -27,7 +30,10 @@ const services = [
     title: "Move, Build & Grow",
     desc: "Put the technology foundation in place for what comes next.",
     items: [
-      { label: "New Offices & Buildouts", href: "/project-management-buildouts" },
+      {
+        label: "New Offices & Buildouts",
+        href: "/project-management-buildouts",
+      },
       "Moves & Expansions",
       "IT Projects",
     ],

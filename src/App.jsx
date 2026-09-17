@@ -81,7 +81,7 @@ export default function App() {
         <Route path="/managed-it-help-desk" element={<ManagedITPage />} />
         <Route path="/cybersecurity-services" element={<CybersecurityPage />} />
         <Route path="/cloud-phones-communications" element={<VoipPage />} />
-        <Route path="/it-strategy-advisory" element={<ITStrategyPage />} />
+        <Route path="/technology-strategy" element={<ITStrategyPage />} />
         <Route
           path="/project-management-buildouts"
           element={<ProjectManagementPage />}

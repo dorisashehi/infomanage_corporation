@@ -12,7 +12,7 @@ const navLinks = [
           { label: "Managed IT & Help Desk", href: "/managed-it-help-desk" },
           { label: "Cybersecurity", href: "/cybersecurity-services" },
           { label: "Backup & Business Continuity", href: "#" },
-          { label: "Technology Strategy", href: "/it-strategy-advisory" },
+          { label: "Technology Strategy", href: "/technology-strategy" },
         ],
       },
       {
