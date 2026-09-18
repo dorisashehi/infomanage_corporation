@@ -45,40 +45,13 @@ export default function FAQ() {
           style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 50px" }}
           data-aos="fade-up"
         >
-          <span
-            style={{
-              display: "block",
-              fontSize: 12,
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: 2,
-              color: "var(--accent)",
-              marginBottom: 14,
-            }}
-          >
-            FAQ
-          </span>
-          <h2
-            style={{
-              fontSize: 32,
-              fontWeight: 700,
-              color: "var(--heading-color)",
-            }}
-          >
-            Frequently Asked Questions
-          </h2>
+          <span className="faq-badge">FAQ</span>
+          <h2 className="faq-heading">Frequently Asked Questions</h2>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 40,
-            alignItems: "flex-start",
-          }}
-        >
+        <div className="faq-row" style={{ alignItems: "flex-start" }}>
           <div
-            style={{ flex: "2 1 460px" }}
+            className="faq-list-col"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -88,46 +61,28 @@ export default function FAQ() {
           </div>
 
           <div
+            className="faq-cta-card"
             style={{
-              flex: "1 1 260px",
               background: "var(--light-bg)",
               borderRadius: 14,
-              padding: "28px 24px",
               display: "flex",
               alignItems: "center",
-              gap: 20,
-              textAlign: "left",
             }}
             data-aos="fade-up"
             data-aos-delay="200"
           >
             <i
-              className="bi bi-headset"
-              style={{ fontSize: 64, color: "var(--accent)", flexShrink: 0 }}
+              className="bi bi-headset faq-cta-icon"
+              style={{ color: "var(--accent)", flexShrink: 0 }}
             />
             <div>
-              <p
-                style={{
-                  fontWeight: 700,
-                  color: "var(--heading-color)",
-                  marginBottom: 4,
-                  fontSize: 15,
-                }}
-              >
+              <p className="faq-cta-title" style={{ color: "var(--heading-color)" }}>
                 Have more questions?
               </p>
-              <p style={{ color: "#777", fontSize: 13, marginBottom: 14 }}>
+              <p className="faq-cta-text" style={{ color: "#777" }}>
                 Our team is here to help.
               </p>
-              <Link
-                to="/contact"
-                className="btn-pricing"
-                style={{
-                  display: "inline-block",
-                  padding: "8px 22px",
-                  fontSize: 13,
-                }}
-              >
+              <Link to="/contact" className="btn-pricing faq-cta-btn">
                 Contact Us
               </Link>
             </div>

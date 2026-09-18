@@ -92,10 +92,8 @@ export default function Header() {
               alt="InfoManage"
               style={{
                 height: "100%",
-                maxWidth: "85%",
-                objectFit: "cover",
+                width: "auto",
                 display: "block",
-                transform: "scale(1.0)",
               }}
             />
           </a>
@@ -204,10 +202,8 @@ export default function Header() {
                 alt="InfoManage"
                 style={{
                   height: "100%",
-                  maxWidth: "85%",
-                  objectFit: "cover",
+                  width: "auto",
                   display: "block",
-                  transform: "scale(1.0)",
                 }}
               />
               <i

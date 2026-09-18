@@ -9,16 +9,17 @@ export default function Trusted() {
     <section id="trusted" className="trusted-section">
       <div className="container">
         <div
+          className="trusted-row"
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: 40,
             alignItems: "center",
           }}
         >
           {/* Image */}
           <div
-            style={{ flex: "0 1 260px", position: "relative" }}
+            className="trusted-image-col"
+            style={{ position: "relative" }}
             data-aos="fade-right"
           >
             <i
@@ -58,6 +59,7 @@ export default function Trusted() {
               }}
             />
             <div
+              className="trusted-badge-box"
               style={{
                 position: "absolute",
                 bottom: 16,
@@ -66,7 +68,6 @@ export default function Trusted() {
                 minWidth: 100,
                 background: "var(--accent)",
                 color: "#fff",
-                padding: "16px 18px",
                 borderRadius: 12,
                 textAlign: "center",
                 boxShadow: "0 8px 24px rgba(26, 108, 181, 0.4)",
@@ -74,10 +75,10 @@ export default function Trusted() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div style={{ fontSize: 26, fontWeight: 900, lineHeight: 1 }}>
+              <div className="trusted-badge-num" style={{ fontWeight: 900, lineHeight: 1 }}>
                 30+
               </div>
-              <div style={{ fontSize: 11, marginTop: 4, lineHeight: 1.3 }}>
+              <div className="trusted-badge-label" style={{ marginTop: 4, lineHeight: 1.3 }}>
                 Years of
                 <br />
                 Expertise
@@ -87,35 +88,15 @@ export default function Trusted() {
 
           {/* Text */}
           <div
-            style={{ flex: "1 1 280px" }}
+            className="trusted-text-col"
             data-aos="fade-right"
             data-aos-delay="100"
           >
-            <span
-              style={{
-                display: "block",
-                fontSize: 12,
-                fontWeight: 700,
-                textTransform: "uppercase",
-                letterSpacing: 2,
-                color: "var(--accent)",
-                marginBottom: 14,
-              }}
-            >
-              Established & Trusted
-            </span>
-            <h2
-              style={{
-                fontSize: 26,
-                fontWeight: 700,
-                color: "var(--heading-color)",
-                marginBottom: 12,
-                lineHeight: 1.3,
-              }}
-            >
+            <span className="trusted-badge">Established & Trusted</span>
+            <h2 className="trusted-heading">
               Technology Experience That Goes Beyond the Help Desk
             </h2>
-            <p style={{ color: "#666", lineHeight: 1.8, fontSize: 15 }}>
+            <p className="trusted-desc">
               Founded in 1995, InfoManage brings decades of experience across IT
               operations, infrastructure, cybersecurity, cloud, communications,
               projects and technology strategy.
@@ -123,25 +104,18 @@ export default function Trusted() {
           </div>
 
           {/* Stats */}
-          <div style={{ flex: "2 1 500px", display: "flex", flexWrap: "wrap" }}>
+          <div className="trusted-stats-grid">
             {credibility.map((c, i) => (
               <div
                 key={i}
                 className="trusted-stat-item"
-                style={{
-                  flex: "1 1 110px",
-                  textAlign: "center",
-                  padding: "0 16px",
-                  borderRight:
-                    i < credibility.length - 1 ? "1px solid #e5e9f0" : "none",
-                }}
+                style={{ textAlign: "center" }}
                 data-aos="zoom-in"
                 data-aos-delay={230 + i * 80}
               >
                 <div
+                  className="trusted-stat-icon"
                   style={{
-                    width: 52,
-                    height: 52,
                     margin: "0 auto 12px",
                     borderRadius: "50%",
                     border: "1.5px solid rgba(26, 108, 181, 0.3)",
@@ -150,15 +124,12 @@ export default function Trusted() {
                     justifyContent: "center",
                   }}
                 >
-                  <i
-                    className={`bi ${c.icon}`}
-                    style={{ fontSize: 22, color: "var(--accent)" }}
-                  />
+                  <i className={`bi ${c.icon}`} style={{ color: "var(--accent)" }} />
                 </div>
                 <span
+                  className="trusted-stat-label"
                   style={{
                     display: "block",
-                    fontSize: 13.5,
                     fontWeight: 700,
                     color: "var(--heading-color)",
                     lineHeight: 1.4,

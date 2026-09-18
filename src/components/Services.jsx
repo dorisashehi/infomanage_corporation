@@ -42,19 +42,16 @@ const services = [
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      style={{ padding: "48px 0", background: "var(--light-bg)" }}
-    >
+    <section id="services" className="services-section-block">
       <div className="container">
         <div
           style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
           data-aos="fade-up"
         >
           <span
+            className="services-badge"
             style={{
               display: "block",
-              fontSize: 12,
               fontWeight: 700,
               textTransform: "uppercase",
               letterSpacing: 2,
@@ -65,8 +62,8 @@ export default function Services() {
             WHAT WE DO
           </span>
           <h2
+            className="services-heading"
             style={{
-              fontSize: 32,
               fontWeight: 700,
               color: "var(--heading-color)",
               marginBottom: 10,
@@ -74,7 +71,7 @@ export default function Services() {
           >
             One Partner for Your Technology
           </h2>
-          <p style={{ color: "#666", fontSize: 15 }}>
+          <p className="services-intro" style={{ color: "#666" }}>
             From everyday support to major technology initiatives, we manage the
             technology your organization depends on.
           </p>
@@ -119,8 +116,8 @@ export default function Services() {
                   return (
                     <li
                       key={j}
+                      className="service-item"
                       style={{
-                        fontSize: 13,
                         padding: "5px 0",
                         display: "flex",
                         gap: 6,

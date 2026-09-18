@@ -107,11 +107,11 @@ export default function CTA() {
   return (
     <section
       id="call-to-action"
-      className="mit-dark-section"
-      style={{ padding: "56px 0" }}
+      className="mit-dark-section cta-split-section"
     >
       <div className="container">
         <div
+          className="cta-split-row"
           style={{
             display: "flex",
             flexWrap: "wrap",
@@ -121,26 +121,18 @@ export default function CTA() {
         >
           {/* Left: eyebrow, headline, avatar stack */}
           <div
+            className="cta-split-left"
             style={{
-              flex: "0 1 340px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              borderRight: "1px solid rgba(255,255,255,0.12)",
-              paddingRight: 32,
             }}
             data-aos="fade-up"
           >
-            <span className="mit-split-label">CLIENT EXPERIENCE</span>
-            <h2
-              style={{
-                fontSize: 28,
-                fontWeight: 700,
-                color: "#fff",
-                lineHeight: 1.3,
-                marginBottom: 20,
-              }}
-            >
+            <span className="mit-split-label cta-split-label">
+              CLIENT EXPERIENCE
+            </span>
+            <h2 className="cta-split-heading" style={{ color: "#fff" }}>
               Trusted for the Everyday, and the Critical
             </h2>
             <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
@@ -148,11 +140,10 @@ export default function CTA() {
                 {avatarPhotos.map((src, i) => (
                   <img
                     key={i}
+                    className="cta-avatar"
                     src={src}
                     alt=""
                     style={{
-                      width: 36,
-                      height: 36,
                       borderRadius: "50%",
                       objectFit: "cover",
                       border: "2px solid #0d1e2e",
@@ -166,7 +157,8 @@ export default function CTA() {
 
           {/* Right: testimonial carousel */}
           <div
-            style={{ flex: "1 1 500px", minWidth: 0 }}
+            className="cta-split-right"
+            style={{ minWidth: 0 }}
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -189,21 +181,21 @@ export default function CTA() {
               {testimonials.map((t, i) => (
                 <SwiperSlide key={i}>
                   <div
+                    className="cta-card"
                     style={{
                       height: "100%",
                       background: "rgba(255,255,255,0.03)",
                       border: "1px solid rgba(26, 108, 181, 0.35)",
                       borderRadius: 12,
-                      padding: "24px 22px",
                       display: "flex",
                       flexDirection: "column",
                     }}
                   >
                     <StarRating rating={t.rating} />
                     <p
+                      className="cta-quote"
                       style={{
                         color: "rgba(255,255,255,0.8)",
-                        fontSize: 13.5,
                         lineHeight: 1.7,
                         marginBottom: 18,
                         flexGrow: 1,

@@ -11,23 +11,22 @@ const coverageItems = [
 
 export default function About() {
   return (
-    <section id="about" className="about-section" style={{ padding: "56px 0" }}>
+    <section id="about" className="about-section">
       <div className="container">
         <div
+          className="about-row"
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: 60,
             alignItems: "center",
           }}
         >
           {/* Left: image collage */}
           <div style={{ flex: "1 1 400px" }} data-aos="fade-right">
             <div
+              className="about-collage"
               style={{
                 position: "relative",
-                maxWidth: 540,
-                height: 420,
                 margin: "0 auto",
               }}
             >
@@ -102,9 +101,9 @@ export default function About() {
             data-aos-delay="100"
           >
             <span
+              className="about-badge"
               style={{
                 display: "block",
-                fontSize: 12,
                 fontWeight: 700,
                 textTransform: "uppercase",
                 letterSpacing: 2,
@@ -115,8 +114,8 @@ export default function About() {
               WHY INFOMANAGE.
             </span>
             <h2
+              className="about-heading"
               style={{
-                fontSize: 32,
                 fontWeight: 700,
                 color: "var(--heading-color)",
                 lineHeight: 1.3,
@@ -126,11 +125,11 @@ export default function About() {
               One Partner. One Point of Accountability.
             </h2>
             <p
+              className="about-desc"
               style={{
                 color: "#555",
                 lineHeight: 1.8,
                 marginBottom: 20,
-                fontSize: 16,
               }}
             >
               Whether the need is ongoing managed IT, a single technology
@@ -140,7 +139,10 @@ export default function About() {
             </p>
 
             <div data-aos="fade-up" data-aos-delay="300">
-              <span style={{ fontSize: 14, fontWeight: 600, color: "#333" }}>
+              <span
+                className="about-highlight"
+                style={{ fontWeight: 600, color: "#333" }}
+              >
                 Across everything we do, our goal is the same: reduce technology
                 risk and downtime through secure, well-designed and properly
                 maintained technology.

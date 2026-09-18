@@ -41,16 +41,16 @@ const situations = [
 
 export default function WhenToContact() {
   return (
-    <section id="when-to-contact" style={{ padding: "80px 0" }}>
+    <section id="when-to-contact" className="wtc-section">
       <div className="container">
         <div
           style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 50px" }}
           data-aos="fade-up"
         >
           <span
+            className="wtc-badge"
             style={{
               display: "block",
-              fontSize: 12,
               fontWeight: 700,
               textTransform: "uppercase",
               letterSpacing: 2,
@@ -61,8 +61,8 @@ export default function WhenToContact() {
             WHEN TO CONTACT US
           </span>
           <h2
+            className="wtc-heading"
             style={{
-              fontSize: 32,
               fontWeight: 700,
               color: "var(--heading-color)",
             }}
@@ -76,7 +76,6 @@ export default function WhenToContact() {
             className="wtc-grid"
             style={{
               display: "grid",
-              gap: "28px 24px",
             }}
             data-aos="fade-up"
             data-aos-delay="100"
@@ -87,9 +86,8 @@ export default function WhenToContact() {
                 style={{ display: "flex", alignItems: "center", gap: 12 }}
               >
                 <div
+                  className="wtc-icon"
                   style={{
-                    width: 36,
-                    height: 36,
                     borderRadius: 8,
                     background: "rgba(26,108,181,0.12)",
                     display: "flex",
@@ -98,14 +96,11 @@ export default function WhenToContact() {
                     flexShrink: 0,
                   }}
                 >
-                  <i
-                    className={`bi ${s.icon}`}
-                    style={{ color: "var(--accent)", fontSize: 16 }}
-                  />
+                  <i className={`bi ${s.icon}`} style={{ color: "var(--accent)" }} />
                 </div>
                 <p
+                  className="wtc-item-text"
                   style={{
-                    fontSize: 14,
                     fontWeight: 400,
                     color: "rgb(85, 85, 85)",
                     margin: 0,
@@ -123,7 +118,6 @@ export default function WhenToContact() {
             style={{
               background: "var(--light-bg)",
               borderRadius: 14,
-              padding: "24px 20px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -135,30 +129,28 @@ export default function WhenToContact() {
           >
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
               <i
-                className="bi bi-chat-dots"
-                style={{ fontSize: 32, color: "var(--accent)", flexShrink: 0 }}
+                className="bi bi-chat-dots wtc-cta-icon"
+                style={{ color: "var(--accent)", flexShrink: 0 }}
               />
               <p
+                className="wtc-cta-title"
                 style={{
                   fontWeight: 700,
                   color: "var(--heading-color)",
                   margin: 0,
-                  fontSize: 17,
                 }}
               >
                 Recognize your situation?
               </p>
             </div>
-            <p style={{ color: "#777", fontSize: 13, margin: 0 }}>
+            <p className="wtc-cta-text" style={{ color: "#777", margin: 0 }}>
               If any of this sounds familiar, it's time to talk.
             </p>
             <Link
               to="/contact"
-              className="btn-pricing"
+              className="btn-pricing wtc-cta-btn"
               style={{
                 display: "inline-block",
-                padding: "8px 22px",
-                fontSize: 13,
                 alignSelf: "flex-start",
               }}
             >

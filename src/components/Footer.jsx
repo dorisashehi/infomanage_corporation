@@ -44,37 +44,21 @@ export default function Footer() {
       <footer id="footer" className="site-footer">
         <div className="container">
           <div
+            className="footer-cta-row"
             style={{
               display: "flex",
               flexWrap: "wrap",
-              gap: 24,
               alignItems: "center",
               justifyContent: "space-between",
-              paddingBottom: 40,
-              marginBottom: 40,
-              borderBottom: "1px solid rgba(255,255,255,0.1)",
             }}
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div style={{ flex: "1 1 420px" }}>
-              <h2
-                style={{
-                  fontSize: 30,
-                  fontWeight: 700,
-                  color: "#fff",
-                  marginBottom: 14,
-                }}
-              >
+            <div className="footer-cta-text-col">
+              <h2 className="footer-cta-heading">
                 Let's Talk About What You Need From IT.
               </h2>
-              <p
-                style={{
-                  color: "rgba(255,255,255,0.65)",
-                  lineHeight: 1.7,
-                  fontSize: 16,
-                }}
-              >
+              <p className="footer-cta-text">
                 Ongoing IT management, a technology problem, a major project, or
                 a new office start with InfoManage.
               </p>
@@ -82,13 +66,11 @@ export default function Footer() {
             <div style={{ flexShrink: 0 }}>
               <Link
                 to="/contact"
-                className="cta-btn"
+                className="cta-btn footer-cta-btn"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 8,
-                  padding: "14px 32px",
-                  fontSize: 15,
                 }}
               >
                 Contact InfoManage
@@ -102,8 +84,8 @@ export default function Footer() {
             <div className="footer-brand">
               <div style={{ marginBottom: 16, lineHeight: 1 }}>
                 <div
+                  className="footer-brand-title"
                   style={{
-                    fontSize: 24,
                     fontWeight: 800,
                     color: "#fff",
                     fontFamily: '"Nunito", sans-serif',
