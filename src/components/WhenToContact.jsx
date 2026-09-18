@@ -71,14 +71,11 @@ export default function WhenToContact() {
           </h2>
         </div>
 
-        <div
-          style={{ display: "flex", flexWrap: "wrap", gap: 40, alignItems: "stretch" }}
-        >
+        <div className="wtc-row" style={{ alignItems: "stretch" }}>
           <div
+            className="wtc-grid"
             style={{
-              flex: "2 1 460px",
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
               gap: "28px 24px",
             }}
             data-aos="fade-up"
@@ -122,9 +119,8 @@ export default function WhenToContact() {
           </div>
 
           <div
+            className="wtc-cta"
             style={{
-              flex: "1 1 220px",
-              maxWidth: 280,
               background: "var(--light-bg)",
               borderRadius: 14,
               padding: "24px 20px",

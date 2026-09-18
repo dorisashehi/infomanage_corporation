@@ -42,14 +42,9 @@ export default function Hero() {
               ONE TECHNOLOGY PARTNER
             </span>
           </div>
-          <h2
-            style={{
-              fontSize: "clamp(24px, 3.2vw, 44px)",
-              marginBottom: 24,
-            }}
-          >
-            You Manage Your Business. We Manage
-            <br />
+          <h2 style={{ marginBottom: 24 }}>
+            You Manage Your Business. We Manage{" "}
+            <br className="hero-linebreak" />
             Your Technology.
             <sup style={{ fontSize: "0.4em" }}>™</sup>
           </h2>
