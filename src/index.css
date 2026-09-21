@@ -4092,6 +4092,213 @@ a:hover {
     rgba(26, 108, 181, 0.5) 100%
   );
 }
+@media (max-width: 991px) {
+  .cyber-hero {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+}
+@media (max-width: 767px) {
+  .cyber-hero {
+    min-height: 640px;
+  }
+}
+@media (max-width: 480px) {
+  .cyber-hero {
+    min-height: 560px;
+  }
+}
+
+.cyber-eyebrow {
+  font-size: 12px;
+}
+.cyber-h2 {
+  font-size: 32px;
+}
+.cyber-lead {
+  font-size: 15px;
+}
+.cyber-row {
+  gap: 32px;
+}
+.cyber-exposure-section {
+  padding: 48px 0;
+  background: #fff;
+}
+.cyber-collage {
+  max-width: 620px;
+  height: 480px;
+}
+.cyber-exposure-grid {
+  grid-template-columns: 1fr 1fr;
+}
+.cyber-practice-section {
+  padding: 48px 0 76px;
+  background: #0d1e2e;
+}
+.cyber-approach-section {
+  padding: 48px 0;
+}
+.cyber-timeline {
+  padding-left: 68px;
+}
+.cyber-timeline-line {
+  left: 23px;
+}
+.cyber-timeline-num {
+  left: -68px;
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+.cyber-timeline-title {
+  font-size: 16.5px;
+}
+.cyber-badge-circle {
+  transition: transform 0.3s;
+}
+.cyber-selfcheck-section {
+  padding: 48px 0;
+}
+.cyber-stat-banner {
+  gap: 18px;
+  padding: 18px 22px;
+}
+.cyber-stat-number {
+  font-size: 40px;
+}
+.cyber-stat-text {
+  font-size: 14.5px;
+}
+.cyber-checklist-grid {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+@media (max-width: 991px) {
+  .cyber-h2 {
+    font-size: 28px;
+  }
+  .cyber-collage {
+    height: 400px;
+  }
+}
+@media (max-width: 767px) {
+  .cyber-h2 {
+    font-size: 25px;
+  }
+  .cyber-lead {
+    font-size: 14px;
+  }
+  .cyber-row {
+    gap: 24px;
+  }
+  .cyber-exposure-section {
+    padding: 36px 0;
+  }
+  .cyber-collage {
+    height: 340px;
+  }
+  .cyber-practice-section {
+    padding: 36px 0 56px;
+  }
+  .cyber-approach-section {
+    padding: 36px 0;
+  }
+  .cyber-badge-circle {
+    transform: scale(0.85);
+  }
+  .cyber-timeline {
+    padding-left: 56px;
+  }
+  .cyber-timeline-line {
+    left: 19px;
+  }
+  .cyber-timeline-num {
+    left: -56px;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+  }
+  .cyber-timeline-title {
+    font-size: 15.5px;
+  }
+  .cyber-selfcheck-section {
+    padding: 36px 0;
+  }
+}
+@media (max-width: 480px) {
+  .cyber-eyebrow {
+    font-size: 11px;
+  }
+  .cyber-h2 {
+    font-size: 22px;
+  }
+  .cyber-collage {
+    height: 280px;
+  }
+  .cyber-exposure-grid {
+    grid-template-columns: 1fr;
+  }
+  .cyber-badge-circle {
+    transform: scale(0.7);
+  }
+  .cyber-timeline {
+    padding-left: 48px;
+  }
+  .cyber-timeline-line {
+    left: 16px;
+  }
+  .cyber-timeline-num {
+    left: -48px;
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+  .cyber-timeline-title {
+    font-size: 15px;
+  }
+  .cyber-stat-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+  }
+  .cyber-stat-number {
+    font-size: 32px;
+  }
+  .cyber-stat-text {
+    font-size: 13px;
+  }
+  .cyber-checklist-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 360px) {
+  .cyber-h2 {
+    font-size: 20px;
+  }
+  .cyber-collage {
+    height: 240px;
+  }
+  .cyber-badge-circle {
+    transform: scale(0.6);
+  }
+  .cyber-timeline {
+    padding-left: 42px;
+  }
+  .cyber-timeline-line {
+    left: 14px;
+  }
+  .cyber-timeline-num {
+    left: -42px;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .cyber-timeline-title {
+    font-size: 14.5px;
+  }
+}
 
 .voip-hero {
   min-height: 100vh;

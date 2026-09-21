@@ -116,9 +116,9 @@ const checklistItems = [
 function SectionHeading({ eyebrow }) {
   return (
     <span
+      className="cyber-eyebrow"
       style={{
         display: "block",
-        fontSize: 12,
         fontWeight: 700,
         textTransform: "uppercase",
         letterSpacing: 2,
@@ -175,23 +175,22 @@ export default function CybersecurityPage() {
         </section>
 
         {/* ── Common Points of Exposure — About-style layout ────── */}
-        <section style={{ padding: "48px 0", background: "#fff" }}>
+        <section className="cyber-exposure-section">
           <div className="container">
             <div
+              className="cyber-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 32,
                 alignItems: "center",
               }}
             >
               {/* Left: image collage */}
               <div style={{ flex: "1 1 460px" }} data-aos="fade-right">
                 <div
+                  className="cyber-collage"
                   style={{
                     position: "relative",
-                    maxWidth: 620,
-                    height: 480,
                     margin: "0 auto",
                   }}
                 >
@@ -272,8 +271,8 @@ export default function CybersecurityPage() {
               >
                 <SectionHeading eyebrow="The Real Risk" />
                 <h2
+                  className="cyber-h2"
                   style={{
-                    fontSize: 30,
                     fontWeight: 700,
                     color: "var(--heading-color)",
                     lineHeight: 1.3,
@@ -283,11 +282,11 @@ export default function CybersecurityPage() {
                   Common Points of Exposure
                 </h2>
                 <p
+                  className="cyber-lead"
                   style={{
                     color: "#555",
                     lineHeight: 1.8,
                     marginBottom: 24,
-                    fontSize: 15,
                   }}
                 >
                   Where the actual risk tends to sit inside a growing business.
@@ -296,9 +295,9 @@ export default function CybersecurityPage() {
                 </p>
 
                 <div
+                  className="cyber-exposure-grid"
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
                     columnGap: 20,
                     rowGap: 4,
                   }}
@@ -362,21 +361,21 @@ export default function CybersecurityPage() {
         </section>
 
         {/* ── How These Gaps Show Up in Practice ────────────────── */}
-        <section style={{ padding: "48px 0 76px", background: "#0d1e2e" }}>
+        <section className="cyber-practice-section">
           <div className="container">
             <div
+              className="cyber-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 32,
                 alignItems: "center",
               }}
             >
               <div style={{ flex: "1 1 460px" }} data-aos="fade-right">
                 <SectionHeading eyebrow="In Practice" />
                 <h2
+                  className="cyber-h2"
                   style={{
-                    fontSize: 32,
                     fontWeight: 700,
                     color: "#fff",
                     marginBottom: 10,
@@ -385,9 +384,9 @@ export default function CybersecurityPage() {
                   How These Gaps Show Up in Practice
                 </h2>
                 <p
+                  className="cyber-lead"
                   style={{
                     color: "rgba(255,255,255,0.65)",
-                    fontSize: 15,
                     marginBottom: 24,
                   }}
                 >
@@ -646,7 +645,7 @@ export default function CybersecurityPage() {
         </section>
 
         {/* ── The Way We Defend Your Systems — five layers ──────── */}
-        <section className="howwework-section" style={{ padding: "48px 0" }}>
+        <section className="howwework-section cyber-approach-section">
           <div className="container">
             <div
               style={{
@@ -658,8 +657,8 @@ export default function CybersecurityPage() {
             >
               <SectionHeading eyebrow="Our Approach" />
               <h2
+                className="cyber-h2"
                 style={{
-                  fontSize: 32,
                   fontWeight: 700,
                   color: "var(--heading-color)",
                   marginBottom: 12,
@@ -667,34 +666,34 @@ export default function CybersecurityPage() {
               >
                 The Way We Defend Your Systems
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="cyber-lead" style={{ color: "#666" }}>
                 No single safeguard covers everything. Each layer is built to
                 catch what the one before it might miss.
               </p>
             </div>
 
             <div
+              className="cyber-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap-reverse",
-                gap: 32,
                 alignItems: "center",
               }}
             >
               {/* Numbered timeline */}
               <div
+                className="cyber-timeline"
                 style={{
                   flex: "1 1 460px",
                   position: "relative",
-                  paddingLeft: 68,
                 }}
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
                 <div
+                  className="cyber-timeline-line"
                   style={{
                     position: "absolute",
-                    left: 23,
                     top: 26,
                     bottom: 26,
                     width: 2,
@@ -714,12 +713,10 @@ export default function CybersecurityPage() {
                       }}
                     >
                       <div
+                        className="cyber-timeline-num"
                         style={{
                           position: "absolute",
-                          left: -68,
                           top: 0,
-                          width: 48,
-                          height: 48,
                           borderRadius: "50%",
                           background: color,
                           color: "#fff",
@@ -727,16 +724,15 @@ export default function CybersecurityPage() {
                           alignItems: "center",
                           justifyContent: "center",
                           fontWeight: 700,
-                          fontSize: 18,
                           flexShrink: 0,
                         }}
                       >
                         {item.num.replace(/^0/, "")}
                       </div>
                       <h4
+                        className="cyber-timeline-title"
                         style={{
                           margin: "6px 0 8px",
-                          fontSize: 16.5,
                           fontWeight: 700,
                           color: "var(--heading-color)",
                         }}
@@ -774,6 +770,7 @@ export default function CybersecurityPage() {
                 data-aos-delay="200"
               >
                 <div
+                  className="cyber-badge-circle"
                   style={{
                     position: "relative",
                     width: 260,
@@ -961,8 +958,8 @@ export default function CybersecurityPage() {
 
         {/* ── Where Do You Actually Stand — self-check ──────────── */}
         <section
-          className="mit-section"
-          style={{ padding: "48px 0", background: "#fff" }}
+          className="mit-section cyber-selfcheck-section"
+          style={{ background: "#fff" }}
         >
           <div className="container">
             <div
@@ -975,8 +972,8 @@ export default function CybersecurityPage() {
             >
               <SectionHeading eyebrow="Quick Self-Check" />
               <h2
+                className="cyber-h2"
                 style={{
-                  fontSize: 32,
                   fontWeight: 700,
                   color: "var(--heading-color)",
                   marginBottom: 10,
@@ -984,19 +981,18 @@ export default function CybersecurityPage() {
               >
                 Where Do You Actually Stand?
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="cyber-lead" style={{ color: "#666" }}>
                 A short version of what we walk through with every new client.
               </p>
             </div>
 
             <div
+              className="cyber-stat-banner"
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: 18,
                 background: "var(--accent)",
                 borderRadius: 14,
-                padding: "18px 22px",
                 maxWidth: 800,
                 margin: "0 auto 22px",
               }}
@@ -1004,8 +1000,8 @@ export default function CybersecurityPage() {
               data-aos-delay="100"
             >
               <div
+                className="cyber-stat-number"
                 style={{
-                  fontSize: 40,
                   fontWeight: 900,
                   color: "#fff",
                   fontFamily: '"Nunito", sans-serif',
@@ -1015,9 +1011,9 @@ export default function CybersecurityPage() {
                 60%
               </div>
               <p
+                className="cyber-stat-text"
                 style={{
                   color: "rgba(255,255,255,0.92)",
-                  fontSize: 14.5,
                   lineHeight: 1.6,
                   margin: 0,
                 }}
@@ -1029,10 +1025,9 @@ export default function CybersecurityPage() {
             </div>
 
             <div
+              className="cyber-checklist-grid"
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                columnGap: 20,
                 maxWidth: 800,
                 margin: "0 auto",
               }}
