@@ -3398,6 +3398,258 @@ a:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
+@media (max-width: 991px) {
+  .mit-hero {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+}
+@media (max-width: 767px) {
+  .mit-hero {
+    min-height: 640px;
+  }
+}
+@media (max-width: 480px) {
+  .mit-hero {
+    min-height: 560px;
+  }
+}
+
+.mit-eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.mit-h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+.mit-h2-sm {
+  font-size: 28px;
+}
+.mit-lead {
+  font-size: 15px;
+}
+.mit-body-text {
+  font-size: 14.5px;
+}
+.mit-row {
+  gap: 48px;
+}
+.mit-overview-section {
+  padding: 48px 0;
+  background: #fff;
+}
+.mit-coverage-list {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+}
+.mit-coverage-list li {
+  font-size: 14px;
+}
+.mit-fme-section {
+  padding: 48px 0;
+}
+.mit-fme-row {
+  gap: 8px;
+  padding: 26px 30px;
+}
+.mit-fme-card {
+  flex: 1 1 auto;
+  min-width: 200px;
+}
+.mit-fme-icon {
+  width: 60px;
+  height: 60px;
+}
+.mit-fme-icon i {
+  font-size: 22px;
+}
+.mit-fme-title {
+  font-size: 14px;
+}
+.mit-fme-desc {
+  font-size: 13px;
+}
+.mit-fme-connector {
+  display: flex;
+}
+.mit-results-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.mit-results-icon {
+  width: 56px;
+  height: 56px;
+}
+.mit-results-icon i {
+  font-size: 26px;
+}
+.mit-results-title {
+  font-size: 14.5px;
+}
+.mit-results-desc {
+  font-size: 13px;
+}
+.mit-results-image {
+  height: 400px;
+}
+.mit-isyou-section {
+  padding: 48px 0;
+  background: #0d1e2e;
+}
+.mit-cta-section {
+  padding: 48px 0;
+}
+.mit-cta-banner {
+  padding: 36px 40px;
+  gap: 24px;
+}
+.mit-cta-heading {
+  font-size: 24px;
+  font-weight: 700;
+}
+.mit-cta-text {
+  font-size: 15px;
+}
+.mit-cta-btn {
+  padding: 12px 28px;
+  font-size: 15px;
+}
+.mit-cta-image {
+  width: 220px;
+  height: 160px;
+}
+@media (max-width: 991px) {
+  .mit-h2 {
+    font-size: 28px;
+  }
+  .mit-h2-sm {
+    font-size: 25px;
+  }
+  .mit-fme-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .mit-fme-card {
+    flex-basis: 100%;
+    min-width: 0;
+  }
+  .mit-fme-connector {
+    display: none;
+  }
+  .mit-results-image {
+    height: 340px;
+  }
+}
+@media (max-width: 767px) {
+  .mit-h2 {
+    font-size: 25px;
+  }
+  .mit-h2-sm {
+    font-size: 22px;
+  }
+  .mit-lead {
+    font-size: 14px;
+  }
+  .mit-body-text {
+    font-size: 13.5px;
+  }
+  .mit-row {
+    gap: 32px;
+  }
+  .mit-overview-section {
+    padding: 36px 0;
+  }
+  .mit-fme-section {
+    padding: 36px 0;
+  }
+  .mit-fme-row {
+    padding: 22px 20px;
+  }
+  .mit-results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mit-results-image {
+    height: 280px;
+  }
+  .mit-isyou-section {
+    padding: 36px 0;
+  }
+  .mit-cta-section {
+    padding: 36px 0;
+  }
+  .mit-cta-banner {
+    padding: 28px 24px;
+    gap: 20px;
+  }
+  .mit-cta-heading {
+    font-size: 21px;
+  }
+  .mit-cta-image {
+    width: 180px;
+    height: 130px;
+  }
+}
+@media (max-width: 480px) {
+  .mit-eyebrow {
+    font-size: 11px;
+  }
+  .mit-h2 {
+    font-size: 22px;
+  }
+  .mit-h2-sm {
+    font-size: 20px;
+  }
+  .mit-coverage-list {
+    grid-template-columns: 1fr;
+  }
+  .mit-coverage-list li {
+    font-size: 13px;
+  }
+  .mit-fme-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .mit-fme-icon i {
+    font-size: 18px;
+  }
+  .mit-results-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mit-results-icon {
+    width: 46px;
+    height: 46px;
+  }
+  .mit-results-icon i {
+    font-size: 20px;
+  }
+  .mit-results-image {
+    height: 220px;
+  }
+  .mit-cta-heading {
+    font-size: 19px;
+  }
+  .mit-cta-text {
+    font-size: 13.5px;
+  }
+  .mit-cta-btn {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+  .mit-cta-image {
+    width: 100%;
+    height: 160px;
+  }
+}
+@media (max-width: 360px) {
+  .mit-h2 {
+    font-size: 20px;
+  }
+}
 
 .mit-section {
   padding: 80px 0;

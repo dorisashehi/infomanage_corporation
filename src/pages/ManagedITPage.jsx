@@ -164,38 +164,22 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── What We Handle — light section, 3-column ──────────── */}
-        <section
-          id="overview"
-          style={{ padding: "48px 0", background: "#fff" }}
-        >
+        <section id="overview" className="mit-overview-section">
           <div className="container">
             <div
+              className="mit-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 48,
                 alignItems: "flex-start",
               }}
             >
               {/* Text */}
               <div style={{ flex: "1 1 280px" }} data-aos="fade-up">
-                <span
-                  style={{
-                    display: "block",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: 2,
-                    color: "var(--accent)",
-                    marginBottom: 10,
-                  }}
-                >
-                  What We Handle
-                </span>
+                <span className="mit-eyebrow">What We Handle</span>
                 <h2
+                  className="mit-h2 mit-h2-sm"
                   style={{
-                    fontSize: 28,
-                    fontWeight: 700,
                     color: "var(--heading-color)",
                     lineHeight: 1.3,
                     marginBottom: 12,
@@ -212,10 +196,10 @@ export default function ManagedITPage() {
                   }}
                 />
                 <p
+                  className="mit-body-text"
                   style={{
                     color: "#555",
                     lineHeight: 1.8,
-                    fontSize: 14.5,
                     marginBottom: 14,
                   }}
                 >
@@ -223,10 +207,10 @@ export default function ManagedITPage() {
                   managed end to end.
                 </p>
                 <p
+                  className="mit-body-text"
                   style={{
                     color: "#555",
                     lineHeight: 1.8,
-                    fontSize: 14.5,
                     marginBottom: 20,
                   }}
                 >
@@ -275,13 +259,12 @@ export default function ManagedITPage() {
                 data-aos-delay="100"
               >
                 <ul
+                  className="mit-coverage-list"
                   style={{
                     listStyle: "none",
                     padding: 0,
                     margin: 0,
                     display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    columnGap: 24,
                   }}
                 >
                   {coverageItems.map((item, i) => (
@@ -294,7 +277,6 @@ export default function ManagedITPage() {
                         padding: "9px 0",
                         borderBottom: "1px solid #eef0f4",
                         color: "#444",
-                        fontSize: 14,
                       }}
                     >
                       <i
@@ -315,7 +297,7 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── Fix / Maintain / Enhance — HowWeWork style cards ─── */}
-        <section className="howwework-section" style={{ padding: "48px 0" }}>
+        <section className="howwework-section mit-fme-section">
           <div className="container">
             <div
               style={{
@@ -325,44 +307,23 @@ export default function ManagedITPage() {
               }}
               data-aos="fade-up"
             >
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 2,
-                  color: "var(--accent)",
-                  marginBottom: 10,
-                }}
-              >
-                How We Work
-              </span>
-              <h2
-                style={{
-                  fontSize: 32,
-                  fontWeight: 700,
-                  color: "var(--heading-color)",
-                  marginBottom: 10,
-                }}
-              >
+              <span className="mit-eyebrow">How We Work</span>
+              <h2 className="mit-h2" style={{ color: "var(--heading-color)" }}>
                 Fix It. Maintain It. Make It Better.
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="mit-lead" style={{ color: "#666" }}>
                 A simple operating rhythm that keeps systems running and gets
                 better over time.
               </p>
             </div>
 
             <div
+              className="mit-fme-row"
               style={{
                 display: "flex",
-                flexWrap: "nowrap",
                 alignItems: "center",
-                gap: 8,
                 border: "1px solid #e5eaf1",
                 borderRadius: 16,
-                padding: "26px 30px",
                 boxShadow: "0 8px 28px rgba(13, 30, 46, 0.06)",
               }}
               data-aos="fade-up"
@@ -377,20 +338,18 @@ export default function ManagedITPage() {
                 return (
                   <Fragment key={i}>
                     <div
+                      className="mit-fme-card"
                       style={{
                         display: "flex",
                         alignItems: "center",
                         gap: 14,
-                        flex: "1 1 auto",
-                        minWidth: 200,
                       }}
                       data-aos="fade-up"
                       data-aos-delay={150 + i * 100}
                     >
                       <div
+                        className="mit-fme-icon"
                         style={{
-                          width: 60,
-                          height: 60,
                           borderRadius: "50%",
                           border: `2px solid ${color}`,
                           display: "flex",
@@ -399,17 +358,14 @@ export default function ManagedITPage() {
                           flexShrink: 0,
                         }}
                       >
-                        <i
-                          className={`bi ${card.icon}`}
-                          style={{ color, fontSize: 22 }}
-                        />
+                        <i className={`bi ${card.icon}`} style={{ color }} />
                       </div>
                       <div>
                         <h6
+                          className="mit-fme-title"
                           style={{
                             color,
                             fontWeight: 900,
-                            fontSize: 14,
                             textTransform: "uppercase",
                             letterSpacing: 0.5,
                             margin: "0 0 4px",
@@ -418,8 +374,8 @@ export default function ManagedITPage() {
                           {card.title}.
                         </h6>
                         <p
+                          className="mit-fme-desc"
                           style={{
-                            fontSize: 13,
                             color: "rgb(85, 85, 85)",
                             margin: 0,
                             lineHeight: 1.4,
@@ -432,8 +388,8 @@ export default function ManagedITPage() {
 
                     {i < frameworkCards.length - 1 && (
                       <div
+                        className="mit-fme-connector"
                         style={{
-                          display: "flex",
                           alignItems: "center",
                           flex: "0 1 40px",
                           minWidth: 20,
@@ -473,30 +429,11 @@ export default function ManagedITPage() {
               }}
               data-aos="fade-up"
             >
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 2,
-                  color: "var(--accent)",
-                  marginBottom: 10,
-                }}
-              >
-                Behind the Scenes
-              </span>
-              <h2
-                style={{
-                  fontSize: 32,
-                  fontWeight: 700,
-                  color: "var(--heading-color)",
-                  marginBottom: 10,
-                }}
-              >
+              <span className="mit-eyebrow">Behind the Scenes</span>
+              <h2 className="mit-h2" style={{ color: "var(--heading-color)" }}>
                 How We Keep Systems Running
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="mit-lead" style={{ color: "#666" }}>
                 A closer look at the Maintain cycle: the proactive work that
                 happens before you ever notice a problem.
               </p>
@@ -685,31 +622,18 @@ export default function ManagedITPage() {
         >
           <div className="container">
             <div
+              className="mit-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 32,
                 alignItems: "center",
               }}
             >
               <div style={{ flex: "1 1 420px" }} data-aos="fade-up">
-                <span
-                  style={{
-                    display: "block",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: 2,
-                    color: "var(--accent)",
-                    marginBottom: 10,
-                  }}
-                >
-                  What You Get
-                </span>
+                <span className="mit-eyebrow">What You Get</span>
                 <h2
+                  className="mit-h2"
                   style={{
-                    fontSize: 32,
-                    fontWeight: 700,
                     color: "var(--heading-color)",
                     lineHeight: 1.25,
                     marginBottom: 12,
@@ -718,10 +642,10 @@ export default function ManagedITPage() {
                   The Difference You&apos;ll Actually Notice
                 </h2>
                 <p
+                  className="mit-body-text"
                   style={{
                     color: "#555",
                     lineHeight: 1.8,
-                    fontSize: 14.5,
                     marginBottom: 24,
                     maxWidth: 460,
                   }}
@@ -739,9 +663,9 @@ export default function ManagedITPage() {
                 />
 
                 <div
+                  className="mit-results-grid"
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
                     gap: 16,
                   }}
                 >
@@ -752,9 +676,8 @@ export default function ManagedITPage() {
                       data-aos-delay={100 + i * 80}
                     >
                       <div
+                        className="mit-results-icon"
                         style={{
-                          width: 56,
-                          height: 56,
                           borderRadius: "50%",
                           background: "rgba(26, 108, 181, 0.08)",
                           display: "flex",
@@ -765,12 +688,12 @@ export default function ManagedITPage() {
                       >
                         <i
                           className={`bi ${item.icon}`}
-                          style={{ color: "var(--accent)", fontSize: 26 }}
+                          style={{ color: "var(--accent)" }}
                         />
                       </div>
                       <h5
+                        className="mit-results-title"
                         style={{
-                          fontSize: 14.5,
                           fontWeight: 700,
                           color: "var(--heading-color)",
                           marginBottom: 8,
@@ -779,8 +702,8 @@ export default function ManagedITPage() {
                         {item.title}
                       </h5>
                       <p
+                        className="mit-results-desc"
                         style={{
-                          fontSize: 13,
                           color: "#666",
                           lineHeight: 1.6,
                           margin: 0,
@@ -800,11 +723,11 @@ export default function ManagedITPage() {
               >
                 <div style={{ position: "relative" }}>
                   <img
+                    className="mit-results-image"
                     src="/images/managed-it/operations.jpg"
                     alt="InfoManage technician managing IT operations"
                     style={{
                       width: "100%",
-                      height: 400,
                       objectFit: "cover",
                       borderRadius: 16,
                       display: "block",
@@ -849,35 +772,22 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── Is This You? — dark section, Why It's Different format ── */}
-        <section style={{ padding: "48px 0", background: "#0d1e2e" }}>
+        <section className="mit-isyou-section">
           <div className="container">
             <div
+              className="mit-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 48,
                 alignItems: "flex-start",
               }}
             >
               {/* Left: header + callout */}
               <div style={{ flex: "1 1 320px" }} data-aos="fade-right">
-                <span
-                  style={{
-                    display: "block",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: 2,
-                    color: "var(--accent)",
-                    marginBottom: 10,
-                  }}
-                >
-                  Is This You?
-                </span>
+                <span className="mit-eyebrow">Is This You?</span>
                 <h2
+                  className="mit-h2 mit-h2-sm"
                   style={{
-                    fontSize: 30,
-                    fontWeight: 700,
                     color: "#fff",
                     lineHeight: 1.3,
                     marginBottom: 14,
@@ -886,10 +796,10 @@ export default function ManagedITPage() {
                   Built for Businesses Like Yours
                 </h2>
                 <p
+                  className="mit-body-text"
                   style={{
                     color: "rgba(255,255,255,0.65)",
                     lineHeight: 1.8,
-                    fontSize: 14.5,
                     marginBottom: 20,
                   }}
                 >
@@ -973,27 +883,25 @@ export default function ManagedITPage() {
         </section>
 
         {/* ── Final CTA — blue banner ────────────────────────────── */}
-        <section style={{ padding: "48px 0" }}>
+        <section className="mit-cta-section">
           <div className="container">
             <div
+              className="mit-cta-banner"
               style={{
                 background: "var(--accent)",
                 borderRadius: 16,
-                padding: "36px 40px",
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "center",
                 justifyContent: "space-between",
-                gap: 24,
                 overflow: "hidden",
               }}
               data-aos="fade-up"
             >
               <div style={{ flex: "1 1 320px" }}>
                 <h2
+                  className="mit-cta-heading"
                   style={{
-                    fontSize: 24,
-                    fontWeight: 700,
                     color: "#fff",
                     marginBottom: 8,
                   }}
@@ -1001,9 +909,9 @@ export default function ManagedITPage() {
                   Ready to stop reacting and start preventing?
                 </h2>
                 <p
+                  className="mit-cta-text"
                   style={{
                     color: "rgba(255,255,255,0.85)",
-                    fontSize: 15,
                     marginBottom: 20,
                   }}
                 >
@@ -1012,16 +920,15 @@ export default function ManagedITPage() {
                 </p>
                 <Link
                   to="/contact"
+                  className="mit-cta-btn"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 8,
                     background: "#fff",
                     color: "var(--accent)",
-                    padding: "12px 28px",
                     borderRadius: 50,
                     fontWeight: 600,
-                    fontSize: 15,
                   }}
                 >
                   Contact Us
@@ -1029,11 +936,10 @@ export default function ManagedITPage() {
                 </Link>
               </div>
               <img
+                className="mit-cta-image"
                 src="/images/about/support-team.jpg"
                 alt="InfoManage team ready to help"
                 style={{
-                  width: 220,
-                  height: 160,
                   objectFit: "cover",
                   borderRadius: 12,
                   display: "block",
