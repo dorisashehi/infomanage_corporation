@@ -108,9 +108,9 @@ const firewallImplementation = [
 function SectionHeading({ eyebrow }) {
   return (
     <span
+      className="pm-eyebrow"
       style={{
         display: "block",
-        fontSize: 12,
         fontWeight: 700,
         textTransform: "uppercase",
         letterSpacing: 2,
@@ -168,7 +168,7 @@ export default function ProjectManagementPage() {
         </section>
 
         {/* ── Capability icon row ────────────────────────────────── */}
-        <section style={{ padding: "48px 0", background: "#fff" }}>
+        <section className="pm-section-light">
           <div className="container">
             <div
               style={{
@@ -220,25 +220,21 @@ export default function ProjectManagementPage() {
         </section>
 
         {/* ── Project Management for Buildouts ───────────────────── */}
-        <section
-          id="project-management"
-          style={{ padding: "48px 0", background: "#fff" }}
-        >
+        <section id="project-management" className="pm-section-light">
           <div className="container">
             <div
+              className="pm-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 32,
                 alignItems: "center",
               }}
             >
               <div style={{ flex: "1 1 420px" }} data-aos="fade-up">
                 <SectionHeading eyebrow="Project Management" />
                 <h2
+                  className="pm-h2"
                   style={{
-                    fontSize: 32,
-                    fontWeight: 700,
                     color: "var(--heading-color)",
                     lineHeight: 1.25,
                     marginBottom: 12,
@@ -247,10 +243,10 @@ export default function ProjectManagementPage() {
                   Project Management for Buildouts
                 </h2>
                 <p
+                  className="pm-body-text"
                   style={{
                     color: "#555",
                     lineHeight: 1.8,
-                    fontSize: 14.5,
                     marginBottom: 24,
                     maxWidth: 460,
                   }}
@@ -270,9 +266,9 @@ export default function ProjectManagementPage() {
                 />
 
                 <div
+                  className="pm-features-grid"
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
                     gap: 16,
                   }}
                 >
@@ -283,9 +279,8 @@ export default function ProjectManagementPage() {
                       data-aos-delay={100 + i * 80}
                     >
                       <div
+                        className="pm-feature-icon"
                         style={{
-                          width: 56,
-                          height: 56,
                           borderRadius: "50%",
                           background: "rgba(26, 108, 181, 0.08)",
                           display: "flex",
@@ -296,12 +291,12 @@ export default function ProjectManagementPage() {
                       >
                         <i
                           className={`bi ${f.icon}`}
-                          style={{ color: "var(--accent)", fontSize: 26 }}
+                          style={{ color: "var(--accent)" }}
                         />
                       </div>
                       <h5
+                        className="pm-feature-title"
                         style={{
-                          fontSize: 14.5,
                           fontWeight: 700,
                           color: "var(--heading-color)",
                           marginBottom: 8,
@@ -310,8 +305,8 @@ export default function ProjectManagementPage() {
                         {f.title}
                       </h5>
                       <p
+                        className="pm-feature-desc"
                         style={{
-                          fontSize: 13,
                           color: "#666",
                           lineHeight: 1.6,
                           margin: 0,
@@ -331,11 +326,11 @@ export default function ProjectManagementPage() {
               >
                 <div style={{ position: "relative" }}>
                   <img
+                    className="pm-image-tall"
                     src="/images/project-management/conference-room.jpg"
                     alt="Modern glass-walled conference room ready for a technology buildout"
                     style={{
                       width: "100%",
-                      height: 400,
                       objectFit: "cover",
                       borderRadius: 16,
                       display: "block",
@@ -380,24 +375,20 @@ export default function ProjectManagementPage() {
         </section>
 
         {/* ── Key Coordination Activities ─────────────────────────── */}
-        <section
-          id="key-coordination"
-          style={{ padding: "48px 0", background: "var(--light-bg)" }}
-        >
+        <section id="key-coordination" className="pm-section-tint">
           <div className="container">
             <div
+              className="pm-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 32,
                 alignItems: "center",
               }}
             >
               <div style={{ flex: "1 1 460px" }} data-aos="fade-up">
                 <h2
+                  className="pm-h2 pm-h2-sm"
                   style={{
-                    fontSize: 30,
-                    fontWeight: 700,
                     color: "var(--heading-color)",
                     marginBottom: 24,
                   }}
@@ -455,11 +446,11 @@ export default function ProjectManagementPage() {
               >
                 <div style={{ position: "relative" }}>
                   <img
+                    className="pm-image-tall"
                     src="/images/project-management/open-workspace.jpg"
                     alt="Modern open office workspace with connected workstations"
                     style={{
                       width: "100%",
-                      height: 420,
                       objectFit: "cover",
                       borderRadius: 16,
                       display: "block",
@@ -544,16 +535,13 @@ export default function ProjectManagementPage() {
         </section>
 
         {/* ── Premise Cabling and Related Activities ─────────────── */}
-        <section
-          id="premise-cabling"
-          style={{ padding: "48px 0", background: "#0d1e2e" }}
-        >
+        <section id="premise-cabling" className="pm-section-dark">
           <div className="container">
             <div
+              className="pm-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 32,
                 alignItems: "stretch",
               }}
             >
@@ -622,9 +610,8 @@ export default function ProjectManagementPage() {
               <div style={{ flex: "1 1 460px" }} data-aos="fade-up">
                 <SectionHeading eyebrow="Cabling & Connectivity" />
                 <h2
+                  className="pm-h2 pm-h2-sm"
                   style={{
-                    fontSize: 28,
-                    fontWeight: 700,
                     color: "#fff",
                     lineHeight: 1.3,
                     marginBottom: 12,
@@ -633,10 +620,10 @@ export default function ProjectManagementPage() {
                   Cabling and Related Activities
                 </h2>
                 <p
+                  className="pm-body-text"
                   style={{
                     color: "rgba(255,255,255,0.7)",
                     lineHeight: 1.8,
-                    fontSize: 14.5,
                     marginBottom: 24,
                   }}
                 >
@@ -645,9 +632,9 @@ export default function ProjectManagementPage() {
                 </p>
 
                 <div
+                  className="pm-cabling-grid"
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
                     gap: 16,
                   }}
                 >
@@ -844,10 +831,7 @@ export default function ProjectManagementPage() {
         </section>
 
         {/* ── Equipment Disconnect and Reconnect ──────────────────── */}
-        <section
-          id="equipment-relocation"
-          style={{ padding: "48px 0", background: "var(--light-bg)" }}
-        >
+        <section id="equipment-relocation" className="pm-section-tint">
           <div className="container">
             <div
               style={{
@@ -859,16 +843,15 @@ export default function ProjectManagementPage() {
             >
               <SectionHeading eyebrow="Equipment & Relocation" />
               <h2
+                className="pm-h2"
                 style={{
-                  fontSize: 32,
-                  fontWeight: 700,
                   color: "var(--heading-color)",
                   marginBottom: 10,
                 }}
               >
                 Equipment Disconnect and Reconnect
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="pm-lead" style={{ color: "#666" }}>
                 We manage the safe and organized disconnect and reconnect of
                 your IT equipment to minimize downtime, and keep your team
                 productive.
@@ -876,15 +859,14 @@ export default function ProjectManagementPage() {
             </div>
 
             <div
+              className="pm-equip-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "flex-start",
-                gap: 8,
                 background: "#fff",
                 border: "1px solid #e5eaf1",
                 borderRadius: 16,
-                padding: "26px 30px",
                 boxShadow: "0 8px 28px rgba(13, 30, 46, 0.06)",
               }}
               data-aos="fade-up"
@@ -893,7 +875,8 @@ export default function ProjectManagementPage() {
               {equipmentSteps.map((step, i) => (
                 <Fragment key={i}>
                   <div
-                    style={{ flex: "1 1 220px", minWidth: 220 }}
+                    className="pm-equip-card"
+                    style={{ flex: "1 1 220px" }}
                     data-aos="fade-up"
                     data-aos-delay={150 + i * 100}
                   >
@@ -978,8 +961,8 @@ export default function ProjectManagementPage() {
 
                   {i < equipmentSteps.length - 1 && (
                     <div
+                      className="pm-equip-connector"
                       style={{
-                        display: "flex",
                         alignItems: "center",
                         flex: "0 1 40px",
                         minWidth: 20,
@@ -1007,10 +990,7 @@ export default function ProjectManagementPage() {
         </section>
 
         {/* ── Firewall/Network Switch Replacement ─────────────────── */}
-        <section
-          id="network-security"
-          style={{ padding: "48px 0", background: "#fff" }}
-        >
+        <section id="network-security" className="pm-section-light">
           <div className="container">
             <div
               style={{
@@ -1022,43 +1002,42 @@ export default function ProjectManagementPage() {
             >
               <SectionHeading eyebrow="Network Security" />
               <h2
+                className="pm-h2"
                 style={{
-                  fontSize: 32,
-                  fontWeight: 700,
                   color: "var(--heading-color)",
                   marginBottom: 10,
                 }}
               >
                 Firewall/Network Switch Replacement
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="pm-lead" style={{ color: "#666" }}>
                 We upgrade and configure your network security and
                 infrastructure to keep your business protected and connected.
               </p>
             </div>
 
             <div
+              className="pm-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap-reverse",
-                gap: 32,
                 alignItems: "center",
               }}
             >
               {/* Numbered timeline */}
               <div
+                className="pm-fw-timeline"
                 style={{
                   flex: "1 1 460px",
                   position: "relative",
-                  paddingLeft: 68,
                 }}
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
                 <div
+                  className="pm-fw-line"
                   style={{
                     position: "absolute",
-                    left: 23,
                     top: 26,
                     bottom: 26,
                     width: 2,
@@ -1089,12 +1068,10 @@ export default function ProjectManagementPage() {
                     }}
                   >
                     <div
+                      className="pm-fw-num"
                       style={{
                         position: "absolute",
-                        left: -68,
                         top: 0,
-                        width: 48,
-                        height: 48,
                         borderRadius: "50%",
                         background: stage.color,
                         color: "#fff",
@@ -1102,16 +1079,15 @@ export default function ProjectManagementPage() {
                         alignItems: "center",
                         justifyContent: "center",
                         fontWeight: 700,
-                        fontSize: 18,
                         flexShrink: 0,
                       }}
                     >
                       {stage.step}
                     </div>
                     <h4
+                      className="pm-fw-title"
                       style={{
                         margin: "8px 0 8px",
-                        fontSize: 14,
                         fontWeight: 700,
                         color: "var(--heading-color)",
                       }}
@@ -1156,6 +1132,7 @@ export default function ProjectManagementPage() {
                 data-aos-delay="200"
               >
                 <div
+                  className="pm-fw-badge-circle"
                   style={{
                     position: "relative",
                     width: 260,

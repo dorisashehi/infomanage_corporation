@@ -5375,6 +5375,247 @@ a:hover {
     rgba(26, 108, 181, 0.48) 100%
   );
 }
+@media (max-width: 991px) {
+  .pm-hero {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+}
+@media (max-width: 767px) {
+  .pm-hero {
+    min-height: 640px;
+  }
+}
+@media (max-width: 480px) {
+  .pm-hero {
+    min-height: 560px;
+  }
+}
+
+.pm-eyebrow {
+  font-size: 12px;
+}
+.pm-h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+.pm-h2-sm {
+  font-size: 28px;
+}
+.pm-lead {
+  font-size: 15px;
+}
+.pm-body-text {
+  font-size: 14.5px;
+}
+.pm-row {
+  gap: 32px;
+}
+.pm-section-light {
+  padding: 48px 0;
+  background: #fff;
+}
+.pm-section-tint {
+  padding: 48px 0;
+  background: var(--light-bg);
+}
+.pm-section-dark {
+  padding: 48px 0;
+  background: #0d1e2e;
+}
+.pm-features-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.pm-feature-icon {
+  width: 56px;
+  height: 56px;
+}
+.pm-feature-icon i {
+  font-size: 26px;
+}
+.pm-feature-title {
+  font-size: 14.5px;
+}
+.pm-feature-desc {
+  font-size: 13px;
+}
+.pm-image-tall {
+  height: 400px;
+}
+.pm-cabling-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.pm-equip-row {
+  gap: 8px;
+  padding: 26px 30px;
+}
+.pm-equip-card {
+  min-width: 220px;
+}
+.pm-equip-connector {
+  display: flex;
+}
+.pm-fw-timeline {
+  padding-left: 68px;
+}
+.pm-fw-line {
+  left: 23px;
+}
+.pm-fw-num {
+  left: -68px;
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+.pm-fw-title {
+  font-size: 14px;
+}
+.pm-fw-badge-circle {
+  transition: transform 0.3s;
+}
+@media (max-width: 991px) {
+  .pm-h2 {
+    font-size: 28px;
+  }
+  .pm-h2-sm {
+    font-size: 25px;
+  }
+  .pm-equip-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .pm-equip-card {
+    flex-basis: 100%;
+    min-width: 0;
+  }
+  .pm-equip-connector {
+    display: none;
+  }
+  .pm-fw-badge-circle {
+    transform: scale(0.85);
+  }
+  .pm-fw-timeline {
+    padding-left: 56px;
+  }
+  .pm-fw-line {
+    left: 19px;
+  }
+  .pm-fw-num {
+    left: -56px;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+  }
+  .pm-fw-title {
+    font-size: 15.5px;
+  }
+  .pm-image-tall {
+    height: 340px;
+  }
+}
+@media (max-width: 767px) {
+  .pm-h2 {
+    font-size: 25px;
+  }
+  .pm-h2-sm {
+    font-size: 22px;
+  }
+  .pm-lead {
+    font-size: 14px;
+  }
+  .pm-body-text {
+    font-size: 13.5px;
+  }
+  .pm-row {
+    gap: 24px;
+  }
+  .pm-section-light {
+    padding: 36px 0;
+  }
+  .pm-section-tint {
+    padding: 36px 0;
+  }
+  .pm-section-dark {
+    padding: 36px 0;
+  }
+  .pm-features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pm-image-tall {
+    height: 280px;
+  }
+  .pm-cabling-grid {
+    grid-template-columns: 1fr;
+  }
+  .pm-equip-row {
+    padding: 22px 20px;
+  }
+}
+@media (max-width: 480px) {
+  .pm-eyebrow {
+    font-size: 11px;
+  }
+  .pm-h2 {
+    font-size: 22px;
+  }
+  .pm-h2-sm {
+    font-size: 20px;
+  }
+  .pm-features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pm-feature-icon {
+    width: 46px;
+    height: 46px;
+  }
+  .pm-feature-icon i {
+    font-size: 20px;
+  }
+  .pm-image-tall {
+    height: 220px;
+  }
+  .pm-fw-badge-circle {
+    transform: scale(0.7);
+  }
+  .pm-fw-timeline {
+    padding-left: 48px;
+  }
+  .pm-fw-line {
+    left: 16px;
+  }
+  .pm-fw-num {
+    left: -48px;
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+  .pm-fw-title {
+    font-size: 15px;
+  }
+}
+@media (max-width: 360px) {
+  .pm-h2 {
+    font-size: 20px;
+  }
+  .pm-fw-badge-circle {
+    transform: scale(0.6);
+  }
+  .pm-fw-timeline {
+    padding-left: 42px;
+  }
+  .pm-fw-line {
+    left: 14px;
+  }
+  .pm-fw-num {
+    left: -42px;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .pm-fw-title {
+    font-size: 14.5px;
+  }
+}
 
 /* Who This Is For — icon card grid */
 .cyber-for-orgs-grid {
