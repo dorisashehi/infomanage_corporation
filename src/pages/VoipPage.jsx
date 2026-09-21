@@ -190,10 +190,7 @@ export default function VoipPage() {
         </section>
 
         {/* ── Unified Communications — feature-card grid ────────── */}
-        <section
-          className="mit-section"
-          style={{ padding: "56px 0", background: "#fff" }}
-        >
+        <section className="mit-section voip-section-light">
           <div className="container">
             <div
               style={{
@@ -203,30 +200,11 @@ export default function VoipPage() {
               }}
               data-aos="fade-up"
             >
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 2,
-                  color: "var(--accent)",
-                  marginBottom: 10,
-                }}
-              >
-                One Platform
-              </span>
-              <h2
-                style={{
-                  fontSize: 32,
-                  fontWeight: 700,
-                  color: "var(--heading-color)",
-                  marginBottom: 10,
-                }}
-              >
+              <span className="voip-eyebrow">One Platform</span>
+              <h2 className="voip-h2" style={{ color: "var(--heading-color)" }}>
                 Every Way You Communicate, Unified
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="voip-lead" style={{ color: "#666" }}>
                 Calls, video, messaging, and conferencing, working together
                 instead of living in separate apps and separate bills.
               </p>
@@ -256,7 +234,7 @@ export default function VoipPage() {
         </section>
 
         {/* ── Benefits to Your Business — Productivity/Cost/Reliability ── */}
-        <section className="howwework-section" style={{ padding: "48px 0" }}>
+        <section className="howwework-section voip-benefits-section">
           <div className="container">
             <div
               style={{
@@ -266,30 +244,11 @@ export default function VoipPage() {
               }}
               data-aos="fade-up"
             >
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 2,
-                  color: "var(--accent)",
-                  marginBottom: 10,
-                }}
-              >
-                What You Gain
-              </span>
-              <h2
-                style={{
-                  fontSize: 32,
-                  fontWeight: 700,
-                  color: "var(--heading-color)",
-                  marginBottom: 10,
-                }}
-              >
+              <span className="voip-eyebrow">What You Gain</span>
+              <h2 className="voip-h2" style={{ color: "var(--heading-color)" }}>
                 Benefits to Your Business
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="voip-lead" style={{ color: "#666" }}>
                 What switching to cloud communications actually changes for your
                 team and your budget.
               </p>
@@ -404,35 +363,22 @@ export default function VoipPage() {
         </section>
 
         {/* ── Why Businesses Are Switching — dark section ───────── */}
-        <section style={{ padding: "48px 0", background: "#0d1e2e" }}>
+        <section className="voip-section-dark">
           <div className="container">
             <div
+              className="voip-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 48,
                 alignItems: "flex-start",
               }}
             >
               {/* Left: header + support callout */}
               <div style={{ flex: "1 1 320px" }} data-aos="fade-right">
-                <span
-                  style={{
-                    display: "block",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: 2,
-                    color: "var(--accent)",
-                    marginBottom: 10,
-                  }}
-                >
-                  Why It&apos;s Different
-                </span>
+                <span className="voip-eyebrow">Why It&apos;s Different</span>
                 <h2
+                  className="voip-h2 voip-h2-sm"
                   style={{
-                    fontSize: 30,
-                    fontWeight: 700,
                     color: "#fff",
                     lineHeight: 1.3,
                     marginBottom: 14,
@@ -441,10 +387,10 @@ export default function VoipPage() {
                   Real Support, From Real People
                 </h2>
                 <p
+                  className="voip-body-text"
                   style={{
                     color: "rgba(255,255,255,0.65)",
                     lineHeight: 1.8,
-                    fontSize: 14.5,
                     marginBottom: 20,
                   }}
                 >
@@ -530,10 +476,7 @@ export default function VoipPage() {
         </section>
 
         {/* ── Is This You? — criteria grid ──────────────────────── */}
-        <section
-          className="mit-section"
-          style={{ padding: "48px 0 56px", background: "var(--light-bg)" }}
-        >
+        <section className="mit-section voip-section-tint">
           <div className="container">
             <div
               style={{
@@ -543,39 +486,19 @@ export default function VoipPage() {
               }}
               data-aos="fade-up"
             >
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 2,
-                  color: "var(--accent)",
-                  marginBottom: 10,
-                }}
-              >
-                Is This You?
-              </span>
-              <h2
-                style={{
-                  fontSize: 32,
-                  fontWeight: 700,
-                  color: "var(--heading-color)",
-                  marginBottom: 10,
-                }}
-              >
+              <span className="voip-eyebrow">Is This You?</span>
+              <h2 className="voip-h2" style={{ color: "var(--heading-color)" }}>
                 Built for Teams That Can&apos;t Afford Dropped Calls
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="voip-lead" style={{ color: "#666" }}>
                 VoIP from InfoManage fits organizations that:
               </p>
             </div>
 
             <div
-              className="mit-criteria-list"
+              className="voip-criteria-grid"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
                 gap: 16,
                 maxWidth: 900,
                 margin: "0 auto",
@@ -617,10 +540,7 @@ export default function VoipPage() {
         </section>
 
         {/* ── Our Process — vertical numbered timeline ──────────── */}
-        <section
-          className="mit-section"
-          style={{ padding: "48px 0 56px", background: "#fff" }}
-        >
+        <section className="mit-section voip-section-light">
           <div className="container">
             <div
               style={{
@@ -630,30 +550,11 @@ export default function VoipPage() {
               }}
               data-aos="fade-up"
             >
-              <span
-                style={{
-                  display: "block",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  letterSpacing: 2,
-                  color: "var(--accent)",
-                  marginBottom: 10,
-                }}
-              >
-                Getting Started
-              </span>
-              <h2
-                style={{
-                  fontSize: 32,
-                  fontWeight: 700,
-                  color: "var(--heading-color)",
-                  marginBottom: 10,
-                }}
-              >
+              <span className="voip-eyebrow">Getting Started</span>
+              <h2 className="voip-h2" style={{ color: "var(--heading-color)" }}>
                 Our Process
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="voip-lead" style={{ color: "#666" }}>
                 A clear, five-step path from signed agreement to a fully working
                 phone system, no surprises along the way.
               </p>
@@ -711,27 +612,25 @@ export default function VoipPage() {
         </section>
 
         {/* ── Final CTA — blue banner ────────────────────────────── */}
-        <section style={{ padding: "48px 0" }}>
+        <section className="voip-cta-section">
           <div className="container">
             <div
+              className="voip-cta-banner"
               style={{
                 background: "var(--accent)",
                 borderRadius: 16,
-                padding: "36px 40px",
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "center",
                 justifyContent: "space-between",
-                gap: 24,
                 overflow: "hidden",
               }}
               data-aos="fade-up"
             >
               <div style={{ flex: "1 1 320px" }}>
                 <h2
+                  className="voip-cta-heading"
                   style={{
-                    fontSize: 24,
-                    fontWeight: 700,
                     color: "#fff",
                     marginBottom: 8,
                   }}
@@ -739,9 +638,9 @@ export default function VoipPage() {
                   Ready to move your phones to the cloud?
                 </h2>
                 <p
+                  className="voip-cta-text"
                   style={{
                     color: "rgba(255,255,255,0.85)",
-                    fontSize: 15,
                     marginBottom: 20,
                   }}
                 >
@@ -750,16 +649,15 @@ export default function VoipPage() {
                 </p>
                 <Link
                   to="/contact"
+                  className="voip-cta-btn"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 8,
                     background: "#fff",
                     color: "var(--accent)",
-                    padding: "12px 28px",
                     borderRadius: 50,
                     fontWeight: 600,
-                    fontSize: 15,
                   }}
                 >
                   Contact Us
@@ -767,11 +665,10 @@ export default function VoipPage() {
                 </Link>
               </div>
               <img
+                className="voip-cta-image"
                 src="/images/about/support-team.jpg"
                 alt="InfoManage team ready to help"
                 style={{
-                  width: 220,
-                  height: 160,
                   objectFit: "cover",
                   borderRadius: 12,
                   display: "block",

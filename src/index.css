@@ -4573,6 +4573,169 @@ a:hover {
     rgba(26, 108, 181, 0.5) 100%
   );
 }
+@media (max-width: 991px) {
+  .voip-hero {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+}
+@media (max-width: 767px) {
+  .voip-hero {
+    min-height: 640px;
+  }
+}
+@media (max-width: 480px) {
+  .voip-hero {
+    min-height: 560px;
+  }
+}
+
+.voip-eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.voip-h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+.voip-h2-sm {
+  font-size: 28px;
+}
+.voip-lead {
+  font-size: 15px;
+}
+.voip-body-text {
+  font-size: 14.5px;
+}
+.voip-row {
+  gap: 48px;
+}
+.voip-section-light {
+  padding: 56px 0;
+  background: #fff;
+}
+.voip-benefits-section {
+  padding: 48px 0;
+}
+.voip-section-tint {
+  padding: 48px 0 56px;
+  background: var(--light-bg);
+}
+.voip-section-dark {
+  padding: 48px 0;
+  background: #0d1e2e;
+}
+.voip-criteria-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+}
+.voip-cta-section {
+  padding: 48px 0;
+}
+.voip-cta-banner {
+  padding: 36px 40px;
+  gap: 24px;
+}
+.voip-cta-heading {
+  font-size: 24px;
+  font-weight: 700;
+}
+.voip-cta-text {
+  font-size: 15px;
+}
+.voip-cta-btn {
+  padding: 12px 28px;
+  font-size: 15px;
+}
+.voip-cta-image {
+  width: 220px;
+  height: 160px;
+}
+@media (max-width: 991px) {
+  .voip-h2 {
+    font-size: 28px;
+  }
+  .voip-h2-sm {
+    font-size: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .voip-h2 {
+    font-size: 25px;
+  }
+  .voip-h2-sm {
+    font-size: 22px;
+  }
+  .voip-lead {
+    font-size: 14px;
+  }
+  .voip-body-text {
+    font-size: 13.5px;
+  }
+  .voip-row {
+    gap: 32px;
+  }
+  .voip-section-light {
+    padding: 40px 0;
+  }
+  .voip-benefits-section {
+    padding: 36px 0;
+  }
+  .voip-section-tint {
+    padding: 36px 0 40px;
+  }
+  .voip-section-dark {
+    padding: 36px 0;
+  }
+  .voip-cta-section {
+    padding: 36px 0;
+  }
+  .voip-cta-banner {
+    padding: 28px 24px;
+    gap: 20px;
+  }
+  .voip-cta-heading {
+    font-size: 21px;
+  }
+  .voip-cta-image {
+    width: 180px;
+    height: 130px;
+  }
+}
+@media (max-width: 480px) {
+  .voip-eyebrow {
+    font-size: 11px;
+  }
+  .voip-h2 {
+    font-size: 22px;
+  }
+  .voip-h2-sm {
+    font-size: 20px;
+  }
+  .voip-cta-heading {
+    font-size: 19px;
+  }
+  .voip-cta-text {
+    font-size: 13.5px;
+  }
+  .voip-cta-btn {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+  .voip-cta-image {
+    width: 100%;
+    height: 160px;
+  }
+}
+@media (max-width: 360px) {
+  .voip-h2 {
+    font-size: 20px;
+  }
+}
 
 /* ---- VoIP Our Process — interlocking chevron chain diagram ---- */
 .voip-process {
