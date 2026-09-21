@@ -682,7 +682,7 @@ export default function CybersecurityPage() {
             >
               {/* Numbered timeline */}
               <div
-                className="cyber-timeline"
+                className="cyber-approach-timeline"
                 style={{
                   flex: "1 1 460px",
                   position: "relative",
@@ -691,7 +691,7 @@ export default function CybersecurityPage() {
                 data-aos-delay="100"
               >
                 <div
-                  className="cyber-timeline-line"
+                  className="cyber-approach-line"
                   style={{
                     position: "absolute",
                     top: 26,
@@ -713,7 +713,7 @@ export default function CybersecurityPage() {
                       }}
                     >
                       <div
-                        className="cyber-timeline-num"
+                        className="cyber-approach-num"
                         style={{
                           position: "absolute",
                           top: 0,
@@ -730,7 +730,7 @@ export default function CybersecurityPage() {
                         {item.num.replace(/^0/, "")}
                       </div>
                       <h4
-                        className="cyber-timeline-title"
+                        className="cyber-approach-title"
                         style={{
                           margin: "6px 0 8px",
                           fontWeight: 700,

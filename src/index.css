@@ -4139,19 +4139,19 @@ a:hover {
 .cyber-approach-section {
   padding: 48px 0;
 }
-.cyber-timeline {
+.cyber-approach-timeline {
   padding-left: 68px;
 }
-.cyber-timeline-line {
+.cyber-approach-line {
   left: 23px;
 }
-.cyber-timeline-num {
+.cyber-approach-num {
   left: -68px;
   width: 48px;
   height: 48px;
   font-size: 18px;
 }
-.cyber-timeline-title {
+.cyber-approach-title {
   font-size: 16.5px;
 }
 .cyber-badge-circle {
@@ -4207,19 +4207,19 @@ a:hover {
   .cyber-badge-circle {
     transform: scale(0.85);
   }
-  .cyber-timeline {
+  .cyber-approach-timeline {
     padding-left: 56px;
   }
-  .cyber-timeline-line {
+  .cyber-approach-line {
     left: 19px;
   }
-  .cyber-timeline-num {
+  .cyber-approach-num {
     left: -56px;
     width: 40px;
     height: 40px;
     font-size: 15px;
   }
-  .cyber-timeline-title {
+  .cyber-approach-title {
     font-size: 15.5px;
   }
   .cyber-selfcheck-section {
@@ -4242,19 +4242,19 @@ a:hover {
   .cyber-badge-circle {
     transform: scale(0.7);
   }
-  .cyber-timeline {
+  .cyber-approach-timeline {
     padding-left: 48px;
   }
-  .cyber-timeline-line {
+  .cyber-approach-line {
     left: 16px;
   }
-  .cyber-timeline-num {
+  .cyber-approach-num {
     left: -48px;
     width: 34px;
     height: 34px;
     font-size: 13px;
   }
-  .cyber-timeline-title {
+  .cyber-approach-title {
     font-size: 15px;
   }
   .cyber-stat-banner {
@@ -4283,19 +4283,19 @@ a:hover {
   .cyber-badge-circle {
     transform: scale(0.6);
   }
-  .cyber-timeline {
+  .cyber-approach-timeline {
     padding-left: 42px;
   }
-  .cyber-timeline-line {
+  .cyber-approach-line {
     left: 14px;
   }
-  .cyber-timeline-num {
+  .cyber-approach-num {
     left: -42px;
     width: 30px;
     height: 30px;
     font-size: 12px;
   }
-  .cyber-timeline-title {
+  .cyber-approach-title {
     font-size: 14.5px;
   }
 }
