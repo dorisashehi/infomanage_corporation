@@ -91,7 +91,7 @@ export default function Header() {
               src="/logo.jpg"
               alt="InfoManage"
               style={{
-                height: "100%",
+                height: 56,
                 width: "auto",
                 display: "block",
               }}
@@ -201,7 +201,7 @@ export default function Header() {
                 src="/logo.jpg"
                 alt="InfoManage"
                 style={{
-                  height: "100%",
+                  height: 60,
                   width: "auto",
                   display: "block",
                 }}
