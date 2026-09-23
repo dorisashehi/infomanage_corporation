@@ -179,21 +179,15 @@ export default function ITStrategyPage() {
               <i className="bi bi-diagram-3" />
               <span>IT Strategy &amp; Advisory</span>
             </div>
-            <h1>Technology Strategy and Advisory</h1>
-            <p className="mit-hero-sub">
-              Helping organizations plan, evolve, and align their technology
-              infrastructure with long-term business goals.
-            </p>
+            <h1>
+              A Clear Path From Today&apos;s Systems
+              <br />
+              to Tomorrow&apos;s Needs.
+            </h1>
             <p className="mit-hero-body">
-              Effective technology management requires more than maintaining
-              systems. Organizations must also plan how their infrastructure
-              will evolve as their operations grow and technology requirements
-              change.
-            </p>
-            <p className="mit-hero-body">
-              InfoManage provides strategic technology advisory to help
-              organizations make informed decisions about their infrastructure,
-              systems, and long-term technology investments.
+              From roadmaps and infrastructure architecture to vendor strategy,
+              we help you make confident, proactive decisions about where your
+              technology is headed.
             </p>
             {/* <div className="mit-hero-btns">
               <Link to="/contact#contact" className="btn-get-started">Schedule a Strategy Consultation</Link>
@@ -512,7 +506,7 @@ export default function ITStrategyPage() {
         </section>
 
         {/* ── Vendor Strategy — dark section with 2×2 glass cards ─ */}
-        <section style={{ padding: "80px 0", background: "#0d1e2e" }}>
+        <section className="mit-dark-section">
           <div className="container">
             <div className="section-title mit-dark-title" data-aos="fade-up">
               <h2>Vendor Strategy and Coordination</h2>
@@ -605,165 +599,69 @@ export default function ITStrategyPage() {
         </section>
 
         {/* ── Final CTA ─────────────────────────────────────────── */}
-        <section
-          className="mit-section"
-          style={{ background: "#fff", borderTop: "1px solid #eef0f4" }}
-        >
+        <section className="mit-cta-section">
           <div className="container">
             <div
+              className="mit-cta-banner"
               style={{
+                background: "var(--accent)",
+                borderRadius: 16,
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 60,
                 alignItems: "center",
+                justifyContent: "space-between",
+                overflow: "hidden",
               }}
+              data-aos="fade-up"
             >
-              <div
-                style={{ flex: "1 1 400px" }}
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <span
+              <div style={{ flex: "1 1 320px" }}>
+                <h2
+                  className="mit-cta-heading"
+                  style={{
+                    color: "#fff",
+                    marginBottom: 8,
+                  }}
+                >
+                  Ready to plan your technology with confidence?
+                </h2>
+                <p
+                  className="mit-cta-text"
+                  style={{
+                    color: "rgba(255,255,255,0.85)",
+                    marginBottom: 20,
+                  }}
+                >
+                  Let&apos;s build a roadmap that keeps your infrastructure
+                  ahead of the business, not behind it.
+                </p>
+                <Link
+                  to="/contact"
+                  className="mit-cta-btn"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 8,
-                    fontSize: 12,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: 2,
+                    background: "#fff",
                     color: "var(--accent)",
-                    marginBottom: 16,
+                    borderRadius: 50,
+                    fontWeight: 600,
                   }}
                 >
-                  <i className="bi bi-diagram-3-fill" />
-                  Plan Your Technology Environment
-                </span>
-                <h2
-                  style={{
-                    fontSize: 34,
-                    fontWeight: 700,
-                    color: "var(--heading-color)",
-                    marginBottom: 18,
-                  }}
-                >
-                  Plan Your Technology Environment with Confidence
-                </h2>
-                <p
-                  style={{
-                    color: "#666",
-                    lineHeight: 1.8,
-                    fontSize: 16,
-                    marginBottom: 14,
-                  }}
-                >
-                  Schedule a consultation to discuss your technology environment
-                  and learn how InfoManage can help guide your infrastructure
-                  strategy.
-                </p>
-                <p style={{ color: "#999", fontSize: 14, lineHeight: 1.7 }}>
-                  InfoManage works with organizations to periodically review
-                  their technology environment, discuss operational performance,
-                  and identify areas for improvement — ensuring that technology
-                  continues to support evolving business goals.
-                </p>
+                  Contact Us
+                  <i className="bi bi-arrow-right" />
+                </Link>
               </div>
-
-              <div
-                style={{ flex: "1 1 400px" }}
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div style={{ marginBottom: 28 }}>
-                  {[
-                    "Technology roadmap development and lifecycle planning",
-                    "vCTO advisory and strategic IT budgeting",
-                    "Infrastructure architecture and scalability planning",
-                    "Vendor evaluation and coordination",
-                  ].map((text, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 12,
-                        padding: "10px 0",
-                        borderBottom: "1px solid #f0f2f5",
-                        color: "#444",
-                        fontSize: 15,
-                      }}
-                    >
-                      <i
-                        className="bi bi-check-circle-fill"
-                        style={{
-                          color: "var(--accent)",
-                          fontSize: 18,
-                          flexShrink: 0,
-                        }}
-                      />
-                      <span>{text}</span>
-                    </div>
-                  ))}
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 12,
-                    flexWrap: "wrap",
-                    marginBottom: 24,
-                  }}
-                >
-                  <Link
-                    to="/contact#contact"
-                    className="btn-get-started"
-                    style={{ padding: "12px 32px" }}
-                  >
-                    Schedule a Strategy Consultation
-                  </Link>
-                  {/* <Link
-                    to="/contact"
-                    style={{
-                      display: "inline-block",
-                      padding: "12px 32px",
-                      borderRadius: 50,
-                      fontWeight: 600,
-                      border: "2px solid var(--accent)",
-                      color: "var(--accent)",
-                      transition: "0.3s",
-                      fontSize: 15,
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.background = "var(--accent)";
-                      e.currentTarget.style.color = "#fff";
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.background = "transparent";
-                      e.currentTarget.style.color = "var(--accent)";
-                    }}
-                  >
-                    Contact InfoManage
-                  </Link> */}
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 6,
-                    flexWrap: "wrap",
-                  }}
-                >
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <i
-                      key={s}
-                      className="bi bi-star-fill"
-                      style={{ color: "#ffc107", fontSize: 14 }}
-                    />
-                  ))}
-                  <span style={{ color: "#999", fontSize: 13, marginLeft: 6 }}>
-                    Established 1995 · 30+ years of service
-                  </span>
-                </div>
-              </div>
+              <img
+                className="mit-cta-image"
+                src="/images/about/support-team.jpg"
+                alt="InfoManage team ready to help"
+                style={{
+                  objectFit: "cover",
+                  borderRadius: 12,
+                  display: "block",
+                  flexShrink: 0,
+                }}
+              />
             </div>
           </div>
         </section>
