@@ -120,7 +120,7 @@ a:hover {
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -150,6 +150,11 @@ a:hover {
 .logo h1 span {
   color: var(--accent);
   font-weight: 700;
+}
+@media (min-width: 1200px) {
+  .logo img {
+    height: 64px !important;
+  }
 }
 .navmenu {
   display: flex;
@@ -186,7 +191,7 @@ a:hover {
   content: "";
   position: absolute;
   height: 2px;
-  bottom: -27px;
+  bottom: -15px;
   left: 0;
   right: 0;
   background: var(--accent);
@@ -5868,7 +5873,7 @@ a:hover {
     height: 50px !important;
   }
   .logo {
-    padding: 0px 16px 8px 16px;
+    padding: 0px 16px 8px 0px;
   }
   .site-header.scrolled {
     background: rgba(255, 255, 255, 0.98);
