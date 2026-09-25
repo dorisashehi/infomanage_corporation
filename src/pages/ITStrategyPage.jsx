@@ -126,10 +126,26 @@ const lifecycleSteps = [
 ];
 
 const vendorItems = [
-  { icon: "bi-clipboard2-check", label: "Vendor evaluation and selection" },
-  { icon: "bi-people", label: "Service coordination" },
-  { icon: "bi-bar-chart", label: "Technology platform assessments" },
-  { icon: "bi-file-earmark-text", label: "Contract and service planning" },
+  {
+    icon: "bi-clipboard2-check",
+    label: "Vendor evaluation and selection",
+    desc: "Assessing vendors against your operational needs and business requirements.",
+  },
+  {
+    icon: "bi-people",
+    label: "Service coordination",
+    desc: "Coordinating services and vendor relationships to support day-to-day operations.",
+  },
+  {
+    icon: "bi-bar-chart",
+    label: "Technology platform assessments",
+    desc: "Evaluating platforms to ensure they align with your technology strategy.",
+  },
+  {
+    icon: "bi-file-earmark-text",
+    label: "Contract and service planning",
+    desc: "Planning contracts and service agreements that support long-term business needs.",
+  },
 ];
 
 const forOrgsItems = [
@@ -196,166 +212,342 @@ export default function ITStrategyPage() {
           </div>
         </section>
 
-        {/* ── Strategic Technology Guidance — features-section layout ─ */}
-        <section className="features-section">
+        {/* ── Strategic Technology Guidance — Project Management layout ─ */}
+        <section id="strategic-guidance" className="pm-section-light">
           <div className="container">
             <div
+              className="pm-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 40,
-                alignItems: "flex-start",
+                alignItems: "center",
               }}
             >
-              {/* Left */}
-              <div
-                style={{ flex: "1 1 340px" }}
-                data-aos="fade-right"
-                data-aos-delay="200"
-              >
-                <div className="features-content">
-                  <h2>Strategic Technology Guidance</h2>
-                  <p>
-                    Technology decisions affect nearly every aspect of modern
-                    business operations. InfoManage works with organizations to
-                    ensure that infrastructure, systems, and technology
-                    investments support long-term business needs.
+              <div style={{ flex: "1 1 420px" }} data-aos="fade-up">
+                <span
+                  className="pm-eyebrow"
+                  style={{
+                    display: "block",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: 2,
+                    color: "var(--accent)",
+                    marginBottom: 10,
+                  }}
+                >
+                  Strategic Guidance
+                </span>
+                <h2
+                  className="pm-h2"
+                  style={{
+                    color: "var(--heading-color)",
+                    lineHeight: 1.25,
+                    marginBottom: 12,
+                  }}
+                >
+                  Strategic Technology Guidance
+                </h2>
+                <p
+                  className="pm-body-text"
+                  style={{
+                    color: "#555",
+                    lineHeight: 1.8,
+                    marginBottom: 20,
+                    maxWidth: 460,
+                  }}
+                >
+                  Technology decisions affect nearly every aspect of modern
+                  business operations. InfoManage works with organizations to
+                  ensure that infrastructure, systems, and technology
+                  investments support long-term business needs.
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 12,
+                    alignItems: "flex-start",
+                    background: "var(--light-bg)",
+                    borderRadius: 10,
+                    padding: "16px 18px",
+                    marginBottom: 22,
+                    maxWidth: 460,
+                  }}
+                >
+                  <i
+                    className="bi bi-diagram-3-fill"
+                    style={{
+                      color: "var(--accent)",
+                      fontSize: 18,
+                      marginTop: 2,
+                      flexShrink: 0,
+                    }}
+                  />
+                  <p
+                    style={{
+                      color: "#555",
+                      fontSize: 13,
+                      lineHeight: 1.7,
+                      margin: 0,
+                    }}
+                  >
+                    <strong>Advisory-Led Technology Management:</strong> Through
+                    ongoing planning and strategic guidance, we help
+                    organizations maintain stable environments while preparing
+                    for future growth and evolving requirements.
                   </p>
-
-                  <div className="main-feature">
-                    <div className="feat-icon">
-                      <i className="bi bi-diagram-3-fill" />
-                    </div>
-                    <div>
-                      <h4>Advisory-Led Technology Management</h4>
-                      <p>
-                        Through ongoing planning and strategic guidance, we help
-                        organizations maintain stable environments while
-                        preparing for future growth and evolving requirements.
-                      </p>
-                    </div>
-                  </div>
                 </div>
-              </div>
+                <div
+                  style={{
+                    width: 46,
+                    height: 3,
+                    background: "var(--accent)",
+                    marginBottom: 22,
+                  }}
+                />
 
-              {/* Right: pillars grid */}
-              <div
-                style={{ flex: "1 1 500px" }}
-                data-aos="fade-left"
-                data-aos-delay="300"
-              >
-                <div className="features-grid">
+                <div
+                  className="pm-features-grid"
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                    gap: 16,
+                  }}
+                >
                   {pillars.map((p, i) => (
                     <div
                       key={i}
-                      className="feature-card"
-                      data-aos="zoom-in"
-                      data-aos-delay={400 + i * 50}
+                      data-aos="fade-up"
+                      data-aos-delay={100 + i * 80}
                     >
-                      <div className="icon-wrapper">
-                        <i className={`bi ${p.icon}`} />
+                      <div
+                        className="pm-feature-icon"
+                        style={{
+                          borderRadius: "50%",
+                          background: "rgba(26, 108, 181, 0.08)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          marginBottom: 14,
+                        }}
+                      >
+                        <i
+                          className={`bi ${p.icon}`}
+                          style={{ color: "var(--accent)" }}
+                        />
                       </div>
-                      <h5>{p.title}</h5>
-                      <p>{p.desc}</p>
+                      <h5
+                        className="pm-feature-title"
+                        style={{
+                          fontWeight: 700,
+                          color: "var(--heading-color)",
+                          marginBottom: 8,
+                        }}
+                      >
+                        {p.title}
+                      </h5>
+                      <p
+                        className="pm-feature-desc"
+                        style={{
+                          color: "#666",
+                          lineHeight: 1.6,
+                          margin: 0,
+                        }}
+                      >
+                        {p.desc}
+                      </p>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              <div
+                style={{ flex: "1 1 420px" }}
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
+                <div style={{ position: "relative" }}>
+                  <img
+                    className="pm-image-tall"
+                    src="/images/it-strategy/strategic-planning.jpg"
+                    alt="Technology roadmap planning board with connected notes"
+                    style={{
+                      width: "100%",
+                      objectFit: "cover",
+                      borderRadius: 16,
+                      display: "block",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: -22,
+                      right: -14,
+                      background: "#fff",
+                      borderRadius: 12,
+                      padding: "16px 26px",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.18)",
+                      transform: "rotate(-3deg)",
+                    }}
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <p
+                      style={{
+                        margin: 0,
+                        fontFamily: "'Caveat', cursive",
+                        fontSize: 26,
+                        fontWeight: 700,
+                        color: "var(--heading-color)",
+                        lineHeight: 1.25,
+                      }}
+                    >
+                      Today&apos;s Systems.
+                      <br />
+                      <span style={{ borderBottom: "2px solid var(--accent)" }}>
+                        Tomorrow&apos;s Plan.
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── vCTO Advisory — HowWeWork-style cards ─────────────── */}
-        <section id="vcto" className="howwework-section">
+        {/* ── vCTO Advisory — Services "What We Do" card layout ─── */}
+        <section id="vcto" className="services-section-block">
           <div className="container">
-            <div className="section-title" data-aos="fade-up">
-              <h2>Virtual Chief Technology Officer (vCTO)</h2>
-              <p>
-                Many organizations benefit from technology leadership but may
-                not require a full-time internal executive responsible for IT
-                strategy. InfoManage provides vCTO advisory services that offer
-                experienced technology guidance without the overhead of a
-                dedicated internal role.
+            <div
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 32px",
+              }}
+              data-aos="fade-up"
+            >
+              <span
+                className="services-badge"
+                style={{
+                  display: "block",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: 2,
+                  color: "var(--accent)",
+                  marginBottom: 10,
+                }}
+              >
+                vCTO Advisory
+              </span>
+              <h2
+                className="services-heading"
+                style={{
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
+                Virtual Chief Technology Officer (vCTO)
+              </h2>
+              <p className="services-intro" style={{ color: "#666" }}>
+                Experienced technology leadership, without the cost of a
+                full-time executive.
               </p>
             </div>
 
-            <div className="hww-grid">
+            <div
+              className="services-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: 20,
+              }}
+            >
               {vCTOCards.map((card, i) => (
                 <div
                   key={i}
-                  className="hww-card"
+                  className="service-card"
                   data-aos="fade-up"
-                  data-aos-delay={150 + i * 100}
+                  data-aos-delay={100 + i * 80}
                 >
-                  <div className="hww-num">{card.num}</div>
-                  <div className="hww-icon-wrap">
-                    <i className={`bi ${card.icon}`} />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 14,
+                      marginBottom: 16,
+                    }}
+                  >
+                    <div
+                      className="icon-box"
+                      style={{ marginBottom: 0, flexShrink: 0 }}
+                    >
+                      <i className={`bi ${card.icon}`} />
+                    </div>
+                    <h4 style={{ margin: 0 }}>{card.title}</h4>
                   </div>
-                  <h4>{card.title}</h4>
-                  <p>{card.desc}</p>
-                  <ul className="hww-points">
+                  <p style={{ marginBottom: 12 }}>{card.desc}</p>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                     {card.bullets.map((b, j) => (
-                      <li key={j}>
-                        <i className="bi bi-check2-circle" />
-                        {b}
+                      <li
+                        key={j}
+                        className="service-item"
+                        style={{
+                          padding: "5px 0",
+                          display: "flex",
+                          gap: 6,
+                          alignItems: "flex-start",
+                        }}
+                      >
+                        <i
+                          className="bi bi-arrow-right"
+                          style={{
+                            color: "var(--accent)",
+                            flexShrink: 0,
+                            marginTop: 2,
+                          }}
+                        />
+                        <span style={{ color: "#666" }}>{b}</span>
                       </li>
                     ))}
                   </ul>
+                  <div className="service-number">{card.num}</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── Technology Roadmaps — dark split ─────────────────── */}
-        <section className="mit-dark-section">
+        {/* ── Technology Roadmaps — "Is This You?" layout ───────── */}
+        <section className="mit-isyou-section">
           <div className="container">
             <div
+              className="mit-row"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 56,
-                alignItems: "center",
+                alignItems: "flex-start",
               }}
             >
-              <div
-                style={{ flex: "1 1 400px" }}
-                data-aos="fade-up"
-                data-aos-delay="150"
-              >
-                <img
-                  src="/images/it-strategy/roadmap-planning.jpg"
-                  alt="Technology roadmap planning board"
-                  style={{
-                    width: "100%",
-                    borderRadius: 10,
-                    display: "block",
-                    boxShadow: "0 12px 48px rgba(0,0,0,0.4)",
-                  }}
-                />
-              </div>
-              <div
-                style={{ flex: "1 1 400px" }}
-                data-aos="fade-up"
-                data-aos-delay="250"
-              >
-                <span className="mit-split-label">Roadmap Planning</span>
+              {/* Left: header + callout */}
+              <div style={{ flex: "1 1 320px" }} data-aos="fade-right">
+                <span className="mit-eyebrow">Roadmap Planning</span>
                 <h2
+                  className="mit-h2 mit-h2-sm"
                   style={{
-                    fontSize: 30,
-                    fontWeight: 700,
                     color: "#fff",
-                    marginBottom: 18,
+                    lineHeight: 1.3,
+                    marginBottom: 14,
                   }}
                 >
                   Technology Roadmaps
                 </h2>
                 <p
+                  className="mit-body-text"
                   style={{
-                    color: "rgba(255,255,255,0.72)",
+                    color: "rgba(255,255,255,0.65)",
                     lineHeight: 1.8,
-                    marginBottom: 16,
-                    fontSize: 15,
+                    marginBottom: 20,
                   }}
                 >
                   Long-term planning helps organizations avoid reactive
@@ -364,6 +556,45 @@ export default function ITStrategyPage() {
                   roadmaps that provide visibility into future infrastructure
                   needs.
                 </p>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 14,
+                    alignItems: "center",
+                    background: "rgba(255,255,255,0.06)",
+                    borderRadius: 12,
+                    padding: "16px 20px",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                  }}
+                >
+                  <i
+                    className="bi bi-graph-up-arrow"
+                    style={{
+                      color: "var(--accent)",
+                      fontSize: 26,
+                      flexShrink: 0,
+                    }}
+                  />
+                  <p
+                    style={{
+                      color: "rgba(255,255,255,0.85)",
+                      fontSize: 13.5,
+                      lineHeight: 1.6,
+                      margin: 0,
+                    }}
+                  >
+                    These roadmaps allow organizations to plan investments more
+                    effectively while reducing operational risk.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right: checklist */}
+              <div
+                style={{ flex: "1 1 360px", minWidth: 0 }}
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
                 <p
                   style={{
                     color: "rgba(255,255,255,0.9)",
@@ -376,75 +607,160 @@ export default function ITStrategyPage() {
                 >
                   Roadmaps typically address:
                 </p>
-                <ul className="mit-split-list">
+                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {roadmapAreas.map((item, i) => (
-                    <li key={i}>
-                      <i className={`bi ${item.icon}`} />
+                    <li
+                      key={i}
+                      style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: 10,
+                        padding: "10px 0",
+                        borderBottom:
+                          i < roadmapAreas.length - 1
+                            ? "1px solid rgba(255,255,255,0.08)"
+                            : "none",
+                        color: "rgba(255,255,255,0.85)",
+                        fontSize: 14.5,
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      <i
+                        className="bi bi-check-circle-fill"
+                        style={{
+                          color: "var(--accent)",
+                          fontSize: 15,
+                          marginTop: 2,
+                          flexShrink: 0,
+                        }}
+                      />
                       {item.label}
                     </li>
                   ))}
                 </ul>
-                <p
-                  style={{
-                    color: "rgba(255,255,255,0.55)",
-                    fontSize: 14,
-                    lineHeight: 1.8,
-                    marginTop: 20,
-                    fontStyle: "italic",
-                  }}
-                >
-                  These roadmaps allow organizations to plan investments more
-                  effectively while reducing operational risk.
-                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── Infrastructure Architecture — feature-card grid ───── */}
+        {/* ── Infrastructure Architecture — Services "What We Do" card layout ─── */}
         <section
           id="infrastructure-architecture"
-          className="mit-section"
-          style={{ background: "#fff" }}
+          className="services-section-block"
         >
           <div className="container">
-            <div className="section-title" data-aos="fade-up">
-              <h2>Infrastructure Architecture</h2>
-              <p>
+            <div
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 32px",
+              }}
+              data-aos="fade-up"
+            >
+              <span
+                className="services-badge"
+                style={{
+                  display: "block",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: 2,
+                  color: "var(--accent)",
+                  marginBottom: 10,
+                }}
+              >
+                Infrastructure
+              </span>
+              <h2
+                className="services-heading"
+                style={{
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
+                Infrastructure Architecture
+              </h2>
+              <p className="services-intro" style={{ color: "#666" }}>
                 As organizations grow, their technology environments often
                 become more complex. Infrastructure architecture planning
                 ensures that systems remain scalable, secure, and manageable.
               </p>
             </div>
 
-            <div className="mit-gov-grid">
+            <div
+              className="services-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(2, 1fr)",
+                gap: 20,
+              }}
+            >
               {archItems.map((item, i) => (
                 <div
                   key={i}
-                  className="feature-card"
+                  className="service-card"
                   data-aos="fade-up"
-                  data-aos-delay={150 + i * 60}
+                  data-aos-delay={100 + i * 80}
                 >
-                  <div className="icon-wrapper">
-                    <i className={`bi ${item.icon}`} />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 14,
+                      marginBottom: 16,
+                    }}
+                  >
+                    <div
+                      className="icon-box"
+                      style={{ marginBottom: 0, flexShrink: 0 }}
+                    >
+                      <i className={`bi ${item.icon}`} />
+                    </div>
+                    <h4 style={{ margin: 0 }}>{item.title}</h4>
                   </div>
-                  <h5>{item.title}</h5>
-                  <p>{item.desc}</p>
+                  <p style={{ marginBottom: 0 }}>{item.desc}</p>
+                  <div className="service-number">0{i + 1}</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── Lifecycle Planning — vertical step list + image ───── */}
-        <section
-          className="mit-section"
-          style={{ background: "var(--light-bg)" }}
-        >
+        {/* ── Lifecycle Planning — "Our Approach" layout ─────────── */}
+        <section className="howwework-section cyber-approach-section">
           <div className="container">
-            <div className="section-title" data-aos="fade-up">
-              <h2>Lifecycle Planning</h2>
-              <p>
+            <div
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 24px",
+              }}
+              data-aos="fade-up"
+            >
+              <span
+                className="pm-eyebrow"
+                style={{
+                  display: "block",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: 2,
+                  color: "var(--accent)",
+                  marginBottom: 10,
+                }}
+              >
+                Lifecycle Management
+              </span>
+              <h2
+                className="cyber-h2"
+                style={{
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 12,
+                }}
+              >
+                Lifecycle Planning
+              </h2>
+              <p className="cyber-lead" style={{ color: "#666" }}>
                 Technology infrastructure requires regular evaluation and
                 replacement. Proper lifecycle planning helps organizations avoid
                 unexpected failures and maintain reliable environments.
@@ -452,216 +768,389 @@ export default function ITStrategyPage() {
             </div>
 
             <div
+              className="cyber-row"
               style={{
                 display: "flex",
-                flexWrap: "wrap",
-                gap: 56,
+                flexWrap: "wrap-reverse",
                 alignItems: "center",
               }}
             >
+              {/* Numbered timeline */}
               <div
-                style={{ flex: "1 1 400px" }}
+                className="cyber-approach-timeline"
+                style={{
+                  flex: "1 1 460px",
+                  position: "relative",
+                }}
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
+                <div
+                  className="cyber-approach-line"
+                  style={{
+                    position: "absolute",
+                    top: 26,
+                    bottom: 26,
+                    width: 2,
+                    background:
+                      "repeating-linear-gradient(180deg, #d0d7e2 0, #d0d7e2 6px, transparent 6px, transparent 12px)",
+                  }}
+                />
+
                 {lifecycleSteps.map((step, i) => (
                   <div
                     key={i}
-                    className="its-lifecycle-row"
-                    data-aos="fade-up"
-                    data-aos-delay={150 + i * 70}
+                    style={{
+                      position: "relative",
+                      marginBottom: i < lifecycleSteps.length - 1 ? 16 : 0,
+                    }}
                   >
-                    <div className="its-lifecycle-dot">
-                      <i className={`bi ${step.icon}`} />
+                    <div
+                      className="cyber-approach-num"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        borderRadius: "50%",
+                        background: "var(--accent)",
+                        color: "#fff",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontWeight: 700,
+                        flexShrink: 0,
+                      }}
+                    >
+                      {i + 1}
                     </div>
-                    <div className="its-lifecycle-content">
-                      <div className="its-lifecycle-label">
-                        Phase {step.num}
+                    <h4
+                      className="cyber-approach-title"
+                      style={{
+                        margin: "6px 0 8px",
+                        fontWeight: 700,
+                        color: "var(--heading-color)",
+                      }}
+                    >
+                      {step.title}
+                    </h4>
+                    <p
+                      style={{
+                        fontSize: 14,
+                        color: "#666",
+                        lineHeight: 1.6,
+                        margin: 0,
+                      }}
+                    >
+                      {step.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Circular photo badge */}
+              <div
+                style={{ flex: "0 1 280px", textAlign: "center" }}
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div
+                  className="cyber-badge-circle"
+                  style={{
+                    position: "relative",
+                    width: 260,
+                    height: 260,
+                    margin: "0 auto",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: -10,
+                      borderRadius: "50%",
+                      border: "2px dashed rgba(26, 108, 181, 0.3)",
+                    }}
+                  />
+                  <img
+                    src="/images/it-strategy/lifecycle-hardware.jpg"
+                    alt="Close-up of a computer circuit board"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "50%",
+                      display: "block",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.16)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 6,
+                      right: 6,
+                      width: 60,
+                      height: 60,
+                      borderRadius: "50%",
+                      background: "var(--accent)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 8px 20px rgba(26, 108, 181, 0.4)",
+                    }}
+                  >
+                    <i
+                      className="bi bi-arrow-repeat"
+                      style={{ color: "#fff", fontSize: 24 }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Vendor Strategy — Cabling & Connectivity layout ────── */}
+        <section id="vendor-strategy" className="pm-section-dark">
+          <div className="container">
+            <div
+              className="pm-row"
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "stretch",
+              }}
+            >
+              <div style={{ flex: "0 1 280px" }} data-aos="fade-right">
+                <div
+                  style={{
+                    position: "relative",
+                    height: "100%",
+                    minHeight: 320,
+                    borderRadius: 18,
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src="/images/it-strategy/vendor-meeting.jpg"
+                    alt="Signing a vendor services agreement"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(180deg, rgba(10,22,40,0.05) 30%, rgba(10,22,40,0.9) 100%)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: 24,
+                      right: 24,
+                      bottom: 28,
+                    }}
+                  >
+                    <p
+                      style={{
+                        margin: 0,
+                        color: "#fff",
+                        fontSize: 20,
+                        fontWeight: 700,
+                        lineHeight: 1.35,
+                      }}
+                    >
+                      The right vendors.
+                      <br />
+                      Coordinated for you.
+                    </p>
+                    <div
+                      style={{
+                        width: 40,
+                        height: 3,
+                        background: "var(--accent)",
+                        marginTop: 14,
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ flex: "1 1 460px" }} data-aos="fade-up">
+                <span
+                  className="pm-eyebrow"
+                  style={{
+                    display: "block",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: 2,
+                    color: "var(--accent)",
+                    marginBottom: 10,
+                  }}
+                >
+                  Vendor Strategy
+                </span>
+                <h2
+                  className="pm-h2 pm-h2-sm"
+                  style={{
+                    color: "#fff",
+                    lineHeight: 1.3,
+                    marginBottom: 12,
+                  }}
+                >
+                  Vendor Strategy and Coordination
+                </h2>
+                <p
+                  className="pm-body-text"
+                  style={{
+                    color: "rgba(255,255,255,0.7)",
+                    lineHeight: 1.8,
+                    marginBottom: 24,
+                  }}
+                >
+                  Organizations often depend on multiple technology vendors,
+                  software providers, and service platforms. InfoManage assists
+                  organizations by helping evaluate vendors, coordinate
+                  services, and ensure that vendor relationships support
+                  operational needs.
+                </p>
+
+                <div
+                  className="pm-cabling-grid"
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                    gap: 16,
+                  }}
+                >
+                  {vendorItems.map((item, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        background: "rgba(255,255,255,0.06)",
+                        borderRadius: 14,
+                        padding: "20px 18px",
+                      }}
+                      data-aos="fade-up"
+                      data-aos-delay={100 + i * 60}
+                    >
+                      <div
+                        style={{
+                          width: 52,
+                          height: 52,
+                          borderRadius: "50%",
+                          background: "rgba(26, 108, 181, 0.1)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          marginBottom: 14,
+                        }}
+                      >
+                        <i
+                          className={`bi ${item.icon}`}
+                          style={{ color: "var(--accent)", fontSize: 22 }}
+                        />
                       </div>
-                      <h5>{step.title}</h5>
-                      <p>{step.desc}</p>
+                      <h5
+                        style={{
+                          fontSize: 14,
+                          fontWeight: 700,
+                          color: "#fff",
+                          marginBottom: 6,
+                        }}
+                      >
+                        {item.label}
+                      </h5>
+                      <p
+                        style={{
+                          fontSize: 12.5,
+                          color: "rgba(255,255,255,0.65)",
+                          lineHeight: 1.6,
+                          margin: 0,
+                        }}
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Who This Is For — FAQ layout ─────────────────────── */}
+        <section className="faq-section">
+          <div className="container">
+            <div
+              style={{
+                textAlign: "center",
+                maxWidth: 640,
+                margin: "0 auto 50px",
+              }}
+              data-aos="fade-up"
+            >
+              <span className="faq-badge">Who This Is For</span>
+              <h2 className="faq-heading">Strategic Technology Partnership</h2>
+              <p style={{ color: "#666", marginTop: 10 }}>
+                IT strategy and advisory services are designed for organizations
+                that:
+              </p>
+            </div>
+
+            <div className="faq-row" style={{ alignItems: "flex-start" }}>
+              <div
+                className="faq-list-col"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                {forOrgsItems.map((item, i) => (
+                  <div key={i} className="faq-item">
+                    <div className="faq-header" style={{ cursor: "default" }}>
+                      <i
+                        className={`bi ${item.icon} faq-toggle-icon`}
+                        style={{ fontSize: 18 }}
+                      />
+                      <span className="faq-question">{item.text}</span>
                     </div>
                   </div>
                 ))}
               </div>
 
               <div
-                style={{ flex: "1 1 380px" }}
+                className="faq-cta-card"
+                style={{
+                  background: "var(--light-bg)",
+                  borderRadius: 14,
+                  display: "flex",
+                  alignItems: "center",
+                }}
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                <img
-                  src="/images/it-strategy/technology-analysis.jpg"
-                  alt="Technology planning and analysis"
-                  style={{
-                    width: "100%",
-                    borderRadius: 12,
-                    display: "block",
-                    boxShadow: "0 12px 40px rgba(0,0,0,0.12)",
-                  }}
+                <i
+                  className="bi bi-diagram-3-fill faq-cta-icon"
+                  style={{ color: "var(--accent)", flexShrink: 0 }}
                 />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Vendor Strategy — dark section with 2×2 glass cards ─ */}
-        <section className="mit-dark-section">
-          <div className="container">
-            <div className="section-title mit-dark-title" data-aos="fade-up">
-              <h2>Vendor Strategy and Coordination</h2>
-              <p>
-                Organizations often depend on multiple technology vendors,
-                software providers, and service platforms. InfoManage assists
-                organizations by helping evaluate vendors, coordinate services,
-                and ensure that vendor relationships support operational needs.
-              </p>
-            </div>
-
-            <div className="its-vendor-grid">
-              {vendorItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="its-vendor-card"
-                  data-aos="fade-up"
-                  data-aos-delay={100 + i * 80}
-                >
-                  <div className="its-vendor-icon">
-                    <i className={`bi ${item.icon}`} />
-                  </div>
-                  <p>{item.label}</p>
+                <div>
+                  <p
+                    className="faq-cta-title"
+                    style={{ color: "var(--heading-color)" }}
+                  >
+                    Not sure if this fits?
+                  </p>
+                  <p className="faq-cta-text" style={{ color: "#777" }}>
+                    Let&apos;s talk through your environment.
+                  </p>
+                  <Link to="/contact" className="btn-pricing faq-cta-btn">
+                    Contact Us
+                  </Link>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Strategic Reviews ─────────────────────────────────── */}
-        <section className="mit-section" style={{ background: "#fff" }}>
-          <div className="container">
-            <div className="section-title" data-aos="fade-up">
-              <h2>Strategic Reviews</h2>
-              <p>
-                Regular technology reviews allow organizations to evaluate their
-                current infrastructure and plan for improvements.
-              </p>
-            </div>
-
-            <div
-              style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <p style={{ color: "#666", fontSize: 15, lineHeight: 1.8 }}>
-                InfoManage works with organizations to periodically review their
-                technology environment, discuss operational performance, and
-                identify areas for improvement.
-              </p>
-              <p style={{ color: "#666", fontSize: 15, lineHeight: 1.8 }}>
-                These discussions help ensure that technology continues to
-                support evolving business goals.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Who This Is For — numbered criteria ──────────────── */}
-        <section
-          className="mit-section"
-          style={{ background: "var(--light-bg)" }}
-        >
-          <div className="container">
-            <div className="section-title" data-aos="fade-up">
-              <h2>Strategic Technology Partnership</h2>
-              <p>
-                IT strategy and advisory services are designed for organizations
-                that:
-              </p>
-            </div>
-
-            <div className="mit-criteria-list">
-              {forOrgsItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="mit-criteria-item"
-                  data-aos="fade-up"
-                  data-aos-delay={80 + i * 70}
-                >
-                  <div className="mit-criteria-num">0{i + 1}</div>
-                  <div className="mit-criteria-icon">
-                    <i className={`bi ${item.icon}`} />
-                  </div>
-                  <p>{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Final CTA ─────────────────────────────────────────── */}
-        <section className="mit-cta-section">
-          <div className="container">
-            <div
-              className="mit-cta-banner"
-              style={{
-                background: "var(--accent)",
-                borderRadius: 16,
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-                justifyContent: "space-between",
-                overflow: "hidden",
-              }}
-              data-aos="fade-up"
-            >
-              <div style={{ flex: "1 1 320px" }}>
-                <h2
-                  className="mit-cta-heading"
-                  style={{
-                    color: "#fff",
-                    marginBottom: 8,
-                  }}
-                >
-                  Ready to plan your technology with confidence?
-                </h2>
-                <p
-                  className="mit-cta-text"
-                  style={{
-                    color: "rgba(255,255,255,0.85)",
-                    marginBottom: 20,
-                  }}
-                >
-                  Let&apos;s build a roadmap that keeps your infrastructure
-                  ahead of the business, not behind it.
-                </p>
-                <Link
-                  to="/contact"
-                  className="mit-cta-btn"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 8,
-                    background: "#fff",
-                    color: "var(--accent)",
-                    borderRadius: 50,
-                    fontWeight: 600,
-                  }}
-                >
-                  Contact Us
-                  <i className="bi bi-arrow-right" />
-                </Link>
               </div>
-              <img
-                className="mit-cta-image"
-                src="/images/about/support-team.jpg"
-                alt="InfoManage team ready to help"
-                style={{
-                  objectFit: "cover",
-                  borderRadius: 12,
-                  display: "block",
-                  flexShrink: 0,
-                }}
-              />
             </div>
           </div>
         </section>

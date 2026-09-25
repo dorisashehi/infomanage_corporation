@@ -5516,6 +5516,22 @@ a:hover {
     rgba(26, 108, 181, 0.48) 100%
   );
 }
+@media (max-width: 991px) {
+  .its-hero {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+}
+@media (max-width: 767px) {
+  .its-hero {
+    min-height: 640px;
+  }
+}
+@media (max-width: 480px) {
+  .its-hero {
+    min-height: 560px;
+  }
+}
 
 .pm-hero {
   min-height: 100vh;
