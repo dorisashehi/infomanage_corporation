@@ -92,7 +92,6 @@ const processSteps = [
   {
     num: 1,
     title: "Account Set-up",
-    color: "#123a63",
     bullets: [
       "Documents signed and approved",
       "Account is assigned a Project Manager",
@@ -101,7 +100,6 @@ const processSteps = [
   {
     num: 2,
     title: "Meet Your Project Manager",
-    color: "#134f83",
     bullets: [
       "Confirm implementation details — number porting, LAN/WAN infrastructure, and requirements",
       "Complete project checklist",
@@ -110,7 +108,6 @@ const processSteps = [
   {
     num: 3,
     title: "Scheduling",
-    color: "#1a6cb5",
     bullets: [
       "Choose and finalize install date and time",
       "Affirm expectations",
@@ -120,7 +117,6 @@ const processSteps = [
   {
     num: 4,
     title: "Installation",
-    color: "#3684c4",
     bullets: [
       "Install equipment and train employees",
       "Validate everything works before technicians depart",
@@ -129,7 +125,6 @@ const processSteps = [
   {
     num: 5,
     title: "Account Completion",
-    color: "#6ba8d9",
     bullets: [
       "Finalize paperwork and any service modifications",
       "Billing dates established",
@@ -171,64 +166,173 @@ export default function VoipPage() {
           >
             <div className="mit-hero-badge">
               <i className="bi bi-telephone" />
-              <span>VoIP Phone Systems</span>
+              <span>Cloud Phones &amp; Communications</span>
             </div>
             <h1>You Manage Your Business. We&apos;ll Manage the Phones.</h1>
             <p className="mit-hero-sub">
               Cloud calling that&apos;s more flexible, and more affordable, than
               a traditional office phone system.
             </p>
-            <p className="mit-hero-body">
+            {/* <p className="mit-hero-body">
               Voice, video, messaging, and conferencing in one platform, so your
               team stays connected from anywhere, on any device.
             </p>
             <p className="mit-hero-note">
               No phone closet, no maintenance contract, no waiting on hold with
               an overseas call center.
-            </p>
+            </p> */}
           </div>
         </section>
 
-        {/* ── Unified Communications — feature-card grid ────────── */}
+        {/* ── Unified Communications — text + features, image ────── */}
         <section className="mit-section voip-section-light">
           <div className="container">
             <div
+              className="pm-row"
               style={{
-                textAlign: "center",
-                maxWidth: 640,
-                margin: "0 auto 32px",
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
               }}
-              data-aos="fade-up"
             >
-              <span className="voip-eyebrow">One Platform</span>
-              <h2 className="voip-h2" style={{ color: "var(--heading-color)" }}>
-                Every Way You Communicate, Unified
-              </h2>
-              <p className="voip-lead" style={{ color: "#666" }}>
-                Calls, video, messaging, and conferencing, working together
-                instead of living in separate apps and separate bills.
-              </p>
-            </div>
-
-            <div
-              className="mit-gov-grid"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              {capabilitiesItems.map((item, i) => (
-                <div
-                  key={i}
-                  className="feature-card"
-                  data-aos="fade-up"
-                  data-aos-delay={150 + i * 50}
+              <div style={{ flex: "1 1 420px" }} data-aos="fade-up">
+                <span className="voip-eyebrow">One Platform</span>
+                <h2
+                  className="voip-h2"
+                  style={{
+                    color: "var(--heading-color)",
+                    lineHeight: 1.25,
+                    marginBottom: 12,
+                  }}
                 >
-                  <div className="icon-wrapper">
-                    <i className={`bi ${item.icon}`} />
-                  </div>
-                  <h5>{item.title}</h5>
-                  <p>{item.desc}</p>
+                  Every Way You Communicate, Unified
+                </h2>
+                <p
+                  className="voip-lead"
+                  style={{
+                    color: "#555",
+                    lineHeight: 1.8,
+                    marginBottom: 24,
+                    maxWidth: 460,
+                  }}
+                >
+                  Calls, video, messaging, and conferencing, working together
+                  instead of living in separate apps and separate bills.
+                </p>
+                <div
+                  style={{
+                    width: 46,
+                    height: 3,
+                    background: "var(--accent)",
+                    marginBottom: 22,
+                  }}
+                />
+
+                <div
+                  className="pm-features-grid"
+                  style={{
+                    display: "grid",
+                    gap: 16,
+                  }}
+                >
+                  {capabilitiesItems.map((item, i) => (
+                    <div
+                      key={i}
+                      data-aos="fade-up"
+                      data-aos-delay={100 + i * 80}
+                    >
+                      <div
+                        className="pm-feature-icon"
+                        style={{
+                          borderRadius: "50%",
+                          background: "rgba(26, 108, 181, 0.08)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          marginBottom: 14,
+                        }}
+                      >
+                        <i
+                          className={`bi ${item.icon}`}
+                          style={{ color: "var(--accent)" }}
+                        />
+                      </div>
+                      <h5
+                        className="pm-feature-title"
+                        style={{
+                          fontWeight: 700,
+                          color: "var(--heading-color)",
+                          marginBottom: 8,
+                        }}
+                      >
+                        {item.title}
+                      </h5>
+                      <p
+                        className="pm-feature-desc"
+                        style={{
+                          color: "#666",
+                          lineHeight: 1.6,
+                          margin: 0,
+                        }}
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div
+                style={{ flex: "1 1 420px" }}
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
+                <div style={{ position: "relative" }}>
+                  <img
+                    className="pm-image-tall"
+                    src="/images/home/services.jpg"
+                    alt="Team member messaging on a phone while working on a laptop"
+                    style={{
+                      width: "100%",
+                      objectFit: "cover",
+                      borderRadius: 16,
+                      display: "block",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: -22,
+                      right: -14,
+                      background: "#fff",
+                      borderRadius: 12,
+                      padding: "16px 26px",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.18)",
+                      transform: "rotate(-3deg)",
+                    }}
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
+                    <p
+                      style={{
+                        margin: 0,
+                        fontFamily: "'Caveat', cursive",
+                        fontSize: 26,
+                        fontWeight: 700,
+                        color: "var(--heading-color)",
+                        lineHeight: 1.25,
+                      }}
+                    >
+                      One Number.
+                      <br />
+                      <span style={{ borderBottom: "2px solid var(--accent)" }}>
+                        Every Device.
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -254,34 +358,65 @@ export default function VoipPage() {
               </p>
             </div>
 
-            <div className="hww-grid">
+            <div
+              className="services-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: 20,
+              }}
+            >
               {benefitsItems.map((card, i) => (
                 <div
                   key={i}
-                  className="hww-card"
+                  className="service-card"
                   data-aos="fade-up"
-                  data-aos-delay={150 + i * 100}
+                  data-aos-delay={100 + i * 80}
                 >
-                  <div className="hww-num">{card.num}</div>
                   <div
-                    className="hww-icon-wrap"
-                    style={{ borderRadius: "50%", background: "var(--accent)" }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 14,
+                      marginBottom: 16,
+                    }}
                   >
-                    <i
-                      className={`bi ${card.icon}`}
-                      style={{ color: "#fff" }}
-                    />
+                    <div
+                      className="icon-box"
+                      style={{ marginBottom: 0, flexShrink: 0 }}
+                    >
+                      <i className={`bi ${card.icon}`} />
+                    </div>
+                    <h4 style={{ margin: 0 }}>{card.title}</h4>
                   </div>
-                  <h4>{card.title}</h4>
-                  <p>{card.desc}</p>
-                  <ul className="hww-points">
+                  <p style={{ marginBottom: 12 }}>{card.desc}</p>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                     {card.bullets.map((b, j) => (
-                      <li key={j}>
-                        <i className="bi bi-check2-circle" />
+                      <li
+                        key={j}
+                        className="service-item"
+                        style={{
+                          padding: "5px 0",
+                          display: "flex",
+                          gap: 6,
+                          alignItems: "flex-start",
+                          color: "#666",
+                          fontWeight: 400,
+                        }}
+                      >
+                        <i
+                          className="bi bi-arrow-right"
+                          style={{
+                            color: "var(--accent)",
+                            flexShrink: 0,
+                            marginTop: 2,
+                          }}
+                        />
                         {b}
                       </li>
                     ))}
                   </ul>
+                  <div className="service-number">{card.num}</div>
                 </div>
               ))}
             </div>
@@ -539,14 +674,14 @@ export default function VoipPage() {
           </div>
         </section>
 
-        {/* ── Our Process — vertical numbered timeline ──────────── */}
+        {/* ── Our Process — numbered timeline + phone badge ────── */}
         <section className="mit-section voip-section-light">
           <div className="container">
             <div
               style={{
                 textAlign: "center",
                 maxWidth: 640,
-                margin: "0 auto 40px",
+                margin: "0 auto 24px",
               }}
               data-aos="fade-up"
             >
@@ -560,53 +695,290 @@ export default function VoipPage() {
               </p>
             </div>
 
-            <div className="voip-process">
-              {processSteps.map((step, i) => {
-                const side = step.num % 2 === 1 ? "left" : "right";
-                return (
+            <div
+              className="cyber-row"
+              style={{
+                display: "flex",
+                flexWrap: "wrap-reverse",
+                alignItems: "center",
+              }}
+            >
+              {/* Numbered timeline */}
+              <div
+                className="cyber-approach-timeline"
+                style={{
+                  flex: "1 1 460px",
+                  position: "relative",
+                }}
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div
+                  className="cyber-approach-line"
+                  style={{
+                    position: "absolute",
+                    top: 26,
+                    bottom: 26,
+                    width: 2,
+                    background:
+                      "repeating-linear-gradient(180deg, #d0d7e2 0, #d0d7e2 6px, transparent 6px, transparent 12px)",
+                  }}
+                />
+
+                {processSteps.map((step, i) => (
                   <div
                     key={step.num}
-                    className="voip-process-row"
-                    data-aos="fade-up"
-                    data-aos-delay={100 + i * 80}
+                    style={{
+                      position: "relative",
+                      marginBottom: i < processSteps.length - 1 ? 16 : 0,
+                    }}
                   >
-                    {side === "left" && (
-                      <div className="voip-process-text left">
-                        <span className="voip-process-step-label">
-                          Step {step.num}
-                          <span className="dots" />
-                        </span>
-                        <div className="voip-process-title">{step.title}</div>
-                        <ul className="voip-process-bullets">
-                          {step.bullets.map((b, j) => (
-                            <li key={j}>{b}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
                     <div
-                      className="voip-process-node"
-                      style={{ background: step.color }}
+                      className="cyber-approach-num"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        borderRadius: "50%",
+                        background: "var(--accent)",
+                        color: "#fff",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontWeight: 700,
+                        flexShrink: 0,
+                      }}
                     >
-                      <span>{step.num}</span>
+                      {step.num}
                     </div>
-                    {side === "right" && (
-                      <div className="voip-process-text right">
-                        <span className="voip-process-step-label">
-                          <span className="dots" />
-                          Step {step.num}
-                        </span>
-                        <div className="voip-process-title">{step.title}</div>
-                        <ul className="voip-process-bullets">
-                          {step.bullets.map((b, j) => (
-                            <li key={j}>{b}</li>
-                          ))}
-                        </ul>
+                    <h4
+                      className="cyber-approach-title"
+                      style={{
+                        margin: "6px 0 8px",
+                        fontWeight: 700,
+                        color: "var(--heading-color)",
+                      }}
+                    >
+                      {step.title}
+                    </h4>
+                    {step.bullets.map((b, j) => (
+                      <div
+                        key={j}
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: 6,
+                          padding: "3px 0",
+                        }}
+                      >
+                        <p
+                          style={{
+                            fontSize: 14,
+                            color: "#666",
+                            lineHeight: 1.6,
+                            margin: 0,
+                          }}
+                        >
+                          {b}
+                        </p>
                       </div>
-                    )}
+                    ))}
                   </div>
-                );
-              })}
+                ))}
+              </div>
+
+              {/* Circular phone badge */}
+              <div
+                style={{ flex: "0 1 280px", textAlign: "center" }}
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div
+                  className="cyber-badge-circle"
+                  style={{
+                    position: "relative",
+                    width: 260,
+                    height: 260,
+                    margin: "0 auto",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: -10,
+                      borderRadius: "50%",
+                      border: "2px dashed rgba(26, 108, 181, 0.3)",
+                    }}
+                  />
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: "50%",
+                      overflow: "hidden",
+                      background: "#fff",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.16)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <div style={{ width: 178 }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 8,
+                          marginBottom: 14,
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: 32,
+                            height: 32,
+                            borderRadius: 8,
+                            background: "#e8f1fa",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            flexShrink: 0,
+                          }}
+                        >
+                          <i
+                            className="bi bi-telephone-fill"
+                            style={{ color: "var(--accent)", fontSize: 15 }}
+                          />
+                        </div>
+                        <span
+                          style={{
+                            fontSize: 14,
+                            fontWeight: 700,
+                            color: "var(--heading-color)",
+                          }}
+                        >
+                          Go-Live Checklist
+                        </span>
+                      </div>
+                      {[
+                        {
+                          title: "Numbers Ported",
+                          status: "Main line is live",
+                        },
+                        { title: "Desk Phones", status: "Installed & tested" },
+                        {
+                          title: "Team Training",
+                          status: "All users onboarded",
+                        },
+                      ].map((row, i) => (
+                        <div
+                          key={i}
+                          style={{
+                            display: "flex",
+                            alignItems: "flex-start",
+                            gap: 7,
+                            padding: "7px 0",
+                            borderBottom: i < 2 ? "1px solid #f0f1f4" : "none",
+                          }}
+                        >
+                          <i
+                            className="bi bi-check-circle-fill"
+                            style={{
+                              color: "var(--accent)",
+                              fontSize: 11,
+                              marginTop: 1,
+                              flexShrink: 0,
+                            }}
+                          />
+                          <div style={{ textAlign: "left", minWidth: 0 }}>
+                            <div
+                              style={{
+                                fontSize: 11,
+                                fontWeight: 700,
+                                color: "#333",
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
+                            >
+                              {row.title}
+                            </div>
+                            <div
+                              style={{
+                                fontSize: 10,
+                                color: "#999",
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
+                            >
+                              {row.status}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 6,
+                      right: 6,
+                      width: 60,
+                      height: 60,
+                      borderRadius: "50%",
+                      background: "var(--accent)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 8px 20px rgba(26, 108, 181, 0.4)",
+                    }}
+                  >
+                    <i
+                      className="bi bi-telephone-outbound"
+                      style={{ color: "#fff", fontSize: 24 }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 4,
+                      left: -14,
+                      width: 52,
+                      height: 52,
+                      borderRadius: "50%",
+                      background: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 8px 20px rgba(0,0,0,0.18)",
+                    }}
+                  >
+                    <i
+                      className="bi bi-headset"
+                      style={{ color: "var(--accent)", fontSize: 22 }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 96,
+                      right: -18,
+                      width: 52,
+                      height: 52,
+                      borderRadius: "50%",
+                      background: "#fff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 8px 20px rgba(0,0,0,0.18)",
+                    }}
+                  >
+                    <i
+                      className="bi bi-camera-video-fill"
+                      style={{ color: "var(--accent)", fontSize: 20 }}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

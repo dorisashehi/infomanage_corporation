@@ -143,7 +143,7 @@ export default function ManagedITPage() {
           >
             <div className="mit-hero-badge">
               <i className="bi bi-cpu" />
-              <span>Managed IT Services</span>
+              <span>Managed IT &amp; Help Desk</span>
             </div>
             <h1>
               Stop Reacting to Problems.

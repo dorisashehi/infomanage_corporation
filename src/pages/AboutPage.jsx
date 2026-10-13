@@ -45,17 +45,19 @@ export default function AboutPage() {
             data-aos-delay="100"
           >
             <div className="mit-hero-badge">
-              <i className="bi bi-calendar-check" />
-              <span>Founded in 1995 · 30+ Years of Service</span>
+              <i className="bi bi-info-circle" />
+              <span>About</span>
             </div>
             <h1>About InfoManage</h1>
             <p className="mit-hero-sub">
-              Reliable Technology. Proven Experience.
+              Reliable technology and proven experience since 1995 — IT
+              operations and infrastructure support that keeps your business
+              secure, stable, and running smoothly.
             </p>
-            <p className="mit-hero-body">
+            {/* <p className="mit-hero-body">
               IT operations and infrastructure support designed to keep your
               business secure, stable, and running smoothly.
-            </p>
+            </p> */}
             {/* <div className="mit-hero-btns">
               <Link to="/contact#contact" className="btn-get-started">Schedule a Consultation</Link>
               <Link to="/contact" className="mit-hero-outline-btn">Contact InfoManage</Link>

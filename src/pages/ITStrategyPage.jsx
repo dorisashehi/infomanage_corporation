@@ -193,7 +193,7 @@ export default function ITStrategyPage() {
           >
             <div className="mit-hero-badge">
               <i className="bi bi-diagram-3" />
-              <span>IT Strategy &amp; Advisory</span>
+              <span>Technology Strategy</span>
             </div>
             <h1>
               A Clear Path From Today&apos;s Systems

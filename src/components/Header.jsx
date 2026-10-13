@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "/", internal: true },
@@ -9,17 +9,23 @@ const navLinks = [
       {
         label: "Managed & Secure",
         children: [
+          // Items with `hidden: true` have no page yet; remove the flag once
+          // the page exists and set its href.
           { label: "Managed IT & Help Desk", href: "/managed-it-help-desk" },
           { label: "Cybersecurity", href: "/cybersecurity-services" },
-          { label: "Backup & Business Continuity", href: "#" },
+          { label: "Backup & Business Continuity", href: "#", hidden: true },
           { label: "Technology Strategy", href: "/technology-strategy" },
         ],
       },
       {
         label: "Connect & Collaborate",
         children: [
-          { label: "Microsoft 365 & Google Workspace", href: "#" },
-          { label: "Networks, Wi-Fi & Internet", href: "#" },
+          {
+            label: "Microsoft 365 & Google Workspace",
+            href: "#",
+            hidden: true,
+          },
+          { label: "Networks, Wi-Fi & Internet", href: "#", hidden: true },
           {
             label: "Cloud Phones & Communications",
             href: "/cloud-phones-communications",
@@ -33,19 +39,24 @@ const navLinks = [
             label: "New Offices & Buildouts",
             href: "/project-management-buildouts",
           },
-          { label: "Moves & Expansions", href: "#" },
-          { label: "IT Projects", href: "#" },
+          { label: "Moves & Expansions", href: "#", hidden: true },
+          { label: "IT Projects", href: "#", hidden: true },
         ],
       },
     ],
   },
   { label: "Industries", href: "/industries", internal: true },
   { label: "About", href: "/about", internal: true },
-  { label: "Insights", href: "/insights", internal: true },
+  // Hidden for now
+  // { label: "Insights", href: "/insights", internal: true },
   { label: "Contact", href: "/contact", internal: true },
 ];
 
 export default function Header() {
+  const { pathname } = useLocation();
+  const isActive = (href) => href === pathname;
+  const hasActiveChild = (item) =>
+    item.children?.some((c) => isActive(c.href) || hasActiveChild(c));
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
@@ -112,7 +123,11 @@ export default function Header() {
                       setOpenCategory(null);
                     }}
                   >
-                    <a href="#" onClick={(e) => e.preventDefault()}>
+                    <a
+                      href="#"
+                      className={hasActiveChild(link) ? "active" : ""}
+                      onClick={(e) => e.preventDefault()}
+                    >
                       <span>{link.label}</span>
                       <i className="bi bi-chevron-down toggle-dropdown" />
                     </a>
@@ -127,20 +142,33 @@ export default function Header() {
                             onMouseEnter={() => setOpenCategory(j)}
                             onMouseLeave={() => setOpenCategory(null)}
                           >
-                            <a href="#" onClick={(e) => e.preventDefault()}>
+                            <a
+                              href="#"
+                              className={hasActiveChild(child) ? "active" : ""}
+                              onClick={(e) => e.preventDefault()}
+                            >
                               <span>{child.label}</span>
                               <i className="bi bi-chevron-right toggle-dropdown" />
                             </a>
                             <ul
                               className={`dropdown-menu${openCategory === j ? " show" : ""}`}
                             >
-                              {child.children.map((grandchild, k) => (
-                                <li key={k}>
-                                  <Link to={grandchild.href}>
-                                    {grandchild.label}
-                                  </Link>
-                                </li>
-                              ))}
+                              {child.children
+                                .filter((grandchild) => !grandchild.hidden)
+                                .map((grandchild, k) => (
+                                  <li key={k}>
+                                    <Link
+                                      to={grandchild.href}
+                                      className={
+                                        isActive(grandchild.href)
+                                          ? "active"
+                                          : ""
+                                      }
+                                    >
+                                      {grandchild.label}
+                                    </Link>
+                                  </li>
+                                ))}
                             </ul>
                           </li>
                         ) : (
@@ -263,7 +291,9 @@ export default function Header() {
                       borderBottom: "1px solid #f0f0f0",
                       fontSize: 13,
                       fontWeight: 700,
-                      color: "var(--heading-color)",
+                      color: hasActiveChild(category)
+                        ? "var(--accent)"
+                        : "var(--heading-color)",
                     }}
                   >
                     {category.label}
@@ -280,31 +310,36 @@ export default function Header() {
                     />
                   </div>
                   {mobileOpenCategory === j &&
-                    category.children.map((item, k) => (
-                      <Link
-                        key={k}
-                        to={item.href}
-                        onClick={closeMobileMenu}
-                        style={{
-                          paddingLeft: 44,
-                          fontSize: 14,
-                          color: "#666",
-                          borderBottom: "1px solid #f5f5f5",
-                          display: "flex",
-                          alignItems: "center",
-                        }}
-                      >
-                        <i
-                          className="bi bi-chevron-right"
+                    category.children
+                      .filter((item) => !item.hidden)
+                      .map((item, k) => (
+                        <Link
+                          key={k}
+                          to={item.href}
+                          onClick={closeMobileMenu}
                           style={{
-                            fontSize: 10,
-                            marginRight: 6,
-                            color: "var(--accent)",
+                            paddingLeft: 44,
+                            fontSize: 14,
+                            color: isActive(item.href)
+                              ? "var(--accent)"
+                              : "#666",
+                            fontWeight: isActive(item.href) ? 600 : 400,
+                            borderBottom: "1px solid #f5f5f5",
+                            display: "flex",
+                            alignItems: "center",
                           }}
-                        />
-                        {item.label}
-                      </Link>
-                    ))}
+                        >
+                          <i
+                            className="bi bi-chevron-right"
+                            style={{
+                              fontSize: 10,
+                              marginRight: 6,
+                              color: "var(--accent)",
+                            }}
+                          />
+                          {item.label}
+                        </Link>
+                      ))}
                 </div>
               ))}
 

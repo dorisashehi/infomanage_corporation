@@ -1,8 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import AOS from "aos";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -11,7 +9,7 @@ const industries = [
     slug: "financial-services",
     icon: "bi-bank",
     title: "Financial Services",
-    desc: "Financial services organizations depend on secure, reliable technology environments that support critical operations and protect sensitive client data.",
+    desc: "Secure, reliable systems that protect sensitive client data.",
     listLabel:
       "Technology support for financial services firms often includes:",
     items: [
@@ -26,7 +24,7 @@ const industries = [
     slug: "legal",
     icon: "bi-briefcase-fill",
     title: "Legal",
-    desc: "Law firms rely heavily on secure document management systems, reliable email platforms, and stable infrastructure that supports daily operations.",
+    desc: "Secure documents, reliable email, and stable daily operations.",
     listLabel: "Technology environments for legal practices typically require:",
     items: [
       "Secure document access",
@@ -40,7 +38,7 @@ const industries = [
     slug: "healthcare",
     icon: "bi-heart-pulse-fill",
     title: "Healthcare",
-    desc: "Healthcare organizations require technology environments that support operational reliability, data protection, and secure system access.",
+    desc: "Reliable operations, protected data, and secure system access.",
     listLabel: "Technology management often includes:",
     items: [
       "Secure system configurations",
@@ -54,7 +52,7 @@ const industries = [
     slug: "advertising-media",
     icon: "bi-megaphone-fill",
     title: "Advertising and Media",
-    desc: "Creative and media organizations often depend on high-performance systems that support collaboration, large file storage, and creative production workflows.",
+    desc: "High-performance systems for large files and creative workflows.",
     listLabel: "Technology support for media firms often includes:",
     items: [
       "Infrastructure capable of supporting large file environments",
@@ -68,7 +66,7 @@ const industries = [
     slug: "real-estate",
     icon: "bi-building-fill",
     title: "Real Estate",
-    desc: "Real estate organizations rely on technology systems for client communication, document management, and operational coordination across multiple offices.",
+    desc: "Connected communication and documents across every office.",
     listLabel: "Typical technology needs include:",
     items: [
       "Secure document access",
@@ -82,7 +80,7 @@ const industries = [
     slug: "manufacturing",
     icon: "bi-gear-fill",
     title: "Manufacturing",
-    desc: "Manufacturing organizations depend on reliable infrastructure that supports operations, logistics systems, and communication across facilities.",
+    desc: "Reliable infrastructure for operations across every facility.",
     listLabel: "Technology environments may include:",
     items: [
       "Infrastructure supporting operational systems",
@@ -96,7 +94,7 @@ const industries = [
     slug: "non-profit",
     icon: "bi-people-fill",
     title: "Non-Profit Organizations",
-    desc: "Non-profit organizations often rely on technology to manage operations, communication, and donor engagement while operating within limited budgets.",
+    desc: "Dependable technology for your mission, within your budget.",
     listLabel: "Technology support typically focuses on:",
     items: [
       "Reliable infrastructure management",
@@ -127,8 +125,6 @@ const supportingPoints = [
 ];
 
 export default function IndustriesPage() {
-  const swiperRef = useRef(null);
-  const [paginationEl, setPaginationEl] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -142,18 +138,15 @@ export default function IndustriesPage() {
 
   useEffect(() => {
     const slug = new URLSearchParams(location.search).get("industry");
-    const index = industries.findIndex((ind) => ind.slug === slug);
+    const card = slug && document.getElementById(`industry-${slug}`);
 
-    if (index === -1) {
+    if (!card) {
       window.scrollTo(0, 0);
       return;
     }
 
     const timer = setTimeout(() => {
-      document
-        .getElementById("industries-list")
-        ?.scrollIntoView({ behavior: "smooth" });
-      swiperRef.current?.slideToLoop(index, 0);
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
     }, 150);
     return () => clearTimeout(timer);
   }, [location.search]);
@@ -176,15 +169,16 @@ export default function IndustriesPage() {
             </div>
             <h1>Technology Across Industries</h1>
             <p className="mit-hero-sub">
-              One IT Partner. Every Business Need.
+              One IT partner for every business need — secure, reliable, and
+              scalable technology designed around how your organization works.
             </p>
-            <p className="mit-hero-body">
+            {/* <p className="mit-hero-body">
               Secure, reliable, and scalable technology solutions designed
               around your organization.
             </p>
             <p className="mit-hero-note">
               Professional Services · Manufacturing · Nonprofits · And More
-            </p>
+            </p> */}
             {/* <div className="mit-hero-btns">
               <Link to="/contact#contact" className="btn-get-started">Schedule a Consultation</Link>
               <Link to="/contact" className="mit-hero-outline-btn">Contact InfoManage</Link>
@@ -192,17 +186,17 @@ export default function IndustriesPage() {
           </div>
         </section>
 
-        {/* ── Industries We Work With — Services-style layout ──── */}
-        <section id="industries-list" className="services-section">
+        {/* ── Industries We Work With — "What We Do"-style cards ──── */}
+        <section id="industries-list" className="services-section-block">
           <div className="container">
             <div
               style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 32px" }}
               data-aos="fade-up"
             >
               <span
+                className="services-badge"
                 style={{
                   display: "block",
-                  fontSize: 12,
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: 2,
@@ -212,69 +206,79 @@ export default function IndustriesPage() {
               >
                 Sector-Specific IT Management
               </span>
-              <h2 style={{ fontSize: 32, fontWeight: 700, color: "var(--heading-color)", marginBottom: 10 }}>
+              <h2
+                className="services-heading"
+                style={{
+                  fontWeight: 700,
+                  color: "var(--heading-color)",
+                  marginBottom: 10,
+                }}
+              >
                 IT Built Around Your Industry
               </h2>
-              <p style={{ color: "#666", fontSize: 15 }}>
+              <p className="services-intro" style={{ color: "#666" }}>
                 Every organization has different technology demands. We
                 provide IT management and infrastructure support tailored to
                 the systems, workflows, and requirements of your industry.
               </p>
             </div>
 
-            {/* Swiper cards */}
-            <div data-aos="fade-up" data-aos-duration="1000">
-              <Swiper
-                modules={[Pagination, Autoplay]}
-                loop
-                speed={600}
-                autoplay={{ delay: 5000, disableOnInteraction: false }}
-                pagination={
-                  paginationEl ? { el: paginationEl, clickable: true } : false
-                }
-                onInit={(swiper) => {
-                  swiperRef.current = swiper;
-                }}
-                breakpoints={{
-                  320: { slidesPerView: 1, spaceBetween: 20 },
-                  768: { slidesPerView: 2, spaceBetween: 20 },
-                  992: { slidesPerView: 3, spaceBetween: 20 },
-                }}
-              >
-                {industries.map((ind, i) => (
-                  <SwiperSlide key={i}>
-                    <div className="industry-card">
-                      <div className="industry-card-img-wrap">
-                        <img
-                          src={`/images/industries/${ind.slug}.jpg`}
-                          alt={`${ind.title} technology support`}
-                        />
-                        <div className="industry-card-icon">
-                          <i className={`bi ${ind.icon}`} />
-                        </div>
-                      </div>
-                      <div className="industry-card-body">
-                        <h4>{ind.title}</h4>
-                        <p className="desc">{ind.desc}</p>
-                        <ul className="industry-checklist">
-                          {ind.items.map((item, j) => (
-                            <li key={j}>
-                              <span className="industry-check-dot">
-                                <i className="bi bi-check-lg" />
-                              </span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+            <div className="industries-grid">
+              {industries.map((ind, i) => (
+                <div
+                  key={ind.slug}
+                  id={`industry-${ind.slug}`}
+                  className="service-card"
+                  data-aos="fade-up"
+                  data-aos-delay={100 + (i % 3) * 80}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 14,
+                      marginBottom: 16,
+                    }}
+                  >
+                    <div
+                      className="icon-box"
+                      style={{ marginBottom: 0, flexShrink: 0 }}
+                    >
+                      <i className={`bi ${ind.icon}`} />
                     </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-
-              <div className="industries-pager">
-                <div ref={setPaginationEl} className="industries-pagination swiper-pagination" />
-              </div>
+                    <h4 style={{ margin: 0 }}>{ind.title}</h4>
+                  </div>
+                  <p style={{ marginBottom: 12 }}>{ind.desc}</p>
+                  <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                    {ind.items.map((item, j) => (
+                      <li
+                        key={j}
+                        className="service-item"
+                        style={{
+                          padding: "5px 0",
+                          display: "flex",
+                          gap: 6,
+                          alignItems: "flex-start",
+                          color: "#666",
+                        }}
+                      >
+                        <i
+                          className="bi bi-arrow-right"
+                          style={{
+                            color: "var(--accent)",
+                            flexShrink: 0,
+                            marginTop: 2,
+                          }}
+                        />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="service-number">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

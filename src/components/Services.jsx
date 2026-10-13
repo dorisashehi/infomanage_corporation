@@ -132,15 +132,18 @@ export default function Services() {
                           marginTop: 2,
                         }}
                       />
-                      {href ? (
-                        <Link to={href} className="service-item-link">
-                          {label}
-                        </Link>
-                      ) : (
-                        <a href="#" className="service-item-link">
-                          {label}
-                        </a>
-                      )}
+                      <Link
+                        to={href || "/"}
+                        className="service-item-link"
+                        onClick={
+                          href
+                            ? undefined
+                            : () =>
+                                window.scrollTo({ top: 0, behavior: "smooth" })
+                        }
+                      >
+                        {label}
+                      </Link>
                     </li>
                   );
                 })}

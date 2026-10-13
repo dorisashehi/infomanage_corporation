@@ -148,7 +148,7 @@ export default function ProjectManagementPage() {
           >
             <div className="mit-hero-badge">
               <i className="bi bi-kanban" />
-              <span>ONE BUILDOUT PARTNER</span>
+              <span>New Offices &amp; Buildouts</span>
             </div>
             <h1>
               You Plan the Space.

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectFade } from "swiper/modules";
@@ -11,9 +12,26 @@ const slides = [
   { img: "/images/home/hero-slide-5.jpg" },
 ];
 
+// Autoplay uses a slow crossfade; arrow clicks switch quickly.
+const AUTO_SPEED = 1500;
+const CLICK_SPEED = 500;
+
 export default function Hero() {
+  const swiperRef = useRef(null);
+
   return (
-    <section id="hero" className="hero-section">
+    <section
+      id="hero"
+      className="hero-section"
+      // The arrow's own click handler runs between these two, so only the
+      // slide change it starts uses the faster speed.
+      onClickCapture={() => {
+        if (swiperRef.current) swiperRef.current.params.speed = CLICK_SPEED;
+      }}
+      onClick={() => {
+        if (swiperRef.current) swiperRef.current.params.speed = AUTO_SPEED;
+      }}
+    >
       <div className="hero-info">
         <div className="container" data-aos="fade-up" data-aos-delay="100">
           <div
@@ -77,14 +95,27 @@ export default function Hero() {
               Contact InfoManage
               <i className="bi bi-arrow-right" />
             </Link>
-            <Link
-              to="/managed-it-help-desk"
+            <a
+              href="#services"
               className="btn-cta-outline"
               style={{ display: "inline-flex", alignItems: "center", gap: 8 }}
+              onClick={(e) => {
+                e.preventDefault();
+                const section = document.getElementById("services");
+                const header = document.querySelector(".site-header");
+                if (!section) return;
+                window.scrollTo({
+                  top:
+                    section.getBoundingClientRect().top +
+                    window.scrollY -
+                    (header?.offsetHeight || 0),
+                  behavior: "smooth",
+                });
+              }}
             >
               Explore Our Services
               <i className="bi bi-arrow-right" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -95,8 +126,9 @@ export default function Hero() {
         effect="fade"
         navigation
         loop
-        autoplay={{ delay: 15000, disableOnInteraction: false }}
-        speed={1500}
+        autoplay={{ delay: 6000, disableOnInteraction: false }}
+        speed={AUTO_SPEED}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
       >
         {slides.map((s, i) => (
           <SwiperSlide key={i}>
