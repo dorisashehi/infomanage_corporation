@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const contactCards = [
   {
@@ -22,29 +23,33 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-  const [sent, setSent] = useState(false);
+  // "idle" | "sending" | "sent" | "error"
+  const [status, setStatus] = useState("idle");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("sending");
 
-    const subject = `Consultation Request from ${form.name}${form.subject ? ` (${form.subject})` : ""}`;
-    const body = [
-      `Name: ${form.name}`,
-      `Email: ${form.email}`,
-      `Organization: ${form.subject || "—"}`,
-      "",
-      "IT Environment:",
-      form.message,
-    ].join("\n");
-
-    window.open(
-      `mailto:doris.shehi2@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
-      "_blank",
-    );
-
-    setSent(true);
-    setForm({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setSent(false), 5000);
+    try {
+      // These keys must match the {{variables}} in your EmailJS template
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          organization: form.subject || "—",
+          message: form.message,
+        },
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY },
+      );
+      setStatus("sent");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+    }
+    setTimeout(() => setStatus("idle"), 5000);
   };
 
   return (
@@ -175,10 +180,10 @@ export default function Contact() {
                 discuss how InfoManage can help.
               </p>
 
-              {sent && (
+              {(status === "sent" || status === "error") && (
                 <div
                   style={{
-                    background: "#0d6efd",
+                    background: status === "sent" ? "#0d6efd" : "#dc3545",
                     color: "#fff",
                     padding: "12px 16px",
                     borderRadius: 8,
@@ -186,8 +191,9 @@ export default function Contact() {
                     fontSize: 14,
                   }}
                 >
-                  Opening your email app to send this request. If it doesn't
-                  open, please email us directly.
+                  {status === "sent"
+                    ? "Thank you! Your message has been sent. We'll be in touch shortly."
+                    : "Sorry, something went wrong. Please try again or email us at sales@infomanage.net."}
                 </div>
               )}
 
@@ -237,8 +243,12 @@ export default function Contact() {
                   />
                 </div>
                 <div className="form-actions">
-                  <button type="submit" className="send-btn">
-                    Submit
+                  <button
+                    type="submit"
+                    className="send-btn"
+                    disabled={status === "sending"}
+                  >
+                    {status === "sending" ? "Sending..." : "Submit"}
                   </button>
                 </div>
               </form>
